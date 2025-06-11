@@ -1,8 +1,189 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Navigation Styles */
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-menu {
+  padding: 15px 0;
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.menu {
+  float: right;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.menu ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #ff4757;
+}
+
+/* User Name Display */
+.user-name {
+  color: #ff4757;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Cart Icon */
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4757;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.hero-section h1 {
+  color: white;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  color: #ddd;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Search Box */
+.search-box {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-btn {
+  padding: 15px 30px;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.search-btn:hover {
+  background: #ff2e43;
+}
+
+/* Clearfix */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu ul li {
+    margin-left: 15px;
+  }
+  
+  .menu ul li a {
+    font-size: 12px;
+  }
+  
+  .hero-section h1 {
+    font-size: 36px;
+  }
+  
+  .hero-section p {
+    font-size: 16px;
+  }
+  
+  .search-box {
+    flex-direction: column;
+  }
+  
+  .search-btn {
+    width: 100%;
+  }
+}
+
 /* CSS Style For All */
 * {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 input {
   outline: 0;
@@ -145,17 +326,25 @@ fieldset legend {
 }
 .menu {
   line-height: 60px;
-  position: relative;
 }
 .menu ul {
-  list-style: none;
-  width: 80%;
-  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 .menu ul li {
-  display: inline;
-  padding: 10px;
-  font-weight: bold;
+  display: inline-block;
+  margin: 0 10px;
+  position: relative;
+}
+.menu ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 8px 12px;
 }
 .menu ul li:last-of-type {
   text-align: center;
@@ -173,19 +362,23 @@ fieldset legend {
   border-radius: 3px;
 }
 .shopping-cart {
-  color: #6c5ce7;
+  position: relative;
+  padding: 8px 12px;
   cursor: pointer;
-  font-size: 18px;
+}
+.shopping-cart .badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
 }
 .cart-content {
-  background: #fff;
-  width: 440px;
-  position: absolute;
-  top: 62px;
-  right: 0;
-  box-shadow: 0px 4px 10px 0px #bfbfbf;
-  padding: 10px 10px;
-  display: none;
+  min-width: 300px;
+  right: -50px;
 }
 .cart-table {
   width: 100%;
@@ -417,3 +610,177 @@ fieldset legend {
   border: none;
 }
 /* Contact Page Style End */
+
+/* Login Page Styles */
+.auth-page {
+    background: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-card .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-card .logo img {
+    height: 50px;
+}
+
+.login-card h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #ff2e43;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-links a {
+    color: #ff4757;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.auth-links .divider {
+    color: #ddd;
+    margin: 0 10px;
+}
+
+.error-message {
+    color: #ff4757;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.message-box {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.message-box.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message-box.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 20px;
+    }
+    
+    .login-card h2 {
+        font-size: 20px;
+    }
+    
+    .form-group input {
+        padding: 10px;
+    }
+    
+    .login-btn {
+        padding: 10px;
+    }
+}
+
+/* User Section Styles */
+#userSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    color: #ff4757;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.logout-btn {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #ff4757;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background: #ff4757;
+    color: white;
+}
