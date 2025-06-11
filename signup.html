@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Food Fusion</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Section Start -->
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="index.html" title="Logo">
+                        <img src="img/logo.png" alt="Logo" class="img-responsive">
+                    </a>
+                </div>
+                <!-- Main Menu -->
+                <div class="menu text-right">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
+                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navigation Section End -->
+
+    <!-- Sign Up Section Start -->
+    <section class="login signup">
+        <div class="container">
+            <h2 class="text-center">Sign Up</h2>
+            <div class="heading-border"></div>
+
+            <form id="signupForm" class="form" method="POST" onsubmit="return handleSignup(event)">
+                <fieldset>
+                    <legend>Create Account</legend>
+                    <div class="form-group">
+                        <p class="label">Full Name</p>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name..." required>
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <p class="label">Email</p>
+                        <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <p class="label">Phone Number</p>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number..." required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <p class="label">Password</p>
+                        <input type="password" id="password" name="password" placeholder="Enter your password..." required>
+                        <span class="error-message" id="passwordError"></span>
+                        <div class="password-strength" id="passwordStrength"></div>
+                    </div>
+                    <div class="form-group">
+                        <p class="label">Confirm Password</p>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password..." required>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Sign Up" class="btn-primary">
+                    </div>
+                    <div id="signupMessage" class="message-box"></div>
+                    <div class="form-links text-center">
+                        <a href="login.html" class="login-link">Already have an account? Login</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <!-- Sign Up Section End -->
+
+    <!-- Footer Section Start -->
+    <section class="footer">
+        <div class="container">
+            <div class="grid-3">
+                <div class="text-center">
+                    <h3>About Us</h3><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat officia, temporibus expedita dicta eligendi harum architecto fugiat sint, laudantium omnis animi.</p>
+                </div>
+                <div class="texr-center">
+                    <h3>Site Map</h3><br>
+                    <div class="site-links">
+                        <a href="categories.html">Categories</a>
+                        <a href="foods.html">Foods</a>
+                        <a href="order.html">Order</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="login.html">Login</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h3>Social Links</h3><br>
+                    <div class="social">
+                        <ul>
+                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/facebook-new.png"/></a></li>
+                            <li><a href="#"><img src="https://img.icons8.com/fluency/48/null/instagram-new.png"/></a></li>
+                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/twitter--v1.png"/></a></li>
+                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/linkedin-circled--v1.png"/></a></li>
+                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/youtube-play.png"/></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Copyright Section start -->
+    <section class="copyright">
+        <div class="container text-center">
+            <p>All rights reserved. Design By <a href="#">Code Arcade</a></p>
+        </div>
+        <a id="back-to-top" class="btn-primary">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+    </section>
+    <!-- Copyright Section End -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+    
+    <!-- Sign Up JS -->
+    <script>
+        function handleSignup(event) {
+            event.preventDefault();
+            
+            // Reset error messages
+            document.getElementById('fullNameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('phoneError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('confirmPasswordError').textContent = '';
+            document.getElementById('signupMessage').textContent = '';
+            
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            // Basic validation
+            let isValid = true;
+            
+            if (!fullName) {
+                document.getElementById('fullNameError').textContent = 'Full name is required';
+                isValid = false;
+            }
+            
+            if (!email) {
+                document.getElementById('emailError').textContent = 'Email is required';
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email';
+                isValid = false;
+            }
+            
+            if (!phone) {
+                document.getElementById('phoneError').textContent = 'Phone number is required';
+                isValid = false;
+            } else if (!isValidPhone(phone)) {
+                document.getElementById('phoneError').textContent = 'Please enter a valid phone number';
+                isValid = false;
+            }
+            
+            if (!password) {
+                document.getElementById('passwordError').textContent = 'Password is required';
+                isValid = false;
+            } else if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                isValid = false;
+            }
+            
+            if (!confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Please confirm your password';
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Make API call to our local backend server
+                fetch('http://localhost:3000/api/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        fullName: fullName,
+                        email: email,
+                        phone: phone,
+                        password: password
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('signupMessage').textContent = 'Registration successful! Redirecting to login...';
+                        document.getElementById('signupMessage').className = 'message-box success';
+                        setTimeout(() => {
+                            window.location.href = 'login.html';
+                        }, 2000);
+                    } else {
+                        document.getElementById('signupMessage').textContent = data.message || 'Registration failed. Please try again.';
+                        document.getElementById('signupMessage').className = 'message-box error';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('signupMessage').textContent = 'An error occurred. Please try again later.';
+                    document.getElementById('signupMessage').className = 'message-box error';
+                    console.error('Error:', error);
+                });
+            }
+            
+            return false;
+        }
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        function isValidPhone(phone) {
+            const phoneRegex = /^\+?[\d\s-]{10,}$/;
+            return phoneRegex.test(phone);
+        }
+        
+        // Password strength checker
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthDiv = document.getElementById('passwordStrength');
+            let strength = 0;
+            
+            if (password.length >= 6) strength++;
+            if (password.match(/[A-Z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++;
+            if (password.match(/[^A-Za-z0-9]/)) strength++;
+            
+            switch(strength) {
+                case 0:
+                case 1:
+                    strengthDiv.textContent = 'Weak Password';
+                    strengthDiv.className = 'password-strength weak';
+                    break;
+                case 2:
+                case 3:
+                    strengthDiv.textContent = 'Medium Password';
+                    strengthDiv.className = 'password-strength medium';
+                    break;
+                case 4:
+                    strengthDiv.textContent = 'Strong Password';
+                    strengthDiv.className = 'password-strength strong';
+                    break;
+            }
+        });
+    </script>
+</body>
+</html> 
