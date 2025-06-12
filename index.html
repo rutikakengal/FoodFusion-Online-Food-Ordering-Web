@@ -230,39 +230,35 @@
     <!-- Foods Section End -->
 
     <!-- Footer Section Start -->
-    <section class="footer">
-        <div class="container">
-            <div class="grid-3">
-                <div class="text-center">
-                    <h3>About Us</h3><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat officia, temporibus expedita dicta eligendi harum architecto fugiat sint, laudantium omnis animi. Voluptas praesentium maiores minima pariatur necessitatibus consequuntur, similique assumenda.</p>
-                </div>
-                <div class="texr-center">
-                    <h3>Site Map</h3><br>
-                    <div class="site-links">
-                        <a href="categories.html">Categories</a>
-                        <a href="foods.html">Foods</a>
-                        <a href="order.html">Order</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="login.html">Login</a>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <h3>Social Links</h3><br>
-                    <div class="social">
-                        <ul>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/facebook-new.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/fluency/48/null/instagram-new.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/twitter--v1.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/linkedin-circled--v1.png"/></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/youtube-play.png"/></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 FoodFusion. All rights reserved.</p>
+            <p id="visit-count" style="margin-top:10px; color:#ccc; font-size:14px;"></p>
         </div>
-    </section>
+    </footer>
     <!-- Footer Section End -->
+    <script>
+        // Visit count using localStorage
+        let visitCount = localStorage.getItem('visitCount');
+        if (!visitCount) {
+            visitCount = 1;
+        } else {
+            visitCount = parseInt(visitCount) + 1;
+        }
+        localStorage.setItem('visitCount', visitCount);
+        document.getElementById('visit-count').textContent = "You have visited this site " + visitCount + " times.";
+
+        // Global visit count using countapi.xyz
+        fetch('https://api.countapi.xyz/hit/foodfusion-website/visits')
+            .then(res => res.json())
+            .then(data => {
+                // Show global count below the local count
+                const visitCountElem = document.getElementById('visit-count');
+                if (visitCountElem) {
+                    visitCountElem.innerHTML += "<br>Global visits: " + data.value;
+                }
+            });
+    </script>
 
     <!-- Copyright Section start -->
     <section class="copyright">
