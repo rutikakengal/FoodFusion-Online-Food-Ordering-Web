@@ -1,14 +1,21 @@
 $(function () {
   // Main Menu JS
-  $(window).scroll(function () {
-    if ($(this).scrollTop() < 50) {
-      $("nav").removeClass("site-top-nav");
-      $("#back-to-top").fadeOut();
-    } else {
-      $("nav").addClass("site-top-nav");
-      $("#back-to-top").fadeIn();
-    }
-  });
+ $(window).scroll(function () {
+  if ($(this).scrollTop() < 50) {
+    $("nav").removeClass("site-top-nav");
+    $("#back-to-top").fadeOut();
+    $("#scroll-to-bottom").fadeIn();
+  } else if ($(window).scrollTop() + $(window).height() >= $(document).height() - 50) {
+    // Hide scroll-to-bottom at bottom
+    $("#scroll-to-bottom").fadeOut();
+  } else {
+    $("nav").addClass("site-top-nav");
+    $("#back-to-top").fadeIn();
+    $("#scroll-to-bottom").fadeIn();
+  }
+});
+
+
 
   // Shopping Cart Toggle JS
   $("#shopping-cart").on("click", function () {
@@ -25,6 +32,17 @@ $(function () {
       1000
     );
   });
+// Scroll-To-Bottom Button JS
+$("#scroll-to-bottom").click(function (event) {
+  event.preventDefault();
+  $("html, body").animate(
+    {
+      scrollTop: $(document).height() - $(window).height(),
+    },
+    1000
+  );
+});
+
 
   // Delete Cart Item JS
   $(document).on("click", ".btn-delete", function (event) {
