@@ -310,6 +310,37 @@ fieldset legend {
   background: rgba(8, 8, 8, 0.85);
   color: #fff;
 }
+
+.newsletter h3 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  width: 80%;
+  max-width: 250px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background-color: red;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #e0a800;
+}
+
 .footer .grid-3 {
   padding: 30px 0;
 }
