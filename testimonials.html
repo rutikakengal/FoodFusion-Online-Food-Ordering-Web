@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews & Testimonials - Food Fusion</title>
+    <link rel="stylesheet" href="testimonials.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">🍴</div>
+                <span class="logo-text">Food Fusion</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">HOME</a></li>
+                <li><a href="#" class="nav-link">VIEW MENU</a></li>
+                <li><a href="#" class="nav-link">MEAL PLANS</a></li>
+                <li><a href="#" class="nav-link">ABOUT</a></li>
+                <li><a href="#" class="nav-link">CONTACT US</a></li>
+                <li><a href="#" class="nav-link">CONTRIBUTORS</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+                <button class="cart-btn" id="cartBtn" onclick="toggleCart()">🛒 CART (0)</button>
+                <button class="sign-in-btn">SIGN IN</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">What Our Customers Say</h1>
+            <p class="hero-subtitle">Read authentic reviews from food lovers who trust Food Fusion for their daily meals</p>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalReviews">2,847</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="averageRating">4.8</div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Satisfaction Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overall Rating Section -->
+    <section class="rating-overview">
+        <div class="container">
+            <div class="rating-summary">
+                <div class="overall-rating">
+                    <div class="rating-score">4.8</div>
+                    <div class="stars-display" id="overallStars">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                    </div>
+                    <div class="rating-text">Based on 2,847 reviews</div>
+                </div>
+                <div class="rating-breakdown">
+                    <div class="rating-bar">
+                        <span class="bar-label">5 stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" data-percentage="78"></div>
+                        </div>
+                        <span class="bar-count">2,221</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="bar-label">4 stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" data-percentage="15"></div>
+                        </div>
+                        <span class="bar-count">427</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="bar-label">3 stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" data-percentage="5"></div>
+                        </div>
+                        <span class="bar-count">142</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="bar-label">2 stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" data-percentage="1"></div>
+                        </div>
+                        <span class="bar-count">28</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="bar-label">1 star</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" data-percentage="1"></div>
+                        </div>
+                        <span class="bar-count">29</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="ratingFilter">Filter by Rating:</label>
+                    <select id="ratingFilter" class="filter-select">
+                        <option value="all">All Ratings</option>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="dishFilter">Filter by Dish:</label>
+                    <select id="dishFilter" class="filter-select">
+                        <option value="all">All Dishes</option>
+                        <option value="dal-tadka">Dal Tadka</option>
+                        <option value="steamed-rice">Steamed Rice</option>
+                        <option value="vegetable-curry">Vegetable Curry</option>
+                        <option value="mixed-thali">Mixed Thali</option>
+                        <option value="paneer-curry">Paneer Curry</option>
+                    </select>
+                </div>
+                <button class="write-review-btn" onclick="openReviewForm()">Write a Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Grid -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Reviews will be populated by JavaScript -->
+            </div>
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Reviews</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Saved Reviews</h3>
+            <button class="cart-close" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <div class="cart-empty">
+                <p>No reviews saved yet. Click the bookmark icon on reviews to save them here!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <button class="clear-cart-btn" onclick="clearCart()">Clear All</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Review Form Modal -->
+    <div class="modal-overlay" id="reviewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Write Your Review</h3>
+                <button class="close-btn" onclick="closeReviewForm()">&times;</button>
+            </div>
+            <form class="review-form" id="reviewForm">
+                <div class="form-group">
+                    <label for="reviewerName">Your Name *</label>
+                    <input type="text" id="reviewerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewerEmail">Email Address *</label>
+                    <input type="email" id="reviewerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="dishName">Dish Ordered *</label>
+                    <select id="dishName" required>
+                        <option value="">Select a dish</option>
+                        <option value="dal-tadka">Dal Tadka</option>
+                        <option value="steamed-rice">Steamed Rice</option>
+                        <option value="vegetable-curry">Vegetable Curry</option>
+                        <option value="mixed-thali">Mixed Thali</option>
+                        <option value="paneer-curry">Paneer Curry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Your Rating *</label>
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <input type="hidden" id="ratingValue" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewText">Your Review *</label>
+                    <textarea id="reviewText" rows="5" placeholder="Share your experience with our food and service..." required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeReviewForm()">Cancel</button>
+                    <button type="submit" class="submit-btn">Submit Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>Your review has been submitted successfully and will be published after verification.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="logo-icon">🍴</div>
+                        <span class="logo-text">Food Fusion</span>
+                    </div>
+                    <p>Freshly made tiffin delivered to your doorstep every day!</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">View Menu</a></li>
+                        <li><a href="#">Meal Plans</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Food Fusion. All rights reserved. Built by Rutika❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="testimonials.js"></script>
+</body>
+</html>
