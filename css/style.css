@@ -419,7 +419,7 @@ fieldset legend {
 }
 /* Contact Page Style End */
 
-
+/* highlight */
 mark {
   background-color: #ffd6d6;
   color: #c0392b;
@@ -428,18 +428,15 @@ mark {
   padding: 0px 1px;
 }
 
-
-
-
+/* suggestions */
 #suggestions {
   position: absolute;
   top: 110%;
-  /* positions it just below the input */
   left: 0;
   right: 0;
   margin: auto;
-  width: 99%; /* or whatever width you want */
-  background: rgba(255, 255, 255, 0.7); /* soft white with 30% opacity */
+  width: 99%; 
+  background: rgba(255, 255, 255, 0.7); 
   z-index: 1000;
   border-radius: 5px;
   font-size: 16px;
@@ -461,14 +458,3 @@ mark {
 .suggestion-item:hover {
   background-color: #ffffff;
 }
-
-
-
-/* food-search input[type="search"] {
-  width: 50%;
-  padding: 11px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px 0px 0px 5px;
-  margin-right: -5px;
-} */
