@@ -1,29 +1,81 @@
+/* CSS Variables for Dark Mode */
+:root {
+  /* Light mode colors */
+  --primary-bg: #ffffff;
+  --secondary-bg: #f8f9fa;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --card-bg: #ffffff;
+  --border-color: #dee2e6;
+  --nav-bg: #ffffff;
+  --footer-bg: rgba(8, 8, 8, 0.85);
+  --shadow: rgba(0, 0, 0, 0.1);
+  --input-bg: #ffffff;
+  --input-border: #bfbbbb;
+  --table-border: #bfbbbb;
+  --table-header-bg: #f8f9fa;
+  --section-overlay: rgba(255, 255, 255, 0);
+}
+
+[data-theme="dark"] {
+  /* Dark mode colors */
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --card-bg: #2d2d2d;
+  --border-color: #404040;
+  --nav-bg: #1a1a1a;
+  --footer-bg: rgba(45, 45, 45, 0.95);
+  --shadow: rgba(255, 255, 255, 0.1);
+  --input-bg: #2d2d2d;
+  --input-border: #404040;
+  --table-border: #404040;
+  --table-header-bg: #404040;
+  --section-overlay: rgba(26, 26, 26, 0.8);
+}
+
 /* CSS Style For All */
 * {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Body and global styles - MUST BE AT TOP */
+body {
+  background-color: var(--primary-bg) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 input {
   outline: 0;
 }
+
 input[type="submit"] {
   border: 0;
   cursor: pointer;
 }
+
 a {
   color: rgb(226, 74, 74);
   text-decoration: none;
   transition: 0.5s;
 }
+
 a:hover {
   color: #6c5ce7;
 }
+
 .container {
   width: 85%;
   margin: 0 auto;
   padding: 15px;
+  background-color: transparent;
+  color: var(--text-primary);
 }
+
 .btn-delete {
   background: #ff0000;
   transition: 0.5s;
@@ -33,9 +85,11 @@ a:hover {
   display: inline;
   border-radius: 4px;
 }
+
 .btn-delete:hover {
   color: #fff;
 }
+
 .btn-primary {
   background: rgb(226, 74, 74);
   color: #fff;
@@ -45,43 +99,57 @@ a:hover {
   border-radius: 5px;
   transition: 0.5s;
 }
+
 .btn-primary:hover {
   background: #6c5ce7;
   color: #fff;
 }
+
 .label {
   margin-bottom: 10px;
   font-weight: bold;
+  color: var(--text-primary);
 }
+
 .img-responsive {
   width: 100%;
 }
+
 .img-curve {
   border-radius: 10px;
 }
+
 .text-center {
   text-align: center;
 }
+
 .text-left {
   text-align: left;
 }
+
 .text-right {
   text-align: right;
 }
+
 .text-white {
   color: #fff;
 }
+
 .bold {
   font-weight: bold;
 }
+
 h2 {
-  color: #2f3542;
+  color: var(--text-primary) !important;
   font-size: 32px;
   margin-bottom: 25px;
 }
+
 h3 {
   font-size: 24px;
+  color: var(--text-primary) !important;
 }
+
 .heading-border {
   height: 3px;
   width: 70px;
@@ -90,81 +158,133 @@ h3 {
   margin-top: -10px;
   margin-bottom: 15px;
 }
+
 fieldset {
-  border: 1px solid #fff;
+  border: 1px solid var(--border-color);
   margin: 40px;
   padding: 25px;
   border-radius: 5px;
   padding-bottom: 0;
+  background-color: var(--card-bg);
 }
+
 fieldset legend {
   font-size: 23px;
-  color: #2f3542;
+  color: var(--text-primary);
 }
+
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px 30px;
 }
+
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px 30px;
 }
+
+/* Dark Mode Toggle Button */
+.theme-toggle-btn {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 50px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--secondary-bg);
+  transform: scale(1.05);
+}
+
+.theme-icon {
+  display: flex;
+  align-items: center;
+}
+
+[data-theme="light"] .moon-icon {
+  display: none;
+}
+
+[data-theme="dark"] .sun-icon {
+  display: none;
+}
+
 /* CSS Style For All End */
 
 /* Navigation Section Style */
 .navbar {
   margin-top: 80px;
 }
+
 .navbar-menu {
   padding: 10px 0;
-  background: #fff;
+  background: var(--nav-bg) !important;
   transition: all 0.5s ease-in-out;
 }
+
 .site-top-nav {
-  background: #fff;
+  background: var(--nav-bg) !important;
   padding: 0;
-  box-shadow: 2px -4px 13px 0px #000;
+  box-shadow: 2px -4px 13px 0px var(--shadow);
 }
+
 .navbar-fixed-top {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1030;
-  box-shadow: 2px -7px 13px 0px #000;
+  box-shadow: 2px -7px 13px 0px var(--shadow);
 }
+
 .navbar-fixed-top .container {
   padding: 0 15px;
 }
+
 .logo {
   width: 120px;
   float: left;
   padding: 5px 5px;
 }
+
 .menu {
   line-height: 60px;
   position: relative;
 }
+
 .menu ul {
   list-style: none;
   width: 80%;
   float: right;
 }
+
 .menu ul li {
   display: inline;
   padding: 10px;
   font-weight: bold;
 }
+
+.menu ul li a {
+  color: var(--text-primary) !important;
+}
+
 .menu ul li:last-of-type {
   text-align: center;
 }
+
 .hvr-underline-from-center:before {
   background: #6c5ce7;
   height: 2px;
   bottom: 10px;
 }
+
 .badge {
   color: #fff;
   background: #ff0000;
@@ -172,43 +292,54 @@ fieldset legend {
   padding: 2px 3px;
   border-radius: 3px;
 }
+
 .shopping-cart {
   color: #6c5ce7;
   cursor: pointer;
   font-size: 18px;
 }
+
 .cart-content {
-  background: #fff;
+  background: var(--card-bg);
   width: 440px;
   position: absolute;
   top: 62px;
   right: 0;
-  box-shadow: 0px 4px 10px 0px #bfbfbf;
+  box-shadow: 0px 4px 10px 0px var(--shadow);
   padding: 10px 10px;
   display: none;
+  border: 1px solid var(--border-color);
 }
+
 .cart-table {
   width: 100%;
   border-collapse: collapse;
 }
+
 .cart-table th,
 .cart-table td {
-  border-bottom: 1px solid #ddd;
-  pad: 0px 5px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 5px;
   font-size: 14px;
   font-weight: normal;
   text-align: center;
+  color: var(--text-primary);
+  background-color: var(--card-bg);
 }
+
 .cart-table th {
   font-weight: bold;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--table-header-bg);
 }
+
 .cart-table img {
   width: 50px;
   height: 50px;
   vertical-align: middle;
   border-radius: 100%;
 }
+
 /* Navigation Section Style End */
 
 /* Food Search Section Style Start */
@@ -219,7 +350,25 @@ fieldset legend {
   background-position: center;
   padding: 95px 0;
   background-attachment: fixed;
+  position: relative;
 }
+
+.food-search::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--section-overlay);
+  pointer-events: none;
+}
+
+.food-search > * {
+  position: relative;
+  z-index: 1;
+}
+
 .food-search input[type="search"] {
   width: 50%;
   padding: 11px;
@@ -227,12 +376,20 @@ fieldset legend {
   border: none;
   border-radius: 5px 0px 0px 5px;
   margin-right: -5px;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
 }
+
+.food-search input[type="search"]::placeholder {
+  color: var(--text-secondary);
+}
+
 .food-search .btn-primary {
   padding: 12px;
   transition: 0.5s;
   border-radius: 0px 5px 5px 0px;
 }
+
 /* Food Search Section Style End */
 
 /* Categories Section Style Start */
@@ -241,7 +398,25 @@ fieldset legend {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 55px 0;
+  position: relative;
 }
+
+.categories::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--section-overlay);
+  pointer-events: none;
+}
+
+.categories > * {
+  position: relative;
+  z-index: 1;
+}
+
 .categories h3 {
   background: #2f3542;
   position: absolute;
@@ -249,22 +424,31 @@ fieldset legend {
   right: 0;
   bottom: 0;
   text-align: center;
+  color: #fff !important;
+  padding: 10px 0;
 }
+
 .float-container {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   margin-top: 20px;
   height: 350px;
-  border:1px solid #ddd;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
 }
+
 .categories .float-container img {
   transition: 0.5s;
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
+
 .categories .float-container:hover img {
   transform: scale(1.2);
 }
+
 /* Categories Section Style End */
 
 /* Food Section Style Start */
@@ -275,55 +459,99 @@ fieldset legend {
   padding: 55px 0;
   background-position: center;
   background-attachment: fixed;
+  position: relative;
 }
+
+.food-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--section-overlay);
+  pointer-events: none;
+}
+
+.food-menu > * {
+  position: relative;
+  z-index: 1;
+}
+
 .food-menu-box {
-  padding: 23px;
-  background: #fff;
+  padding: 23px !important;
+  background: var(--card-bg) !important;
   border-radius: 10px;
+  overflow: hidden;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
 }
+
+.food-menu-box h3 {
+  color: var(--text-primary) !important;
+}
+
 .food-menu-img {
   width: 20%;
   float: left;
 }
+
 .food-menu-desc {
   width: 70%;
   float: left;
   margin-left: 40px;
 }
+
 .food-price {
-  font-size: 18px;
+  font-size: 18px !important;
   margin: 10px 0;
+  font-weight: bold;
+  color: var(--text-primary) !important;
 }
+
 .food-details {
-  font-size: 16px;
-  color: #747d8c;
+  font-size: 16px !important;
+  color: var(--text-secondary) !important;
 }
+
 .food-menu-desc .btn-primary {
   margin-top: 15px;
   display: block;
 }
+
 /* Food Section Style End */
 
 /* Footer Section Style Start */
 .footer {
   overflow: hidden;
-  background: rgba(8, 8, 8, 0.85);
+  background: var(--footer-bg);
   color: #fff;
 }
+
 .footer .grid-3 {
   padding: 30px 0;
 }
+
 .site-links a {
   display: block;
   margin: 10px 0;
+  color: #fff;
 }
+
+.site-links a:hover {
+  color: rgb(226, 74, 74);
+}
+
 .social ul {
   list-style: none;
 }
+
 .social ul li {
   display: inline;
   padding: 8px;
 }
+
 /* Footer Section Style End */
 
 /* Copyright Section Style Start */
@@ -331,10 +559,12 @@ fieldset legend {
   overflow: hidden;
   background: #000;
   color: #fff;
+  padding: 15px 0;
 }
+
 /* Copyright Section Style End */
 
-/* Bact-To-Top Section Style Start */
+/* Back-To-Top Section Style Start */
 #back-to-top {
   position: fixed;
   bottom: 40px;
@@ -348,72 +578,138 @@ fieldset legend {
   border-radius: 5px;
   z-index: 9999;
   display: none;
+  background: rgb(226, 74, 74);
+  color: #fff;
+  cursor: pointer;
 }
-/* Bact-To-Top Section Style End */
+
+#back-to-top:hover {
+  background: #6c5ce7;
+}
+
+/* Back-To-Top Section Style End */
 
 /* Order Page Style Start */
 .order {
   padding: 20px 0;
+  background-color: var(--primary-bg);
 }
+
 .order .tbl-full {
   margin-bottom: 50px;
   width: 100%;
   border-collapse: collapse;
+  background-color: var(--card-bg);
 }
+
 .order .tbl-full img {
   width: 35px;
   height: 35px;
   vertical-align: middle;
   border-radius: 100%;
 }
+
 .order .tbl-full tr {
-  border-left: 1px solid #bfbbbb;
-  border-right: 1px solid #bfbbbb;
+  border-left: 1px solid var(--table-border);
+  border-right: 1px solid var(--table-border);
 }
+
 .order .tbl-full tr th,
 .order .tbl-full tr td {
-  border-bottom: 1px solid #bfbbbb;
+  border-bottom: 1px solid var(--table-border);
   padding: 8px 8px;
   text-align: center;
+  color: var(--text-primary);
+  background-color: var(--card-bg);
 }
+
 .order .tbl-full tr th {
-  border-top: 1px solid #bfbbbb;
+  border-top: 1px solid var(--table-border);
+  background-color: var(--table-header-bg);
+  font-weight: bold;
 }
+
 .form fieldset,
 .contact fieldset,
 .login fieldset {
-  border: 1px solid #bfbbbb;
+  border: 1px solid var(--border-color);
 }
+
 .form {
-  box-shadow: 0 0 20px 2px #1a171780;
+  box-shadow: 0 0 20px 2px rgba(26, 23, 23, 0.5);
   width: 70%;
   padding: 7px 0;
   margin: 0 auto;
   border-radius: 3px;
+  background: var(--card-bg);
 }
+
 .form input,
 .form textarea {
   width: 98%;
   padding: 8px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid #bfbbbb;
+  border: 1px solid var(--input-border);
   margin-bottom: 25px;
+  box-sizing: border-box;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
 }
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: var(--text-secondary);
+}
+
 .form input[type="submit"] {
   width: 30%;
   border-radius: 5px;
 }
+
 /* Order Page Style End */
 
 /* Contact Page Style Start */
 .contact,
 .login {
   padding: 65px 0;
+  background-color: var(--primary-bg);
 }
+
 #gmap_canvas {
   width: 100%;
   height: 400px;
   border: none;
 }
+
 /* Contact Page Style End */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu ul {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .food-menu-img,
+  .food-menu-desc {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+  }
+  
+  .cart-content {
+    width: 90%;
+    right: 5%;
+  }
+  
+  .theme-toggle-btn {
+    margin: 5px 0;
+    display: block;
+  }
+}
