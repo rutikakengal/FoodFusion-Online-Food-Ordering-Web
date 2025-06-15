@@ -46,3 +46,42 @@ $(function () {
     $(".tbl-full th:nth-child(6)").text("$" + total.toFixed(2));
   }
 });
+
+
+// Theme Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+
+    // Theme toggle click handler
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        // Add switching animation
+        themeToggle.classList.add('switching');
+        
+        // Change theme
+        body.setAttribute('data-theme', newTheme);
+        
+        // Save theme preference
+        localStorage.setItem('theme', newTheme);
+        
+        // Remove animation class after animation completes
+        setTimeout(() => {
+            themeToggle.classList.remove('switching');
+        }, 500);
+    });
+
+    // Add keyboard support (Enter or Space)
+    themeToggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            themeToggle.click();
+        }
+    });
+});
