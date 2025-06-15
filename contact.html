@@ -90,31 +90,62 @@
     </header>
     <!-- Navigation Section End -->
 
-    <!-- Contact Section Start -->
-    <section class="contact">
-        <div class="container">
-            <h2 class="text-center">Get in touch</h2>
-            <div class="heading-border"></div>
+ <!-- Contact form Start -->
+<section class="contact">
+    <div class="container">
+        <h2 class="text-center">Get in touch</h2>
+        <div class="heading-border"></div>
 
-            <form action="" class="form">
-                <fieldset>
-                    <legend>Contact Us</legend>
-                    <p class="label">Full Name</p>
-                    <input type="text" placeholder="Enter your name..." required>
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
-                    <p class="label">Phone Number</p>
-                    <input type="contact" placeholder="Enter your phone..." required>
-                    <p class="label">Subject</p>
-                    <input type="text" placeholder="Enter your subject..." required>
-                    <p class="label">Message</p>
-                    <textarea name="" id="" rows="5" placeholder="Enter your message..." required></textarea>
-                    <input type="submit" value="Submit" class="btn-primary">
-                </fieldset>
-            </form>
-        </div>
-    </section>
-    <!-- Contact Section End -->
+        <form class="form" onsubmit="return validateForm()">
+            <fieldset>
+                <legend>Contact Us</legend>
+
+
+                <p class="label">Full Name</p>
+                <input type="text" placeholder="Enter your name..." required>
+
+                <p class="label">Email</p>
+                <input type="email" id="email" placeholder="Enter your email..." required>
+                <p id="emailWarning" style="color: red; display: none;">Please enter a valid email address.</p>
+
+                <p class="label">Phone Number</p>
+                <input type="text" id="phone" placeholder="Enter your phone..." required maxlength="10"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    pattern="\d{10}" title="Enter a 10-digit phone number">
+
+                <p class="label">Subject</p>
+                <input type="text" placeholder="Enter your subject..." required>
+
+                <p class="label">Message</p>
+                <textarea rows="5" placeholder="Enter your message..." required></textarea>
+
+                <input type="submit" value="Submit" class="btn-primary">
+            </fieldset>
+        </form>
+    </div>
+</section>
+<!-- Contact Section End -->
+
+<!-- JavaScript for Validation -->
+<script>
+    function validateForm() {
+        const emailField = document.getElementById('email');
+        const emailWarning = document.getElementById('emailWarning');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(emailField.value)) {
+            emailWarning.style.display = 'block';
+            return false; // stop form submission
+        } else {
+            emailWarning.style.display = 'none';
+        }
+
+        return true; // allow form submission
+    }
+</script>
+
+ <!-- Contact form ends -->
+  
 
      <!-- Map Section Start -->
      <section class="map">
