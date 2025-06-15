@@ -10,7 +10,7 @@ $(function () {
             // Set initial theme
             document.body.setAttribute('data-theme', this.currentTheme);
             
-            // Create and add toggle button if it doesn't exist
+            // Create and add toggle button
             this.createToggleButton();
             
             // Add event listener
@@ -25,14 +25,16 @@ $(function () {
         createToggleButton() {
             if ($('#theme-toggle').length === 0) {
                 const toggleButton = `
-                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
-                        <span class="theme-icon">
-                            <span class="sun-icon">☀️</span>
-                            <span class="moon-icon">🌙</span>
-                        </span>
-                    </button>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                            <span class="theme-icon">
+                                <span class="sun-icon">☀️</span>
+                                <span class="moon-icon">🌙</span>
+                            </span>
+                        </button>
+                    </li>
                 `;
-                $('.menu ul').append(`<li>${toggleButton}</li>`);
+                $('.menu ul').append(toggleButton);
             }
         }
 
@@ -45,6 +47,9 @@ $(function () {
             this.currentTheme = theme;
             document.body.setAttribute('data-theme', theme);
             localStorage.setItem('foodfusion-theme', theme);
+            
+            // Force refresh of styles
+            document.documentElement.style.setProperty('--force-refresh', Math.random());
         }
 
         checkSystemPreference() {
