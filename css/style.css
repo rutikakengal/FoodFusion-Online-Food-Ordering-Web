@@ -81,6 +81,7 @@ h2 {
 }
 h3 {
   font-size: 24px;
+  color: rgb(226, 74, 74);
 }
 .heading-border {
   height: 3px;
@@ -307,22 +308,68 @@ fieldset legend {
 /* Footer Section Style Start */
 .footer {
   overflow: hidden;
-  background: rgba(8, 8, 8, 0.85);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.85);
+  color: #000000;
+  border-top:0.2px solid rgb(226, 74, 74);
+}
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #e24a4a; /* Matches the red from your border */
 }
 .footer .grid-3 {
-  padding: 30px 0;
+  background-color:white ;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  padding-left: 0;
 }
-.site-links a {
+.aboutus-flex {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 600px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+.about-content {
+  max-width: 300px;
+}
+.footer-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.foodfusion a {
   display: block;
   margin: 10px 0;
+  color:black;
+}
+.learnmore a {
+  display: block;
+  margin: 10px 0;
+  color:black;
+  transition: 0.3s;
+}
+.footer a:hover {
+  color: #e24a4a;
 }
 .social ul {
   list-style: none;
+  padding: 0;
+  display:flex;
+  gap:10px;
 }
 .social ul li {
-  display: inline;
-  padding: 8px;
+  display:grid;
+  grid-template-rows: repeat(2, auto); 
+  grid-template-columns: repeat(auto-fit, minmax(3px, 1fr));
+  padding: 0px;
 }
 /* Footer Section Style End */
 
