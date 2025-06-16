@@ -236,35 +236,84 @@ fieldset legend {
 /* Food Search Section Style End */
 
 /* Categories Section Style Start */
+/* ====== Categories Section ====== */
 .categories {
-  background-image: url(../img/category-bg.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 55px 0;
+  padding: 5rem 0 10rem 0;
 }
-.categories h3 {
-  background: #2f3542;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+
+.categories h2 {
   text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #555;
 }
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 2rem;
+}
+
 .float-container {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  margin-top: 20px;
+}
+
+.float-container img {
+  width: 100%;
   height: 350px;
-  border:1px solid #ddd;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
 }
-.categories .float-container img {
-  transition: 0.5s;
+
+.float-text {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.float-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
-.categories .float-container:hover img {
-  transform: scale(1.2);
+
+.float-container:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
 }
+
+.float-container:hover .float-text {
+  top: 50%;
+  opacity: 1;
+}
+
+.float-container:hover img {
+  transform: scale(1.05);
+}
+
 /* Categories Section Style End */
 
 /* Food Section Style Start */
