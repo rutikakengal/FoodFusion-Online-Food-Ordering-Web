@@ -54,7 +54,7 @@ a:hover {
   font-weight: bold;
 }
 .img-responsive {
-  width: 100%;
+  width: 71px;
 }
 .img-curve {
   border-radius: 10px;
@@ -110,6 +110,7 @@ fieldset legend {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px 30px;
+  justify-items: center;
 }
 /* CSS Style For All End */
 
@@ -125,15 +126,20 @@ fieldset legend {
 .site-top-nav {
   background: #fff;
   padding: 0;
-  box-shadow: 2px -4px 13px 0px #000;
+  /* box-shadow: 2px -4px 13px 0px #000; */
 }
+
 .navbar-fixed-top {
+  padding: 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1030;
-  box-shadow: 2px -7px 13px 0px #000;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.15); /* translucent white */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 .navbar-fixed-top .container {
   padding: 0 15px;
@@ -261,6 +267,7 @@ fieldset legend {
 .categories .float-container img {
   transition: 0.5s;
   height: 100%;
+  width: 100%;
 }
 .categories .float-container:hover img {
   transform: scale(1.2);
@@ -323,6 +330,15 @@ fieldset legend {
 .social ul li {
   display: inline;
   padding: 8px;
+}
+.site-links{
+      display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.social-links > h3{
+  display: flex;
+    justify-content: center;
 }
 /* Footer Section Style End */
 
