@@ -40,7 +40,7 @@
                         <li>
                             <a id="shopping-cart" class="shopping-cart">
                                 <i class="fa fa-cart-arrow-down"></i>
-                                <span class="badge">4</span>
+                                <span class="badge">0</span> <!-- this is dynamically updated -->
                             </a>
                             <div id="cart-content" class="cart-content">
                                 <h3 class="text-center">Shopping Cart</h3>
@@ -53,35 +53,9 @@
                                         <th>Total</th>
                                         <th>Action</th>
                                     </tr>
-                                    <tr>
-                                        <td><img src="img/food/p1.jpg" alt="Food"></td>
-                                        <td>Pizza</td>
-                                        <td>$ 8.00</td>
-                                        <td>1</td>
-                                        <td>$ 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/s1.jpg" alt="Food"></td>
-                                        <td>Sandwich</td>
-                                        <td>$ 8.00</td>
-                                        <td>1</td>
-                                        <td>$ 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/b1.jpg" alt="Food"></td>
-                                        <td>Burder</td>
-                                        <td>$ 8.00</td>
-                                        <td>1</td>
-                                        <td>$ 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="4">Total</th>
-                                        <th>$24.00$</th>
-                                        <th></th>
-                                    </tr>
+                                    <tbody class="cart-table">
+                                        <!-- Cart items will be rendered here by JavaScript -->
+                                    </tbody>                                    
                                 </table>
                                 <a href="order.html" class="btn-primary">Confirm Order</a>
                             </div>
