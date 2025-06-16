@@ -116,12 +116,13 @@ fieldset legend {
 
 /* Navigation Section Style */
 .navbar {
-  margin-top: 80px;
+  margin-top: 60px;
 }
 .navbar-menu {
   padding: 10px 0;
   background: #fff;
   transition: all 0.5s ease-in-out;
+  border-bottom: 2px solid black;
 }
 .site-top-nav {
   background: #fff;
