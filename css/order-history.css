@@ -1,0 +1,248 @@
+/* Order History Page Styles */
+.order-history {
+    padding: 80px 0;
+}
+
+.order-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 250px; /* Ensure search box has a minimum width */
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.date-filter {
+    min-width: 150px; /* Ensure date filter has a minimum width */
+}
+
+.date-filter input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    /* Ensure native date picker icon is visible */
+    appearance: auto; /* For Safari/iOS */
+    -webkit-appearance: auto; /* For older WebKit */
+}
+
+/* Ensure jQuery UI Datepicker calendar is visible */
+.ui-datepicker {
+    z-index: 1000 !important; /* Ensure the datepicker is on top of other elements */
+    display: block !important; /* Ensure it's not hidden by other rules */
+}
+
+.order-list {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr; /* Display one order per line */
+}
+
+.order-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 25px;
+}
+
+.order-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-header h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.order-header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.order-items {
+    margin-bottom: 20px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.order-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-details h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.item-details p {
+    margin: 5px 0 0;
+    font-size: 15px;
+    color: #777;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.item-actions .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.item-actions .btn-quantity {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.item-actions .btn-quantity:hover {
+    background-color: #ff6b81;
+}
+
+.item-actions .quantity-controls span {
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.add-to-cart-btn {
+    background-color: #44bd32;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #4cd43b;
+}
+
+.order-footer {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.order-summary p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.order-summary strong {
+    font-size: 20px;
+    color: #333;
+}
+
+.reorder-full-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.reorder-full-btn:hover {
+    background-color: #ff6b81;
+}
+
+#no-orders {
+    padding: 40px;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    grid-column: 1 / -1; /* Span across all columns in grid */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .order-filters {
+        flex-direction: column;
+    }
+    
+    .search-box,
+    .date-filter {
+        min-width: unset;
+        width: 100%;
+    }
+    
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .item-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+} 

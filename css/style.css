@@ -433,3 +433,158 @@ fieldset legend {
   border: none;
 }
 /* Contact Page Style End */
+
+/* Order Page Specific Styles */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-quantity,
+.btn-delete {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-quantity:hover,
+.btn-delete:hover {
+    background-color: #ff6b81;
+}
+
+.quantity-controls span {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+/* Cart Content Specific Styles (for the mini cart in the header) */
+.cart-content {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust based on your header height */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 15px;
+}
+
+.cart-content.show {
+    display: block;
+}
+
+.cart-content h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h4 {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.cart-item-details p {
+    margin: 0;
+    font-size: 13px;
+    color: #777;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-item-actions .btn-quantity {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+}
+
+.cart-item-actions span {
+    font-size: 14px;
+}
+
+.btn-remove {
+    background-color: #f5222d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-remove:hover {
+    background-color: #ff4d4f;
+}
+
+#cart-total {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    margin-top: 15px;
+}
+
+#cart-total strong {
+    font-size: 18px;
+    color: #333;
+}
+
+.cart-content .btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
