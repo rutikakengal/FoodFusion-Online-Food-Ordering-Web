@@ -37,14 +37,22 @@
                         <li>
                             <a id="shopping-cart" class="shopping-cart">
                                 <i class="fa fa-cart-arrow-down"></i>
-                                <span class="badge"></span>
+                                <span class="badge">0</span> <!-- this is dynamically updated -->
                             </a>
                             <div id="cart-content" class="cart-content">
                                 <h3 class="text-center">Shopping Cart</h3>
                                 <table class="cart-table" border="0">
+                                    <tr>
+                                        <th>Food</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Qty</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
                                     <tbody class="cart-table">
                                         <!-- Cart items will be rendered here by JavaScript -->
-                                    </tbody>
+                                    </tbody>                                    
                                 </table>
                                 <a href="order.html" class="btn-primary">Confirm Order</a>
                             </div>
