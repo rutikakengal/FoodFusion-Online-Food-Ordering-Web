@@ -197,7 +197,14 @@ fieldset legend {
   width: 100%;
   border-collapse: collapse;
 }
-.cart-table th,
+.cart-table th{
+
+  border-bottom: 1px solid #ddd;
+  padding: 0px 5px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+}
 .cart-table td {
   border-bottom: 1px solid #ddd;
   pad: 0px 5px;
