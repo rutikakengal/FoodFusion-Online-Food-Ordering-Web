@@ -45,4 +45,11 @@ $(function () {
     $("#cart-content th:nth-child(5)").text("$" + total.toFixed(2));
     $(".tbl-full th:nth-child(6)").text("$" + total.toFixed(2));
   }
+
+$("#menu-toggle").on("click", function () {
+  $(".menu ul").toggleClass("open");
+  // Toggle aria-expanded attribute for accessibility
+  const expanded = $(this).attr("aria-expanded") === "true";
+  $(this).attr("aria-expanded", !expanded);
+});
 });

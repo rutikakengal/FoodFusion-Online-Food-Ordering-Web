@@ -126,6 +126,7 @@ fieldset legend {
 .site-top-nav {
   background: #fff;
   padding: 0;
+  align-items: center;
   /* box-shadow: 2px -4px 13px 0px #000; */
 }
 
@@ -153,18 +154,54 @@ fieldset legend {
   line-height: 60px;
   position: relative;
 }
+
+/* Hamburger menu button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6c5ce7;
+  cursor: pointer;
+  padding: 10px;
+  float: right;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: #4834d4;
+  outline: none;
+}
+
 .menu ul {
   list-style: none;
   width: 80%;
   float: right;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.4s ease-in-out;
+  overflow: hidden;
 }
 .menu ul li {
   display: inline;
-  padding: 10px;
+  padding: 10px 15px;
   font-weight: bold;
+  position: relative;
 }
 .menu ul li:last-of-type {
   text-align: center;
+}
+.menu ul li a {
+  color: rgb(226, 74, 74);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.menu ul li a:hover,
+.menu ul li a:focus,
+.menu ul li a.active {
+  color: #6c5ce7;
+  outline: none;
 }
 .hvr-underline-from-center:before {
   background: #6c5ce7;
@@ -215,6 +252,133 @@ fieldset legend {
   vertical-align: middle;
   border-radius: 100%;
 }
+
+/* Responsive Styles */
+@media (max-width: 905px) {
+  .menu-toggle {
+    display: block;
+  }
+  .menu ul {
+    width: 100%;
+    float: none;
+    background: #fff;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 0 0 5px 5px;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+    scrollbar-width: thin;
+    scrollbar-color: #6c5ce7 #f1f1f1;
+  }
+  .menu ul::-webkit-scrollbar {
+    width: 8px;
+  }
+  .menu ul::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  .menu ul::-webkit-scrollbar-thumb {
+    background-color: #6c5ce7;
+    border-radius: 5px;
+    border: 2px solid #f1f1f1;
+  }
+  .menu ul.open {
+    max-height: 500px; /* enough to show all menu items */
+  }
+  .menu ul li {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .menu ul li:last-of-type {
+    border-bottom: none;
+  }
+  .menu ul li a {
+    display: block;
+    font-size: 18px;
+  }
+   #shopping-cart {
+    font-size: 22px;
+    padding: 8px 12px;
+    background-color: orange;
+    border-radius: 6px;
+    width: 95%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .badge {
+    font-size: 14px;
+    padding: 3px 6px;
+    background-color: #ff6600;
+    /* border-radius: 50%; */
+    color: white;
+    margin-left: 4px;
+  }
+}
+
+/* Cart icon styling for desktop navbar */
+#shopping-cart {
+  font-size: 20px;
+  padding: 6px 10px;
+  color: #6c5ce7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#shopping-cart:hover {
+  background-color: orange;
+  border-radius: 6px;
+}
+/* Additional responsiveness for login and cart icons at 876px width */
+@media (max-width: 876px) {
+  .menu ul li a[href="login.html"] {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+  #shopping-cart {
+    font-size: 22px;
+    padding: 8px 12px;
+    background-color: orange;
+    border-radius: 6px;
+    width: 95%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .badge {
+    font-size: 14px;
+    padding: 3px 6px;
+    background-color: #ff6600;
+    /* border-radius: 50%; */
+    color: white;
+    margin-left: 4px;
+  }
+}
+
+/* Cart icon styling for desktop navbar */
+#shopping-cart {
+  font-size: 20px;
+  padding: 6px 10px;
+  color: #6c5ce7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#shopping-cart:hover {
+  background-color: orange;
+  border-radius: 6px;
+}
+@media (max-width: 480px) {
+  .badge {
+    font-size: 12px;
+    padding: 2px 5px;
+  }
+}
+
 /* Navigation Section Style End */
 
 /* Food Search Section Style Start */
