@@ -2,8 +2,214 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-image: url('img/signup.jpg');
+            background-position: center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        .dark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .signup-container {
+            position: relative;
+            z-index: 1;
+            background-color: white;
+            border-radius: 13px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px 30px;
+            width: 350px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #555;
+        }
+
+        .home-icon {
+            display: block;
+            margin: 0 auto 10px auto;
+            width: 120px;
+            height: 100px;
+            cursor: pointer;
+        }
+        
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 12px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input::placeholder {
+            color: #aaa;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        
+        button {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 15px;
+        }
+        
+        button:hover {
+            background-color: #d63333;
+        }
+
+        .google-btn {
+            background-color: white;
+            color: #555;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .google-btn:hover {
+            background-color: #f5f5f5;
+        }
+
+        .google-icon {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #4285F4;
+        }
+
+        .red {
+            color: red;
+            font-weight: bold;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .forgot-password {
+            font-size: 13px;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .forgot-password a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+            margin: 0 10px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        input.error {
+            border-color: red;
+        }
+    </style>
+
     <title>Online Food Delivery Website</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
@@ -13,8 +219,107 @@
     <link rel="stylesheet" href="css/hover-min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
+
+    <div class="dark"></div>
+    <div class="signup-container">
+        <span class="close-btn" onclick="window.location.href='index.html'">&times;</span>
+        <img src="img/gif.gif" alt="Home Icon" class="home-icon" onclick="window.location.href='index.html'">
+        <h1>Welcome To Tiffin Fusion</h1>
+        
+        <form id="signinForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <div class="error-message" id="email-error">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required minlength="6">
+                <div class="error-message" id="password-error">Password must be at least 6 characters</div>
+                <p class="forgot-password"><a href="#">Forgot Password?</a></p>
+            </div>
+            
+            <button type="submit">Sign in</button>
+
+            <div class="divider">or</div>
+
+            <button type="button" class="google-btn">
+                <i class="fab fa-google google-icon"></i>
+                Continue with Google
+            </button>
+
+            <div class="signup-link">
+                Don't have an account? <a href="signup.html">Sign up</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('signinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const emailError = document.getElementById('email-error');
+            const passwordError = document.getElementById('password-error');
+            
+            let isValid = true;
+            
+            // Validate email
+            if (!email) {
+                emailError.style.display = 'block';
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                emailError.style.display = 'block';
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+                document.getElementById('email').classList.remove('error');
+            }
+            
+            // Validate password
+            if (!password) {
+                passwordError.style.display = 'block';
+                document.getElementById('password').classList.add('error');
+                isValid = false;
+            } else if (password.length < 6) {
+                passwordError.style.display = 'block';
+                document.getElementById('password').classList.add('error');
+                isValid = false;
+            } else {
+                passwordError.style.display = 'none';
+                document.getElementById('password').classList.remove('error');
+            }
+            
+            if (isValid) {
+                // Form is valid, proceed with sign in
+                window.location.href = 'index2.html';
+            }
+        });
+
+        // Add real-time validation
+        document.getElementById('email').addEventListener('input', function() {
+            if (this.value) {
+                this.classList.remove('error');
+                document.getElementById('email-error').style.display = 'none';
+            }
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            if (this.value && this.value.length >= 6) {
+                this.classList.remove('error');
+                document.getElementById('password-error').style.display = 'none';
+            }
+        });
+    </script>
+
     <!-- Navigation Section Start -->
     <header class="navbar">
         <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
@@ -207,5 +512,6 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
+
 </body>
 </html>
