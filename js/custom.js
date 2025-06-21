@@ -35,14 +35,35 @@ $(function () {
 
   // Update Total Price JS
   function updateTotal() {
-    let total = 0;
-    $("#cart-content tr").each(function () {
-      const rowTotal = parseFloat($(this).find("td:nth-child(5)").text().replace("$", ""));
-      if (!isNaN(rowTotal)) {
-        total += rowTotal;
-      }
-    });
-    $("#cart-content th:nth-child(5)").text("$" + total.toFixed(2));
-    $(".tbl-full th:nth-child(6)").text("$" + total.toFixed(2));
-  }
+  let totalNav = 0;
+  let totalOrder = 0;
+
+  $("#cart-content .cart-table .cart-item").each(function () {
+    const price = parseFloat($(this).find(".price").text().replace("$", "").trim());
+    const qty = parseInt($(this).find(".qty").text().trim());
+
+    if (!isNaN(price) && !isNaN(qty)) {
+      const itemTotal = price * qty;
+      $(this).find(".total").text("$ " + itemTotal.toFixed(2));
+      totalNav += itemTotal;
+    }
+  });
+
+  $("#cart-total-nav").text("$" + totalNav.toFixed(2));
+
+  $(".order .tbl-full .cart-item").each(function () {
+    const price = parseFloat($(this).find(".price").text().replace("$", "").trim());
+    const qty = parseInt($(this).find(".qty").text().trim());
+
+    if (!isNaN(price) && !isNaN(qty)) {
+      const itemTotal = price * qty;
+      $(this).find(".total").text("$ " + itemTotal.toFixed(2));
+      totalOrder += itemTotal;
+    }
+  });
+
+  $("#cart-total-order").text("$" + totalOrder.toFixed(2));
+}
+
+  updateTotal();
 });
