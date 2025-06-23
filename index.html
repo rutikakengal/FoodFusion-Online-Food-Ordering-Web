@@ -96,9 +96,11 @@
     <!-- Food Search Section Start -->
     <section class="food-search text-center">
         <div class="container">
-            <form action="food-search.html">
-                <input type="search" placeholder="Search for food..." required>
-                <input type="submit" value="Search" class="btn-primary">
+            <form action="food-search.html" >
+                <input type="search"  id='search' placeholder="Search for food..." >
+                <input type="submit" value="Search"  class="btn-primary">
+                 <span id="name-error" class="error-message"></span>
+               
             </form>
         </div>
     </section>
@@ -338,6 +340,7 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
+    <script src='js/validation.js'></script>
 </body>
 
 </html>

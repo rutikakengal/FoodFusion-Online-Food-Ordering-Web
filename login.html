@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/hover-min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/validation.js"></script>
 </head>
 <body>
     <!-- Navigation Section Start -->
@@ -96,16 +98,41 @@
             <h2 class="text-center">Login</h2>
             <div class="heading-border"></div>
 
-            <form action="" class="form">
+            <!-- <form action="" class="form" onsubmit="return loginForm()">
                 <fieldset>
                     <legend>Login</legend>
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
+                   
+                     <p class="label">Email</p>
+                    <input type="text" placeholder="Enter your email..." >
                     <p class="label">Password</p>
-                    <input type="password" placeholder="Enter your password..." required>
+                    <input type="password" placeholder="Enter your password..." >
                     <input type="submit" value="Login" class="btn-primary">
                 </fieldset>
-            </form>
+            </form> -->
+
+        <form action="" class="form" onsubmit="return loginForm()" onreset="resetErrorslogin()" >
+          <fieldset>
+             <legend>Login</legend>
+            
+            <p>
+             <p class="label">Email</p>
+              <input type="text" id="email"  name="EMail" placeholder="Enter your email" />
+              <span id="email-error-login" class="error-message"></span>
+            </p>
+            <p>
+              <p class="label">Password</p>
+              <input type="password" id="password" name="Password"  placeholder="Enter your Password"/>
+              <span id="password-error" class="error-message"></span>
+            </p>
+            <p>
+        
+           
+            <p>
+              <input type="submit" value="Login" name="Submit" />
+              <input type="reset" value="Reset" name="Reset" />
+            </p>
+          </fieldset>
+        </form>
         </div>
     </section>
     <!-- Login Section End -->

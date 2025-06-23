@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/hover-min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+     <script src="js/validation.js"></script>
 </head>
 <body>
     <!-- Navigation Section Start -->
@@ -137,20 +138,42 @@
                     <th></th>
                 </tr>
             </table>
-            <form action="" class="form">
-                <fieldset>
-                    <legend>Delivery Details</legend>
-                    <p class="label">Full Name</p>
-                    <input type="text" placeholder="Enter your name..." required>
-                    <p class="label">Phone Number</p>
-                    <input type="contact" placeholder="Enter your phone..." required>
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
-                    <p class="label">Address</p>
-                    <input type="text" placeholder="Enter your address..." required>
-                    <input type="submit" value="Confirm Order" class="btn-primary">
-                </fieldset>
-            </form>
+         
+         <form action="" class="form" onsubmit="return orderForm()" onreset="resetOrderErrors()" >
+          <fieldset>
+             <legend>Order</legend>
+            <p>
+               <p class="label">Full Name</p>
+              <input type="text" id="name"  name="Name" placeholder="Enter your full name"/>
+              <span id="name-error" class="error-message"></span>
+            </p>
+
+            <p>
+              <p class="label">Phone Number</p>
+              <input type="text" id="phone" name="Phone"  placeholder="Enter your Phone Number"/>
+              <span id="phone-error" class="error-message"></span>
+            </p>
+
+            
+            <p>
+             <p class="label">Email</p>
+              <input type="text" id="email"  name="EMail" placeholder="Enter your email" />
+              <span id="email-error" class="error-message"></span>
+            </p>
+
+            
+            <p>
+             <p class="label">Address</p>
+             <input type="text" id="address" name="Address"  placeholder="Enter your Address" >
+              <span id="address-error" class="error-message"></span>
+            </p>
+           
+            <p>
+              <input type="submit" value="Submit" name="Submit" />
+              <input type="reset" value="Reset" name="Reset" />
+            </p>
+          </fieldset>
+        </form>
         </div>
     </section>
     <!-- Food Order Section End -->

@@ -50,7 +50,8 @@ a:hover {
   color: #fff;
 }
 .label {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
+  margin-top: 15px;
   font-weight: bold;
 }
 .img-responsive {
@@ -262,7 +263,7 @@ fieldset legend {
   border-radius: 10px;
   margin-top: 20px;
   height: 350px;
-  border:1px solid #ddd;
+  border: 1px solid #ddd;
 }
 .categories .float-container img {
   transition: 0.5s;
@@ -331,14 +332,14 @@ fieldset legend {
   display: inline;
   padding: 8px;
 }
-.site-links{
-      display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.social-links > h3{
+.site-links {
   display: flex;
-    justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social-links > h3 {
+  display: flex;
+  justify-content: center;
 }
 /* Footer Section Style End */
 
@@ -400,17 +401,64 @@ fieldset legend {
 .login fieldset {
   border: 1px solid #bfbbbb;
 }
+
+/* contact form */
 .form {
   box-shadow: 0 0 20px 2px #1a171780;
   width: 70%;
   padding: 7px 0;
   margin: 0 auto;
   border-radius: 3px;
+   box-sizing: border-box;
 }
-.form input,
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+ 
+}
+
+textarea {
+  resize: vertical;
+}
+input[type="submit"],
+input[type="reset"] {
+  width: 20%;
+  background: rgb(226, 74, 74);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+input[type="reset"]{
+   margin-left: 15px;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover:hover {
+  background: #6c5ce7;
+  transition: 0.5s;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+/* contact form ends */
+
+/* .form input,
 .form textarea {
   width: 98%;
-  padding: 8px;
+  padding: 10px;
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #bfbbbb;
@@ -419,7 +467,8 @@ fieldset legend {
 .form input[type="submit"] {
   width: 30%;
   border-radius: 5px;
-}
+} */
+
 /* Order Page Style End */
 
 /* Contact Page Style Start */
