@@ -23,6 +23,7 @@ a:hover {
   width: 85%;
   margin: 0 auto;
   padding: 15px;
+  /* margin-left: 50rem; */
 }
 .btn-delete {
   background: #ff0000;
@@ -109,22 +110,29 @@ fieldset legend {
 }
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 3fr);
   grid-gap: 10px 30px;
   justify-items: center;
+  /* margin-left: 20rem; */
+  /* background: cadetblue; */
 }
 /* CSS Style For All End */
 
 /* Navigation Section Style */
 .navbar {
   margin-top: 80px;
+  display: grid;
+   background-color: dodgerblue;
+  grid-template-columns: auto auto auto
+  
 }
 .navbar-menu {
   padding: 10px 0;
-  background: #fff;
-  transition: all 0.5s ease-in-out;
+  /* background: #fff; */
+  background: #4e75b8;
+  /* transition: all 0.5s ease-in-out; */
 }
-.site-top-nav {
+#site-top-nav {
   background: #fff;
   padding: 0;
   /* box-shadow: 2px -4px 13px 0px #000; */
@@ -137,10 +145,10 @@ fieldset legend {
   left: 0;
   right: 0;
   z-index: 1030;
-  height: 65px;
+  height: auto;
   background: rgba(255, 255, 255, 0.15); /* translucent white */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter: blur(12px); */
+  /* -webkit-backdrop-filter: blur(12px); */
 }
 .navbar-fixed-top .container {
   padding: 0 15px;
@@ -151,13 +159,15 @@ fieldset legend {
   padding: 5px 5px;
 }
 .menu {
-  line-height: 60px;
+  line-height: 40px;
   position: relative;
+  
 }
 .menu ul {
   list-style: none;
   width: 80%;
   float: right;
+  /* margin-top: 16px; */
 }
 .menu ul li {
   display: inline;
@@ -168,9 +178,10 @@ fieldset legend {
   text-align: center;
 }
 .hvr-underline-from-center:before {
-  background: #6c5ce7;
+  /* background: #6c5ce7; */
+  
   height: 2px;
-  bottom: 10px;
+  bottom: 4px;
 }
 .badge {
   color: #fff;
@@ -220,6 +231,7 @@ fieldset legend {
 
 /* Food Search Section Style Start */
 .food-search {
+  position: relative;
   background-image: url(../img/search-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -268,7 +280,8 @@ fieldset legend {
 .categories .float-container img {
   transition: 0.5s;
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
+  width: 22vw;
 }
 .categories .float-container:hover img {
   transform: scale(1.2);
