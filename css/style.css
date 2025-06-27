@@ -23,6 +23,7 @@ a:hover {
   width: 85%;
   margin: 0 auto;
   padding: 15px;
+  /* margin-left: 50rem; */
 }
 .btn-delete {
   background: #ff0000;
@@ -50,7 +51,8 @@ a:hover {
   color: #fff;
 }
 .label {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
+  margin-top: 15px;
   font-weight: bold;
 }
 .img-responsive {
@@ -108,22 +110,29 @@ fieldset legend {
 }
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 3fr);
   grid-gap: 10px 30px;
   justify-items: center;
+  /* margin-left: 20rem; */
+  /* background: cadetblue; */
 }
 /* CSS Style For All End */
 
 /* Navigation Section Style */
 .navbar {
   margin-top: 80px;
+  display: grid;
+   background-color: dodgerblue;
+  grid-template-columns: auto auto auto
+  
 }
 .navbar-menu {
   padding: 10px 0;
-  background: #fff;
-  transition: all 0.5s ease-in-out;
+  /* background: #fff; */
+  background: #4e75b8;
+  /* transition: all 0.5s ease-in-out; */
 }
-.site-top-nav {
+#site-top-nav {
   background: #fff;
   padding: 0;
   /* box-shadow: 2px -4px 13px 0px #000; */
@@ -136,10 +145,10 @@ fieldset legend {
   left: 0;
   right: 0;
   z-index: 1030;
-  height: 65px;
+  height: auto;
   background: rgba(255, 255, 255, 0.15); /* translucent white */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter: blur(12px); */
+  /* -webkit-backdrop-filter: blur(12px); */
 }
 .navbar-fixed-top .container {
   padding: 0 15px;
@@ -150,13 +159,15 @@ fieldset legend {
   padding: 5px 5px;
 }
 .menu {
-  line-height: 60px;
+  line-height: 40px;
   position: relative;
+  
 }
 .menu ul {
   list-style: none;
   width: 80%;
   float: right;
+  /* margin-top: 16px; */
 }
 .menu ul li {
   display: inline;
@@ -167,9 +178,10 @@ fieldset legend {
   text-align: center;
 }
 .hvr-underline-from-center:before {
-  background: #6c5ce7;
+  /* background: #6c5ce7; */
+  
   height: 2px;
-  bottom: 10px;
+  bottom: 4px;
 }
 .badge {
   color: #fff;
@@ -219,6 +231,7 @@ fieldset legend {
 
 /* Food Search Section Style Start */
 .food-search {
+  position: relative;
   background-image: url(../img/search-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -262,12 +275,13 @@ fieldset legend {
   border-radius: 10px;
   margin-top: 20px;
   height: 350px;
-  border:1px solid #ddd;
+  border: 1px solid #ddd;
 }
 .categories .float-container img {
   transition: 0.5s;
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
+  width: 22vw;
 }
 .categories .float-container:hover img {
   transform: scale(1.2);
@@ -331,14 +345,14 @@ fieldset legend {
   display: inline;
   padding: 8px;
 }
-.site-links{
-      display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.social-links > h3{
+.site-links {
   display: flex;
-    justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social-links > h3 {
+  display: flex;
+  justify-content: center;
 }
 /* Footer Section Style End */
 
@@ -400,17 +414,64 @@ fieldset legend {
 .login fieldset {
   border: 1px solid #bfbbbb;
 }
+
+/* contact form */
 .form {
   box-shadow: 0 0 20px 2px #1a171780;
   width: 70%;
   padding: 7px 0;
   margin: 0 auto;
   border-radius: 3px;
+   box-sizing: border-box;
 }
-.form input,
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+ 
+}
+
+textarea {
+  resize: vertical;
+}
+input[type="submit"],
+input[type="reset"] {
+  width: 20%;
+  background: rgb(226, 74, 74);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+input[type="reset"]{
+   margin-left: 15px;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover:hover {
+  background: #6c5ce7;
+  transition: 0.5s;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+/* contact form ends */
+
+/* .form input,
 .form textarea {
   width: 98%;
-  padding: 8px;
+  padding: 10px;
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #bfbbbb;
@@ -419,7 +480,8 @@ fieldset legend {
 .form input[type="submit"] {
   width: 30%;
   border-radius: 5px;
-}
+} */
+
 /* Order Page Style End */
 
 /* Contact Page Style Start */

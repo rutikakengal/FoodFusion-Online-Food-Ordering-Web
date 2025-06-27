@@ -1,23 +1,23 @@
 // Tab functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
-    
+
     // Handle tab switching
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetTab = button.getAttribute('data-tab');
-            
+
             // Remove active class from all buttons and contents
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
-            
+
             // Add active class to clicked button and corresponding content
             button.classList.add('active');
             document.getElementById(targetTab).classList.add('active');
         });
     });
-    
+
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav a');
     navLinks.forEach(link => {
@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 // First, activate the corresponding tab
                 const tabButton = document.querySelector(`[data-tab="${targetId}"]`);
                 if (tabButton) {
                     tabButton.click();
                 }
-                
+
                 // Then scroll to the content
                 setTimeout(() => {
                     targetElement.scrollIntoView({
@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Animation for special cards on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
+
     // Observe all cards for animation
     const cards = document.querySelectorAll('.special-card, .event-card, .promotion-card');
     cards.forEach(card => {
@@ -67,17 +67,17 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
-    
+
     // Dynamic day highlighting for specials
     const today = new Date().getDay();
-    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-    const currentDay = days[today];
-    
+    const days = [ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ];
+    const currentDay = days[ today ];
+
     const todaySpecial = document.querySelector(`[data-day="${currentDay}"]`);
     if (todaySpecial) {
         todaySpecial.style.border = '3px solid #ff6b35';
         todaySpecial.style.boxShadow = '0 15px 35px rgba(255, 107, 53, 0.3)';
-        
+
         // Add "Today's Special" badge
         const badge = document.createElement('div');
         badge.innerHTML = "Today's Special!";
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         todaySpecial.style.position = 'relative';
         todaySpecial.appendChild(badge);
     }
-    
+
     // Interactive reserve buttons
     const reserveButtons = document.querySelectorAll('.reserve-btn');
     reserveButtons.forEach(button => {
@@ -107,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
             button.textContent = 'Processing...';
             button.disabled = true;
             button.style.opacity = '0.7';
-            
+
             setTimeout(() => {
                 button.textContent = 'Reserved!';
                 button.style.background = 'linear-gradient(135deg, #28a745, #34ce57)';
-                
+
                 setTimeout(() => {
                     button.textContent = originalText;
                     button.disabled = false;
@@ -121,35 +121,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     });
-    
+
     // Parallax effect for background
     let lastScrollTop = 0;
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const backgroundImage = document.querySelector('.background-image');
-        
+
         if (backgroundImage) {
             const speed = 0.5;
             const yPos = -(scrollTop * speed);
             backgroundImage.style.transform = `translateY(${yPos}px)`;
         }
-        
+
         lastScrollTop = scrollTop;
     });
-    
+
     // Auto-rotate specials (optional feature)
     let currentSpecialIndex = 0;
     const specialCards = document.querySelectorAll('.special-card');
-    
+
     function highlightSpecial() {
         specialCards.forEach((card, index) => {
             card.style.transform = index === currentSpecialIndex ? 'scale(1.05)' : 'scale(1)';
             card.style.zIndex = index === currentSpecialIndex ? '10' : '1';
         });
-        
+
         currentSpecialIndex = (currentSpecialIndex + 1) % specialCards.length;
     }
-    
+
     // Highlight specials every 5 seconds when on specials tab
     setInterval(() => {
         const specialsTab = document.getElementById('specials');
@@ -157,36 +157,36 @@ document.addEventListener('DOMContentLoaded', function() {
             highlightSpecial();
         }
     }, 5000);
-    
+
     // Loading animation for page
     window.addEventListener('load', () => {
         const contentOverlay = document.querySelector('.content-overlay');
         contentOverlay.style.opacity = '0';
         contentOverlay.style.transform = 'translateY(50px)';
-        
+
         setTimeout(() => {
             contentOverlay.style.transition = 'opacity 1s ease, transform 1s ease';
             contentOverlay.style.opacity = '1';
             contentOverlay.style.transform = 'translateY(0)';
         }, 100);
     });
-    
+
     // Enhanced hover effects for promotion cards
     const promotionCards = document.querySelectorAll('.promotion-card');
     promotionCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.transform = 'translateY(-15px) scale(1.02)';
         });
-        
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'translateY(0) scale(1)';
         });
     });
-    
+
     // Time-based greetings
     const currentTime = new Date().getHours();
     let greeting = '';
-    
+
     if (currentTime < 12) {
         greeting = 'Good Morning! Start Your Day with Our Special Breakfast Menu';
     } else if (currentTime < 17) {
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         greeting = 'Good Evening! Discover Our Dinner Delights';
     }
-    
+
     // Add dynamic greeting (optional)
     const pageHeader = document.querySelector('.page-header');
     if (pageHeader) {
@@ -225,7 +225,7 @@ class ReservationSystem {
     constructor() {
         this.reservations = JSON.parse(localStorage.getItem('reservations')) || [];
     }
-    
+
     makeReservation(eventTitle, guestName, guestEmail) {
         const reservation = {
             id: Date.now(),
@@ -235,16 +235,16 @@ class ReservationSystem {
             timestamp: new Date().toISOString(),
             status: 'confirmed'
         };
-        
+
         this.reservations.push(reservation);
         this.saveReservations();
         return reservation;
     }
-    
+
     saveReservations() {
         localStorage.setItem('reservations', JSON.stringify(this.reservations));
     }
-    
+
     getReservations() {
         return this.reservations;
     }
@@ -257,3 +257,4 @@ const reservationSystem = new ReservationSystem();
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { ReservationSystem };
 }
+
