@@ -45,4 +45,16 @@ $(function () {
     $("#cart-content th:nth-child(5)").text("$" + total.toFixed(2));
     $(".tbl-full th:nth-child(6)").text("$" + total.toFixed(2));
   }
+
+  // 🔒 Phone Number Input: Allow only digits
+  $("#phone").on("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+  });
+
+  // ✅ Show confirmation message after form submit
+  $("#orderForm").on("submit", function (e) {
+    e.preventDefault();
+    $("#confirmationMessage").fadeIn();
+    this.reset(); // optional: clear form
+  });
 });
