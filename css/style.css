@@ -227,7 +227,7 @@ fieldset legend {
   background-attachment: fixed;
 }
 .food-search input[type="search"] {
-  width: 50%;
+  width: 100%;
   padding: 11px;
   font-size: 16px;
   border: none;
@@ -238,6 +238,7 @@ fieldset legend {
   padding: 12px;
   transition: 0.5s;
   border-radius: 0px 5px 5px 0px;
+  position: absolute;
 }
 /* Food Search Section Style End */
 
@@ -433,3 +434,43 @@ fieldset legend {
   border: none;
 }
 /* Contact Page Style End */
+
+/* highlight */
+mark {
+  background-color: #ffd6d6;
+  color: #c0392b;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 0px 1px;
+}
+
+/* suggestions */
+#suggestions {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 99%; 
+  background: rgba(255, 255, 255, 0.7); 
+  z-index: 1000;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+}
+
+.search-wrapper {
+      position: relative;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+
+.suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #ffffff;
+}
