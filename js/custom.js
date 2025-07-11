@@ -46,6 +46,13 @@ $(function () {
     $(".tbl-full th:nth-child(6)").text("$" + total.toFixed(2));
   }
 
+//navbar-responsive
+$("#menu-toggle").on("click", function () {
+  $(".menu ul").toggleClass("open");
+  // Toggle aria-expanded attribute for accessibility
+  const expanded = $(this).attr("aria-expanded") === "true";
+  $(this).attr("aria-expanded", !expanded);
+});
   // 🔒 Phone Number Input: Allow only digits
   $("#phone").on("input", function () {
     this.value = this.value.replace(/\D/g, "");
@@ -57,6 +64,7 @@ $(function () {
     $("#confirmationMessage").fadeIn();
     this.reset(); // optional: clear form
   });
+//main
 });
 
 
