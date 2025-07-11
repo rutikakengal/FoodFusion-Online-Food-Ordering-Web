@@ -99,9 +99,12 @@
     <!-- Food Search Section Start -->
     <section class="food-search text-center">
         <div class="container">
-            <form action="food-search.html">
-                <input type="search" placeholder="Search for food..." required>
-                <input type="submit" value="Search" class="btn-primary">
+            <form action="food-search.html" method="GET">
+                <div class="search-wrapper">
+                    <input type="search" id="search-input" name="query" placeholder="Search for food..." autocomplete="off" required>
+                    <div id="suggestions"></div>   
+                    <input type="submit" value="Search" class="btn-primary"> 
+                </div>                 
             </form>
         </div>
     </section>
@@ -114,19 +117,19 @@
             <div class="heading-border"></div>
 
             <div class="grid-3">
-                <a href="category-foods.html">
+                <a href="category-foods.html?category=Pizza">
                     <div class="float-container">
                         <img src="img/category/pizza.jpg" class="img-responsive" alt="">
                         <h3 class="float-text text-white">Pizza</h3>
                     </div>
                 </a>
-                <a href="category-foods.html">
+                <a href="category-foods.html?category=Sandwich">
                     <div class="float-container">
                         <img src="img/category/sandwich.jpg" class="img-responsive" alt="">
                         <h3 class="float-text text-white">Sandwich</h3>
                     </div>
                 </a>
-                <a href="category-foods.html">
+                <a href="category-foods.html?category=Burger">
                     <div class="float-container">
                         <img src="img/category/burger.jpg" class="img-responsive" alt="">
                         <h3 class="float-text text-white">Burger</h3>

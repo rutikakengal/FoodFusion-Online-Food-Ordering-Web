@@ -96,7 +96,7 @@
     <!-- Food Search Section Start -->
     <section class="food-search text-center" >
         <div class="container">
-            <h2 style="background: #44bd32;">Foods on you search <a href="#" class="text-white">"Pizza"</a></h2>
+            <h2 style="background: #44bd32;">Foods on your search <a href="#" class="text-white" id="search-term">"..."</a></h2>
         </div>
     </section>
     <!-- Food Search Section End -->
@@ -107,7 +107,7 @@
             <h2 class="text-center">Food Menu</h2>
             <div class="heading-border"></div>
             <div class="grid-2">
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Pizza">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/p1.jpg" alt="" class="img-responsive img-curve">
@@ -121,7 +121,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Sandwich">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
@@ -135,7 +135,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Burger">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/b1.jpg" alt="" class="img-responsive img-curve">
@@ -149,7 +149,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Pizza">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/p1.jpg" alt="" class="img-responsive img-curve">
@@ -163,7 +163,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Sandwich">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
@@ -177,7 +177,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Burger">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/b1.jpg" alt="" class="img-responsive img-curve">
@@ -192,9 +192,15 @@
                     </form>
                 </div>
             </div>
+            <h2 id="no-results-message" class="text-center" style="display:none; font-size: 18px; color: #fe8769; margin-top: 20px;"></h2>
+
+
         </div>
     </section>
     <!-- Foods Section End -->
+
+    <!-- <h2 id="no-results-message" class="text-center" style="display:none; font-size: 18px; color: #fe8769; background-color: rgba(243, 247, 7, 0.3); margin-top: 20px;"></h2>
+ -->
 
     <!-- Footer Section Start -->
     <section class="footer">

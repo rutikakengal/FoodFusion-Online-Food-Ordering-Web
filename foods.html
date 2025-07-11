@@ -96,9 +96,12 @@
     <!-- Food Search Section Start -->
     <section class="food-search text-center" >
         <div class="container">
-            <form action="">
-                <input type="search" placeholder="Search for food..." required>
-                <input type="submit" value="Search" class="btn-primary">
+            <form action="food-search.html" method="GET">
+                <div class="search-wrapper">
+                    <input type="search" id="search-input" name="query" placeholder="Search for food..." autocomplete="off" required>
+                    <div id="suggestions"></div>   
+                    <input type="submit" value="Search" class="btn-primary"> 
+                </div>                 
             </form>
         </div>
     </section>
