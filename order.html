@@ -1,151 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Food Delivery Website</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon" />
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css" />
     <!-- Hover CSS -->
-    <link rel="stylesheet" href="css/hover-min.css">
+    <link rel="stylesheet" href="css/hover-min.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <!-- Navigation Section Start -->
     <header class="navbar">
-        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
-            <div class="container">
-                <!-- logo -->
-                <div class="logo">
-                    <a href="index.html" title="Logo">
-                        <img src="img/logo.svg" alt="Logo" class="img-responsive">
-                    </a>
+      <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+        <div class="container">
+          <!-- logo -->
+          <div class="logo">
+            <a href="index.html" title="Logo">
+              <img src="img/logo.svg" alt="Logo" class="img-responsive" />
+            </a>
+          </div>
+          <!-- Main Menu -->
+          <div class="menu text-right">
+            <ul>
+              <li>
+                <a class="hvr-underline-from-center" href="index.html">Home</a>
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="categories.html"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="foods.html">Foods</a>
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="order.html">Order</a>
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="contact.html"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="login.html">Login</a>
+              </li>
+              <li>
+                <a id="shopping-cart" class="shopping-cart">
+                  <i class="fa fa-cart-arrow-down"></i>
+                  <span class="badge">4</span>
+                </a>
+                <div
+                  id="cart-content"
+                  class="cart-content"
+                  style="overflow-y: auto; overflow-x: hidden; height: 300px"
+                >
+                  <h3 class="text-center">Shopping Cart</h3>
+                  <table class="cart-table" border="0">
+                    <tr>
+                      <th>Food</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Qty</th>
+                      <th>Total</th>
+                      <th>Action</th>
+                    </tr>
+                    <tr>
+                      <td><img src="img/food/p1.jpg" alt="Food" /></td>
+                      <td>Pizza</td>
+                      <td>$ 8.00</td>
+                      <td>1</td>
+                      <td>$ 8.00</td>
+                      <td><a href="#" class="btn-delete">&times;</a></td>
+                    </tr>
+                    <tr>
+                      <td><img src="img/food/s1.jpg" alt="Food" /></td>
+                      <td>Sandwich</td>
+                      <td>$ 8.00</td>
+                      <td>1</td>
+                      <td>$ 8.00</td>
+                      <td><a href="#" class="btn-delete">&times;</a></td>
+                    </tr>
+                    <tr>
+                      <td><img src="img/food/b1.jpg" alt="Food" /></td>
+                      <td>Burder</td>
+                      <td>$ 8.00</td>
+                      <td>1</td>
+                      <td>$ 8.00</td>
+                      <td><a href="#" class="btn-delete">&times;</a></td>
+                    </tr>
+                    <tr>
+                      <th colspan="4">Total</th>
+                      <th>$24.00$</th>
+                      <th></th>
+                    </tr>
+                  </table>
+                  <a href="order.html" class="btn-primary">Confirm Order</a>
+                  <!-- Pay Now Button -->
+                  <button
+                    id="show-pay-options"
+                    class="btn-primary"
+                    style="margin-top: 10px"
+                  >
+                    Pay Now
+                  </button>
+
+                  <!-- PayPal Button Container (Initially hidden) -->
+                  <div
+                    id="paypal-options"
+                    style="margin-top: 20px; display: none"
+                  >
+                    <div id="paypal-button-container"></div>
+                    <div
+                      id="card-button-container"
+                      style="margin-top: 10px"
+                    ></div>
+                  </div>
                 </div>
-                <!-- Main Menu -->
-                <div class="menu text-right">
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
-                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
-                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
-                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
-                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
-                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <!-- Navigation Section End -->
 
     <!-- Food Order Section Start -->
     <section class="order">
-        <div class="container">
-            <h2 class="text-center">Fill this form to confirm your order.</h2>
-            <table class="tbl-full" border="0">
-                <tr>
-                    <th>S.N.</th>
-                    <th>Food</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Qty</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td><img src="img/food/p1.jpg" alt="Food"></td>
-                    <td>Pizza</td>
-                    <td>$ 8.00</td>
-                    <td>1</td>
-                    <td>$ 8.00</td>
-                    <td><a href="#" class="btn-delete">&times;</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><img src="img/food/s1.jpg" alt="Food"></td>
-                    <td>Sandwich</td>
-                    <td>$ 8.00</td>
-                    <td>1</td>
-                    <td>$ 8.00</td>
-                    <td><a href="#" class="btn-delete">&times;</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><img src="img/food/b1.jpg" alt="Food"></td>
-                    <td>Burger</td>
-                    <td>$ 8.00</td>
-                    <td>1</td>
-                    <td>$ 8.00</td>
-                    <td><a href="#" class="btn-delete">&times;</a></td>
-                </tr>
-                <tr>
-                    <th colspan="5">Total</th>
-                    <th>$24.00</th>
-                    <th></th>
-                </tr>
-            </table>
+      <div class="container">
+        <h2 class="text-center">Fill this form to confirm your order.</h2>
+        <table class="tbl-full" border="0">
+          <tr>
+            <th>S.N.</th>
+            <th>Food</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><img src="img/food/p1.jpg" alt="Food" /></td>
+            <td>Pizza</td>
+            <td>$ 8.00</td>
+            <td>1</td>
+            <td>$ 8.00</td>
+            <td><a href="#" class="btn-delete">&times;</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><img src="img/food/s1.jpg" alt="Food" /></td>
+            <td>Sandwich</td>
+            <td>$ 8.00</td>
+            <td>1</td>
+            <td>$ 8.00</td>
+            <td><a href="#" class="btn-delete">&times;</a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><img src="img/food/b1.jpg" alt="Food" /></td>
+            <td>Burger</td>
+            <td>$ 8.00</td>
+            <td>1</td>
+            <td>$ 8.00</td>
+            <td><a href="#" class="btn-delete">&times;</a></td>
+          </tr>
+          <tr>
+            <th colspan="5">Total</th>
+            <th>$24.00</th>
+            <th></th>
+          </tr>
+        </table>
 
-            <!-- ✅ Updated Form -->
-            <form class="form" id="orderForm">
-                <fieldset>
-                    <legend>Delivery Details</legend>
+        <!-- ✅ Updated Form -->
+        <form class="form" id="orderForm">
+          <fieldset>
+            <legend>Delivery Details</legend>
 
-                    <p class="label">Full Name</p>
-                    <input type="text" placeholder="Enter your name..." name="fullname" required>
+            <p class="label">Full Name</p>
+            <input
+              type="text"
+              placeholder="Enter your name..."
+              name="fullname"
+              required
+            />
 
-                    <p class="label">Phone Number</p>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone..." maxlength="10" pattern="\d{10}" required>
+            <p class="label">Phone Number</p>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter your phone..."
+              maxlength="10"
+              pattern="\d{10}"
+              required
+            />
 
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." name="email" required>
+            <p class="label">Email</p>
+            <input
+              type="email"
+              placeholder="Enter your email..."
+              name="email"
+              required
+            />
 
-                    <p class="label">Address</p>
-                    <input type="text" placeholder="Enter your address..." name="address" required>
+            <p class="label">Address</p>
+            <input
+              type="text"
+              placeholder="Enter your address..."
+              name="address"
+              required
+            />
 
-                    <input type="submit" value="Confirm Order" class="btn-primary">
-                </fieldset>
-            </form>
+            <input type="submit" value="Confirm Order" class="btn-primary" />
+          </fieldset>
+        </form>
 
-            <!-- ✅ Confirmation Message -->
-            <p id="confirmationMessage" style="display:none; color: green; font-weight: bold; margin-top: 10px;">
-                ✅ Your order has been placed successfully!
-            </p>
-        </div>
+        <!-- ✅ Confirmation Message -->
+        <p
+          id="confirmationMessage"
+          style="
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+          "
+        >
+          ✅ Your order has been placed successfully!
+        </p>
+      </div>
     </section>
     <!-- Food Order Section End -->
 
     <!-- Footer Section Start -->
     <section class="footer">
-        <div class="container text-center">
-            <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
-        </div>
+      <div class="container text-center">
+        <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+      </div>
     </section>
     <!-- Footer Section End -->
+
+    <!-- Load PayPal SDK with both PayPal and Card funding -->
+    <script src="https://www.paypal.com/sdk/js?client-id=test&components=buttons,funding-eligibility&enable-funding=card&currency=USD"></script>
+
+    <script>
+      const payNowBtn = document.getElementById("show-pay-options");
+      const paypalOptions = document.getElementById("paypal-options");
+
+      payNowBtn.addEventListener("click", () => {
+        // Disable button to prevent multiple renders
+        payNowBtn.disabled = true;
+        paypalOptions.style.display = "block";
+        paypalOptions.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Render PayPal button
+        paypal
+          .Buttons({
+            style: {
+              layout: "vertical",
+              color: "gold",
+              shape: "rect",
+              label: "paypal",
+            },
+            fundingSource: paypal.FUNDING.PAYPAL,
+            createOrder: (data, actions) => {
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    amount: { value: "24.00" },
+                  },
+                ],
+              });
+            },
+            onApprove: (data, actions) => {
+              return actions.order.capture().then((details) => {
+                alert("Payment completed by " + details.payer.name.given_name);
+                window.location.href = "thankyou.html";
+              });
+            },
+          })
+          .render("#paypal-button-container");
+
+        // Render Card button
+        if (paypal.FUNDING.CARD) {
+          paypal
+            .Buttons({
+              fundingSource: paypal.FUNDING.CARD,
+              style: {
+                layout: "vertical",
+                color: "black",
+                shape: "rect",
+                label: "pay",
+              },
+              createOrder: (data, actions) => {
+                return actions.order.create({
+                  purchase_units: [{ amount: { value: "24.00" } }],
+                });
+              },
+              onApprove: (data, actions) => {
+                return actions.order.capture().then((details) => {
+                  alert(
+                    "Card payment completed by " + details.payer.name.given_name
+                  );
+                  window.location.href = "thankyou.html";
+                });
+              },
+              onError: (err) => {
+                console.error("Card Button Error:", err);
+              },
+            })
+            .render("#card-button-container");
+        } else {
+          console.warn("Card funding not eligible in this browser");
+        }
+      });
+    </script>
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!-- Jquery UI -->
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
+    <script src="js/custom.js"></script>
     <script>
-  $(function () {
-    // Phone validation
-    $("#phone").on("input", function () {
-      this.value = this.value.replace(/\D/g, "");
-    });
+      $(function () {
+        // Phone validation
+        $("#phone").on("input", function () {
+          this.value = this.value.replace(/\D/g, "");
+        });
 
-    // Confirmation message
-    $("#orderForm").on("submit", function (e) {
-      e.preventDefault();
-      $("#confirmationMessage").fadeIn();
-      this.reset();
-    });
-  });
-</script>
-
-</body>
+        // Confirmation message
+        $("#orderForm").on("submit", function (e) {
+          e.preventDefault();
+          $("#confirmationMessage").fadeIn();
+          this.reset();
+        });
+      });
+    </script>
+  </body>
 </html>
