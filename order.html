@@ -128,8 +128,12 @@
                 </tr>
                 <tr>
                     <td>3</td>
+
                     <td><img src="img/food/b1.jpg" alt="Burger image" title="Burger"></td>
                     <td>Burder</td>
+                    <td><img src="img/food/b1.jpg" alt="Food"></td>
+                    <td>Burger</td>
+
                     <td>$ 8.00</td>
                     <td>1</td>
                     <td>$ 8.00</td>
@@ -141,28 +145,45 @@
                     <th></th>
                 </tr>
             </table>
-            <form action="" class="form">
+
+            <!-- ✅ Updated Form -->
+            <form class="form" id="orderForm">
                 <fieldset>
                     <legend>Delivery Details</legend>
+
                     <p class="label">Full Name</p>
-                    <input type="text" placeholder="Enter your name..." required>
+                    <input type="text" placeholder="Enter your name..." name="fullname" required>
+
                     <p class="label">Phone Number</p>
-                    <input type="contact" placeholder="Enter your phone..." required>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone..." maxlength="10" pattern="\d{10}" required>
+
                     <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
+                    <input type="email" placeholder="Enter your email..." name="email" required>
+
                     <p class="label">Address</p>
+
                     <input type="text" placeholder="Enter your address..." required>
                     <p class="label">Order Customization</p>
                     <input type="text" placeholder="place a customized order..." required>
+
+                    <input type="text" placeholder="Enter your address..." name="address" required>
+
+
                     <input type="submit" value="Confirm Order" class="btn-primary">
                 </fieldset>
             </form>
+
+            <!-- ✅ Confirmation Message -->
+            <p id="confirmationMessage" style="display:none; color: green; font-weight: bold; margin-top: 10px;">
+                ✅ Your order has been placed successfully!
+            </p>
         </div>
     </section>
     <!-- Food Order Section End -->
 
     <!-- Footer Section Start -->
     <section class="footer">
+
         <div class="container">
             <div class="grid-3">
                 <div class="text-center">
@@ -257,14 +278,33 @@
         <a id="back-to-top" class="btn-primary" title="Back to top" aria-label="Back to top">
             <i class="fa fa-angle-double-up"></i>
         </a>
+
+        <div class="container text-center">
+            <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+        </div>
     </section>
-    <!-- Copyright Section End -->
+    <!-- Footer Section End -->
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!-- Jquery UI -->
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <script>
+  $(function () {
+    // Phone validation
+    $("#phone").on("input", function () {
+      this.value = this.value.replace(/\D/g, "");
+    });
+
+    // Confirmation message
+    $("#orderForm").on("submit", function (e) {
+      e.preventDefault();
+      $("#confirmationMessage").fadeIn();
+      this.reset();
+    });
+  });
+</script>
+
 </body>
 </html>
