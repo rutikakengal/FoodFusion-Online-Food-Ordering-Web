@@ -81,6 +81,7 @@ h2 {
 }
 h3 {
   font-size: 24px;
+  color: rgb(226, 74, 74);
 }
 .heading-border {
   height: 3px;
@@ -342,22 +343,68 @@ fieldset legend {
 /* Footer Section Style Start */
 .footer {
   overflow: hidden;
-  background: rgba(8, 8, 8, 0.85);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.85);
+  color: #000000;
+  border-top:0.2px solid rgb(226, 74, 74);
+}
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #e24a4a; /* Matches the red from your border */
 }
 .footer .grid-3 {
-  padding: 30px 0;
+  background-color:white ;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  padding-left: 0;
 }
-.site-links a {
+.aboutus-flex {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 600px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+.about-content {
+  max-width: 300px;
+}
+.footer-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.foodfusion a {
   display: block;
   margin: 10px 0;
+  color:black;
+}
+.learnmore a {
+  display: block;
+  margin: 10px 0;
+  color:black;
+  transition: 0.3s;
+}
+.footer a:hover {
+  color: #e24a4a;
 }
 .social ul {
   list-style: none;
+  padding: 0;
+  display:flex;
+  gap:10px;
 }
 .social ul li {
-  display: inline;
-  padding: 8px;
+  display:grid;
+  grid-template-rows: repeat(2, auto); 
+  grid-template-columns: repeat(auto-fit, minmax(3px, 1fr));
+  padding: 0px;
 }
 .site-links{
       display: flex;
@@ -501,3 +548,268 @@ mark {
 .suggestion-item:hover {
   background-color: #ffffff;
 }
+/* css for contact page */
+.contact-modern {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #fffaf0, #ffe4e1);
+  border-top: 1px solid #ccc;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+.contact-faq, .contact-form, .contact-info {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.contact-form label {
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.trust-badges p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+details p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+details summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::after {
+  content: "➕";
+  float: right;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  content: "➖";
+  transform: rotate(180deg);
+}
+
+details p {
+  padding-left: 8px;
+  padding-top: 4px;
+  transition: all 0.3s ease;
+}
+/* FAQs */
+.faq-box {
+  flex: 1;
+  background: white;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  min-width: 280px;
+  width:100%;
+  transition: transform 0.3s ease;
+}
+
+.faq-box:hover {
+  transform: scale(1.01);
+}
+
+.faq-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  color: #3d0066;
+}
+
+.faq-title .emoji {
+  font-size: 1.6rem;
+  margin-right: 10px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-item details {
+  background: #f9f5ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border: 1px solid #e0d7ff;
+  transition: background 0.3s ease;
+}
+
+.faq-item details:hover {
+  background: #f2ebff;
+}
+
+.faq-item summary {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #4b0082;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.2rem;
+  color: #6a0dad;
+  transition: transform 0.3s ease;
+}
+
+.faq-item details[open] summary::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  padding-left: 5px;
+}
+/* my recent orders */
+.order-summary-card {
+  flex: 1;
+  min-width: 280px;
+  height:150px;
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 0px;
+}
+
+.order-summary-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #111;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.order-summary-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-summary-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.order-summary-card li strong {
+  color: #10b981; /* Green for delivered */
+}
+
+.order-summary-card li:nth-child(2) strong {
+  color: #ef4444; /* Red for cancelled */
+}
+
+.order-summary-card button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.order-summary-card button:hover {
+  background-color: #2563eb;
+}
+/* why choose us */
+.usp-card {
+  flex: 1;
+  min-width: 280px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #1e293b;
+  margin-top: 40px;
+  margin-left: -25px;
+  text-align: left;   
+}
+
+.usp-card h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0f172a;
+  display: flex;
+  align-items:center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.usp-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.usp-card li {
+  font-size: 1rem;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #e2e8f0;
+   justify-content: flex-start;
+}
+
+.usp-card li:last-child {
+  border-bottom: none;
+}
+
+.usp-card .icon {
+  font-size: 1.2rem;
+}
+
+
+
+
