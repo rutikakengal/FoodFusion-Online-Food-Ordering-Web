@@ -91,31 +91,102 @@
     <!-- Navigation Section End -->
 
     <!-- Contact Section Start -->
-    <section class="contact">
-        <div class="container">
-            <h2 class="text-center">Get in touch</h2>
-            <div class="heading-border"></div>
+    
+        <section class="contact-section" style="padding: 30px 20px; background: linear-gradient(to bottom right, #fff6f0, #ffeaea);">
+  <div class="container" style="max-width: 1900px; margin: 0 auto;">
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px;">Get in Touch</h2>
 
-            <form action="" class="form">
-                <fieldset>
-                    <legend>Contact Us</legend>
-                    <p class="label">Full Name</p>
-                    <input type="text" placeholder="Enter your name..." required>
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
-                    <p class="label">Phone Number</p>
-                    <input type="contact" placeholder="Enter your phone..." required>
-                    <p class="label">Subject</p>
-                    <input type="text" placeholder="Enter your subject..." required>
-                    <p class="label">Message</p>
-                    <textarea name="" id="" rows="5" placeholder="Enter your message..." required></textarea>
-                    <input type="submit" value="Submit" class="btn-primary">
-                </fieldset>
-            </form>
-        </div>
-    </section>
-    <!-- Contact Section End -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
 
+      <!-- FAQs -->
+       <div class="faq-box">
+  <h3 class="faq-title">
+    <span class="emoji">🧠</span> Frequently Asked Questions
+  </h3>
+  <div class="faq-item">
+    <details>
+      <summary>How can I track my order?</summary>
+      <p>We’ll email tracking details once your order is shipped.</p>
+    </details>
+  </div>
+  <div class="faq-item">
+    <details>
+      <summary>Can I cancel my meal?</summary>
+      <p>Yes, within 30 mins of ordering. Contact support.</p>
+    </details>
+  </div>
+  <div class="faq-item">
+    <details>
+      <summary>Do you support cash on delivery?</summary>
+      <p>Yes, we support COD for select locations.</p>
+    </details>
+  </div>
+  <div class="faq-item">
+    <details>
+      <summary>Can I change delivery address?</summary>
+      <p>Address changes are accepted within 1 hour of order.</p>
+    </details>
+  </div>
+</div>
+      <!-- Contact Form -->
+      <div style="flex: 1.5; min-width: 180px; background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+        <form>
+          <div style="margin-bottom: 15px;">
+            <label for="category"><strong>Category</strong></label>
+            <select id="category" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+              <option value="">Select a category</option>
+              <option value="order">Order Inquiry</option>
+              <option value="cancel">Cancel Request</option>
+              <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="name"><strong>Full Name</strong></label>
+            <input type="text" id="name" placeholder="Enter your name..." required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="email"><strong>Email</strong></label>
+            <input type="email" id="email" placeholder="Enter your email..." required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="phone"><strong>Phone Number</strong></label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+          </div>
+          <div style="margin-bottom: 20px;">
+            <label for="message"><strong>Your Message</strong></label>
+            <textarea id="message" rows="4" placeholder="Type your message..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+          </div>
+          <button type="submit" style="background: #f44336; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 600;">Send Message</button>
+        </form>
+      </div>
+       <!-- My recent Orders -->
+        <div class="order-summary-card">
+  <h3>🛒 My Recent Orders</h3>
+  <ul>
+    <li>
+      <span>🍱 Paneer Rice Bowl – <strong>Delivered</strong> Jul 18</span>
+      <button>Reorder</button>
+    </li>
+    <li>
+      <span>🥗 Keto Salad Box – <strong>Cancelled</strong> Jul 15</span>
+      <button>Reorder</button>
+    </li>
+  <!-- Why Choose Us Section -->
+<div class="usp-card">
+  <h3>🌟 Why Choose Us?</h3>
+  <ul>
+    <li><span class="icon">✅</span> Farm-Fresh Ingredients</li>
+    <!-- <li><span class="icon">⏱️</span> Delivered in Under 45 Minutes</li> -->
+    <li><span class="icon">📦</span> Eco-friendly, Reusable Packaging</li>
+    <li><span class="icon">🧑‍⚕️</span> Diet Plans Approved by Nutritionists</li>
+  </ul>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+<!--Contact Section End -->
      <!-- Map Section Start -->
      <section class="map">
         <h2 class="text-center">Find Us</h2>
