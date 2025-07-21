@@ -108,7 +108,7 @@ fieldset legend {
   grid-gap: 30px 30px;
 }
 .grid-3 {
-  display: grid;
+    display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px 30px;
   justify-items: center;
@@ -117,7 +117,7 @@ fieldset legend {
 
 /* Navigation Section Style */
 .navbar {
-  margin-top: 80px;
+  margin-top: 65px;
 }
 .navbar-menu {
   padding: 10px 0;
@@ -232,15 +232,16 @@ fieldset legend {
   padding: 11px;
   font-size: 16px;
   border: none;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 15px 0px 0px 15px;
   margin-right: -5px;
 }
 .food-search .btn-primary {
   padding: 12px;
   transition: 0.5s;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 15px 15px 0px;
   position: absolute;
 }
+
 /* Food Search Section Style End */
 
 /* Categories Section Style Start */
@@ -250,28 +251,48 @@ fieldset legend {
   background-repeat: no-repeat;
   padding: 55px 0;
 }
-.categories h3 {
+.grid-3 .float-container h3 {
   background: #2f3542;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  color: white;
   text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 1;
+  box-sizing: border-box;
 }
 .float-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-top: 20px;
   height: 350px;
-  border:1px solid #ddd;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
 }
-.categories .float-container img {
-  transition: 0.5s;
+.categories .float-container  {
+  flex: 1;
+  /* height: 100%;
+  width: 100%; */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.categories .float-container  img{
+  flex: 1;
   height: 100%;
   width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
-.categories .float-container:hover img {
+.categories .float-container:hover  {
   transform: scale(1.2);
 }
 /* Categories Section Style End */
@@ -306,6 +327,12 @@ fieldset legend {
 .food-details {
   font-size: 16px;
   color: #747d8c;
+}
+.food-menu-box img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 .food-menu-desc .btn-primary {
   margin-top: 15px;
