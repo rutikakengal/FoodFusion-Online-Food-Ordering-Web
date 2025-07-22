@@ -4,6 +4,24 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 30px; 
+}
+
+.toggle-password {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+}
+
 input {
   outline: 0;
 }
@@ -11,6 +29,7 @@ input[type="submit"] {
   border: 0;
   cursor: pointer;
 }
+
 a {
   color: rgb(226, 74, 74);
   text-decoration: none;
