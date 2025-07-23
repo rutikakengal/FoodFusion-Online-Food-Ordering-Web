@@ -413,26 +413,31 @@ fieldset legend {
 .footer a:hover {
   color: #e24a4a;
 }
+
 .social ul {
   list-style: none;
+  display: block;
   padding: 0;
-  display:flex;
-  gap:10px;
+  margin: 10px 0;
 }
-.social ul li {
-  display:grid;
-  grid-template-rows: repeat(2, auto); 
-  grid-template-columns: repeat(auto-fit, minmax(3px, 1fr));
-  padding: 0px;
+
+.social a {
+ display: flex;
+ margin: 14px 0px;
+ align-items: center;
+ gap: 10px;
+ color:black;
+ transition: 0.3s;
+ 
 }
 .site-links{
-      display: flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
 }
 .social-links > h3{
   display: flex;
-    justify-content: center;
+  justify-content: center;
 }
 /* Footer Section Style End */
 
