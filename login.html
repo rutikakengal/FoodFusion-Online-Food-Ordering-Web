@@ -97,15 +97,22 @@
             <div class="heading-border"></div>
 
             <form action="" class="form">
-                <fieldset>
-                    <legend>Login</legend>
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
-                    <p class="label">Password</p>
-                    <input type="password" placeholder="Enter your password..." required>
-                    <input type="submit" value="Login" class="btn-primary">
-                </fieldset>
-            </form>
+            <fieldset>
+                <legend>Login</legend>
+                <p class="label">Email</p>
+                <input type="email" placeholder="Enter your email..." required>
+
+               <p class="label">Password</p>
+                <div class="password-container">
+                <input type="password" id="password" placeholder="Enter your password..." required>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+
+
+                <input type="submit" value="Login" class="btn-primary">
+            </fieldset>
+        </form>
+
         </div>
     </section>
     <!-- Login Section End -->
@@ -207,5 +214,20 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
+    <script>
+    function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const toggleIcon = document.querySelector(".toggle-password");
+
+        if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.textContent = "🙈";
+        } else {
+        passwordInput.type = "password";
+        toggleIcon.textContent = "👁️";
+        }
+    }
+    </script>
+
 </body>
 </html>
