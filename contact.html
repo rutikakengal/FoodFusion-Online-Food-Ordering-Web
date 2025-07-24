@@ -39,7 +39,7 @@
                                 <i class="fa fa-cart-arrow-down"></i>
                                 <span class="badge">4</span>
                             </a>
-                            <div id="cart-content" class="cart-content">
+                            <div id="cart-content" class="cart-content" style="height:450px;overflow-y: auto;overflow-x: hidden">
                                 <h3 class="text-center">Shopping Cart</h3>
                                 <table class="cart-table" border="0">
                                     <tr>
@@ -81,6 +81,26 @@
                                     </tr>
                                 </table>
                                 <a href="order.html" class="btn-primary">Confirm Order</a>
+                                 <!-- Pay Now Button -->
+                  <button
+                    id="show-pay-options"
+                    class="btn-primary"
+                    style="margin-top: 10px"
+                  >
+                    Pay Now
+                  </button>
+
+                  <!-- PayPal Button Container (Initially hidden) -->
+                  <div
+                    id="paypal-options"
+                    style="margin-top: 20px; display: none"
+                  >
+                    <div id="paypal-button-container"></div>
+                    <div
+                      id="card-button-container"
+                      style="margin-top: 10px"
+                    ></div>
+                  </div>
                             </div>
                         </li>
                     </ul>
@@ -275,6 +295,82 @@
         </div>
     </section>
     <!-- Footer Section End -->
+
+      <!-- Load PayPal SDK with both PayPal and Card funding -->
+    <script src="https://www.paypal.com/sdk/js?client-id=test&components=buttons,funding-eligibility&enable-funding=card&currency=USD"></script>
+
+    <script>
+      const payNowBtn = document.getElementById("show-pay-options");
+      const paypalOptions = document.getElementById("paypal-options");
+
+      payNowBtn.addEventListener("click", () => {
+        // Disable button to prevent multiple renders
+        payNowBtn.disabled = true;
+        paypalOptions.style.display = "block";
+        paypalOptions.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Render PayPal button
+        paypal
+          .Buttons({
+            style: {
+              layout: "vertical",
+              color: "gold",
+              shape: "rect",
+              label: "paypal",
+            },
+            fundingSource: paypal.FUNDING.PAYPAL,
+            createOrder: (data, actions) => {
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    amount: { value: "24.00" },
+                  },
+                ],
+              });
+            },
+            onApprove: (data, actions) => {
+              return actions.order.capture().then((details) => {
+                alert("Payment completed by " + details.payer.name.given_name);
+                window.location.href = "thankyou.html";
+              });
+            },
+          })
+          .render("#paypal-button-container");
+
+        // Render Card button
+        if (paypal.FUNDING.CARD) {
+          paypal
+            .Buttons({
+              fundingSource: paypal.FUNDING.CARD,
+              style: {
+                layout: "vertical",
+                color: "black",
+                shape: "rect",
+                label: "pay",
+              },
+              createOrder: (data, actions) => {
+                return actions.order.create({
+                  purchase_units: [{ amount: { value: "24.00" } }],
+                });
+              },
+              onApprove: (data, actions) => {
+                return actions.order.capture().then((details) => {
+                  alert(
+                    "Card payment completed by " + details.payer.name.given_name
+                  );
+                  window.location.href = "thankyou.html";
+                });
+              },
+              onError: (err) => {
+                console.error("Card Button Error:", err);
+              },
+            })
+            .render("#card-button-container");
+        } else {
+          console.warn("Card funding not eligible in this browser");
+        }
+      });
+    </script>
 
     <!-- Copyright Section start -->
     <section class="copyright">

@@ -1,370 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Food Delivery Website</title>
-    
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-    <!-- Hover CSS -->
-    <link rel="stylesheet" href="css/hover-min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
 
-<body>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css" />
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
     <!-- Navigation Section Start -->
     <header class="navbar">
-        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
-            <div class="container">
-                <!-- logo -->
-                <div class="logo">
-                    <a href="index.html" title="Logo">
-                        <img src="img/logo.svg" alt="Logo" class="img-responsive">
-                    </a>
+      <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+        <div class="container">
+          <!-- logo -->
+          <div class="logo">
+            <a href="index.html" title="Logo">
+              <img src="img/logo.svg" alt="Logo" class="img-responsive" />
+            </a>
+          </div>
+          <!-- Main Menu -->
+          <div class="menu text-right">
+            <ul>
+              <li>
+                <a class="hvr-underline-from-center" href="index.html">Home</a>
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="categories.html"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="foods.html">Foods</a>
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="order.html">Order</a>
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="contact.html"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a class="hvr-underline-from-center" href="login.html">Login</a>
+              </li>
+              <li>
+                <a id="shopping-cart" class="shopping-cart">
+                  <i class="fa fa-cart-arrow-down"></i>
+                  <span class="badge">4</span>
+                </a>
+                <div id="cart-content" class="cart-content" style="height:450px;overflow-y: auto;overflow-x: hidden">
+                  <h3 class="text-center">Shopping Cart</h3>
+                  <table class="cart-table" border="0">
+                    <tr>
+                      <th>Food</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Qty</th>
+                      <th>Total</th>
+                      <th>Action</th>
+                    </tr>
+                    <tr>
+                      <td><img src="img/food/p1.jpg" alt="Food" /></td>
+                      <td>Pizza</td>
+                      <td>&#8377; 8.00</td>
+                      <td>1</td>
+                      <td>&#8377; 8.00</td>
+                      <td><a href="#" class="btn-delete">&times;</a></td>
+                    </tr>
+                    <tr>
+                      <td><img src="img/food/s1.jpg" alt="Food" /></td>
+                      <td>Sandwich</td>
+                      <td>&#8377; 8.00</td>
+                      <td>1</td>
+                      <td>&#8377; 8.00</td>
+                      <td><a href="#" class="btn-delete">&times;</a></td>
+                    </tr>
+                    <tr>
+                      <td><img src="img/food/b1.jpg" alt="Food" /></td>
+                      <td>Burger</td>
+                      <td>&#8377; 8.00</td>
+                      <td>1</td>
+                      <td>&#8377; 8.00</td>
+                      <td><a href="#" class="btn-delete">&times;</a></td>
+                    </tr>
+                    <tr>
+                      <th colspan="4">Total</th>
+                      <th>&#8377;24.00</th>
+                      <th></th>
+                    </tr>
+                  </table>
+                  <a href="order.html" class="btn-primary">Confirm Order</a>
+                  <!-- Pay Now Button -->
+                  <button
+                    id="show-pay-options"
+                    class="btn-primary"
+                    style="margin-top: 10px"
+                  >
+                    Pay Now
+                  </button>
+
+                  <!-- PayPal Button Container (Initially hidden) -->
+                  <div
+                    id="paypal-options"
+                    style="margin-top: 20px; display: none"
+                  >
+                    <div id="paypal-button-container"></div>
+                    <div
+                      id="card-button-container"
+                      style="margin-top: 10px"
+                    ></div>
+                  </div>
                 </div>
-                <!-- Main Menu -->
-                <div class="menu text-right">
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
-                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
-                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
-                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
-                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
-                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
-                        <li>
-                            <a id="shopping-cart" class="shopping-cart">
-                                <i class="fa fa-cart-arrow-down"></i>
-                                <span class="badge">4</span>
-                            </a>
-                            <div id="cart-content" class="cart-content">
-                                <h3 class="text-center">Shopping Cart</h3>
-                                <table class="cart-table" border="0">
-                                    <tr>
-                                        <th>Food</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Qty</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/p1.jpg" alt="Food"></td>
-                                        <td>Pizza</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/s1.jpg" alt="Food"></td>
-                                        <td>Sandwich</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/b1.jpg" alt="Food"></td>
-                                        <td>Burger</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="4">Total</th>
-                                        <th>&#8377;24.00</th>
-                                        <th></th>
-                                    </tr>
-                                </table>
-                                <a href="order.html" class="btn-primary">Confirm Order</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <!-- Navigation Section End -->
 
     <!-- Food Search Section Start -->
     <section class="food-search text-center">
-        <div class="container">
-            <form action="food-search.html" method="GET">
-                <div class="search-wrapper">
-                    <input type="search" id="search-input" name="query" placeholder="Search for food..." autocomplete="off" required>
-                    <div id="suggestions"></div>   
-                    <input type="submit" value="Search" class="btn-primary"> 
-                </div>                 
-            </form>
-        </div>
+      <div class="container">
+        <form action="food-search.html" method="GET">
+          <div class="search-wrapper">
+            <input
+              type="search"
+              id="search-input"
+              name="query"
+              placeholder="Search for food..."
+              autocomplete="off"
+              required
+            />
+            <div id="suggestions"></div>
+            <input type="submit" value="Search" class="btn-primary" />
+          </div>
+        </form>
+      </div>
     </section>
     <!-- Food Search Section End -->
 
     <!-- Category Section Start -->
     <section class="categories">
-        <div class="container">
-            <h2 class="text-center">Explore Foods</h2>
-            <div class="heading-border"></div>
+      <div class="container">
+        <h2 class="text-center">Explore Foods</h2>
+        <div class="heading-border"></div>
 
-            <div class="grid-3">
-                <a href="category-foods.html?category=Pizza">
-                    <div class="float-container">
-                        <img src="img/category/pizza.jpg" class="img-responsive" alt=""  style="width: 250px;">
-                        <h3 class="float-text text-white">Pizza</h3>
-                    </div>
-                </a>
-                <a href="category-foods.html?category=Sandwich">
-                    <div class="float-container">
-                        <img src="img/category/sandwich.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Sandwich</h3>
-                    </div>
-                </a>
-                <a href="category-foods.html?category=Burger">
-                    <div class="float-container">
-                        <img src="img/category/burger.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Burger</h3>
-                    </div>
-                </a>
-                  <a href="category-foods.html">
-                    <div class="float-container">
-                        <img src="img/food/changes1.jpg" class="img-responsive" alt=""  style="width: 250px;">
-                        <h3 class="float-text text-white">Momos</h3>
-                    </div>
-                </a>
-                  <a href="category-foods.html">
-                    <div class="float-container">
-                        <img src="img/food/changes2.jpg" class="img-responsive" alt=""  style="width: 250px;">
-                        <h3 class="float-text text-white" >Noodles</h3>
-                    </div>
-                </a>
-                  <a href="category-foods.html">
-                    <div class="float-container">
-                        <img src="img/food/chnages3.jpg" class="img-responsive" alt="" style="width: 250px;">
-                        <h3 class="float-text text-white">Coffee</h3>
-                    </div>
-                </a>
+        <div class="grid-3">
+          <a href="category-foods.html?category=Pizza">
+            <div class="float-container">
+              <img
+                src="img/category/pizza.jpg"
+                class="img-responsive"
+                alt=""
+                style="width: 250px"
+              />
+              <h3 class="float-text text-white">Pizza</h3>
             </div>
+          </a>
+          <a href="category-foods.html?category=Sandwich">
+            <div class="float-container">
+              <img
+                src="img/category/sandwich.jpg"
+                class="img-responsive"
+                alt=""
+              />
+              <h3 class="float-text text-white">Sandwich</h3>
+            </div>
+          </a>
+          <a href="category-foods.html?category=Burger">
+            <div class="float-container">
+              <img
+                src="img/category/burger.jpg"
+                class="img-responsive"
+                alt=""
+              />
+              <h3 class="float-text text-white">Burger</h3>
+            </div>
+          </a>
+          <a href="category-foods.html">
+            <div class="float-container">
+              <img
+                src="img/food/changes1.jpg"
+                class="img-responsive"
+                alt=""
+                style="width: 250px"
+              />
+              <h3 class="float-text text-white">Momos</h3>
+            </div>
+          </a>
+          <a href="category-foods.html">
+            <div class="float-container">
+              <img
+                src="img/food/changes2.jpg"
+                class="img-responsive"
+                alt=""
+                style="width: 250px"
+              />
+              <h3 class="float-text text-white">Noodles</h3>
+            </div>
+          </a>
+          <a href="category-foods.html">
+            <div class="float-container">
+              <img
+                src="img/food/chnages3.jpg"
+                class="img-responsive"
+                alt=""
+                style="width: 250px"
+              />
+              <h3 class="float-text text-white">Coffee</h3>
+            </div>
+          </a>
         </div>
+      </div>
     </section>
     <!-- Category Section End -->
 
     <!-- Foods Section Start -->
     <section class="food-menu">
-        <div class="container">
-            <h2 class="text-center">Food Menu</h2>
-            <div class="heading-border"></div>
-            <div class="grid-2">
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/p1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>Pizza</h4>
-                            <p class="food-price">&#8377;8.00</p>
+      <div class="container">
+        <h2 class="text-center">Food Menu</h2>
+        <div class="heading-border"></div>
+        <div class="grid-2">
+          <div class="food-menu-box">
+            <form action="">
+              <div class="food-menu-img">
+                <img
+                  src="img/food/p1.jpg"
+                  alt=""
+                  class="img-responsive img-curve"
+                />
+              </div>
+              <div class="food-menu-desc">
+                <h4>Pizza</h4>
+                <p class="food-price">&#8377;8.00</p>
 
-                            <p class="food-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                                excepturi porro.</p>
-                            <input type="number" value="1" min="1">
+                <p class="food-details">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ducimus excepturi porro.
+                </p>
+                <input type="number" value="1" min="1" />
 
-                            <p class="food-details">Crispy base topped with melted cheese, flavorful sauce, and fresh ingredients — a timeless favorite.</p>
-                            <input type="number" value="0" min="1">
+                <p class="food-details">
+                  Crispy base topped with melted cheese, flavorful sauce, and
+                  fresh ingredients — a timeless favorite.
+                </p>
+                <input type="number" value="0" min="1" />
 
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>Sandwich</h4>
-                            <p class="food-price">&#8377;8.00</p>
+                <input type="submit" class="btn-primary" value="Add To Cart" />
+              </div>
+            </form>
+          </div>
+          <div class="food-menu-box">
+            <form action="">
+              <div class="food-menu-img">
+                <img
+                  src="img/food/s1.jpg"
+                  alt=""
+                  class="img-responsive img-curve"
+                />
+              </div>
+              <div class="food-menu-desc">
+                <h4>Sandwich</h4>
+                <p class="food-price">&#8377;8.00</p>
 
-                            <p class="food-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                                excepturi porro.</p>
-                            <input type="number" value="1" min="1">
+                <p class="food-details">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ducimus excepturi porro.
+                </p>
+                <input type="number" value="1" min="1" />
 
-                            <p class="food-details">Layers of fresh veggies and savory fillings, tucked in soft bread for a perfect bite.</p>
-                            <input type="number" value="0" min="1">
+                <p class="food-details">
+                  Layers of fresh veggies and savory fillings, tucked in soft
+                  bread for a perfect bite.
+                </p>
+                <input type="number" value="0" min="1" />
 
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/b1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>Burger</h4>
-                            <p class="food-price">&#8377;8.00</p>
+                <input type="submit" class="btn-primary" value="Add To Cart" />
+              </div>
+            </form>
+          </div>
+          <div class="food-menu-box">
+            <form action="">
+              <div class="food-menu-img">
+                <img
+                  src="img/food/b1.jpg"
+                  alt=""
+                  class="img-responsive img-curve"
+                />
+              </div>
+              <div class="food-menu-desc">
+                <h4>Burger</h4>
+                <p class="food-price">&#8377;8.00</p>
 
-                            <p class="food-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                                excepturi porro.</p>
-                            <input type="number" value="1" min="1">
+                <p class="food-details">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ducimus excepturi porro.
+                </p>
+                <input type="number" value="1" min="1" />
 
-                            <p class="food-details">Juicy patty, melted cheese, and crisp veggies — all packed in a toasted bun.
+                <p class="food-details">
+                  Juicy patty, melted cheese, and crisp veggies — all packed in
+                  a toasted bun. .
+                </p>
+                <input type="number" value="0" min="1" />
 
-.</p>
-                            <input type="number" value="0" min="1">
+                <input type="submit" class="btn-primary" value="Add To Cart" />
+              </div>
+            </form>
+          </div>
+          <div class="food-menu-box">
+            <form action="">
+              <div class="food-menu-img">
+                <img
+                  src="img/food/changes1.jpg"
+                  alt=""
+                  class="img-responsive img-curve"
+                />
+              </div>
+              <div class="food-menu-desc">
+                <h4>Pizza</h4>
+                <p class="food-price">&#8377;8.00</p>
+                <p class="food-details">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ducimus excepturi porro.
+                </p>
+                <input type="number" value="1" min="1" />
 
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/changes1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
+                <h4>Momos</h4>
+                <p class="food-price">&#8377;8.00</p>
+                <p class="food-details">
+                  Steamed to perfection and filled with flavorful goodness in
+                  every bite.
+                </p>
+                <input type="number" value="0" min="1" />
 
-                            <h4>Pizza</h4>
-                            <p class="food-price">&#8377;8.00</p>
-                            <p class="food-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                                excepturi porro.</p>
-                            <input type="number" value="1" min="1">
+                <input type="submit" class="btn-primary" value="Add To Cart" />
+              </div>
+            </form>
+          </div>
+          <div class="food-menu-box">
+            <form action="">
+              <div class="food-menu-img">
+                <img
+                  src="img/food/changes2.jpg"
+                  alt=""
+                  class="img-responsive img-curve"
+                />
+              </div>
+              <div class="food-menu-desc">
+                <h4>Sandwich</h4>
+                <p class="food-price">&#8377;8.00</p>
+                <p class="food-details">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ducimus excepturi porro.
+                </p>
+                <input type="number" value="1" min="1" />
 
-                            <h4>Momos</h4>
-                            <p class="food-price">&#8377;8.00</p>
-                            <p class="food-details">Steamed to perfection and filled with flavorful goodness in every bite.</p>
-                            <input type="number" value="0" min="1">
+                <h4>Noodles</h4>
+                <p class="food-price">&#8377;8.00</p>
+                <p class="food-details">
+                  Slurpy, spicy, and full of irresistible flavors.
+                </p>
+                <input type="number" value="0" min="1" />
 
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/changes2.jpg" alt="" class="img-responsive img-curve" >
-                        </div>
-                        <div class="food-menu-desc">
+                <input type="submit" class="btn-primary" value="Add To Cart" />
+              </div>
+            </form>
+          </div>
+          <div class="food-menu-box">
+            <form action="">
+              <div class="food-menu-img">
+                <img
+                  src="img/food/chnages3.jpg"
+                  alt=""
+                  class="img-responsive img-curve"
+                  style="height: 90px"
+                />
+              </div>
+              <div class="food-menu-desc">
+                <h4>Burger</h4>
+                <p class="food-price">&#8377;8.00</p>
+                <p class="food-details">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ducimus excepturi porro.
+                </p>
+                <input type="number" value="1" min="1" />
 
-                            <h4>Sandwich</h4>
-                            <p class="food-price">&#8377;8.00</p>
-                            <p class="food-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                                excepturi porro.</p>
-                            <input type="number" value="1" min="1">
+                <h4>Coffee</h4>
+                <p class="food-price">&#8377;8.00</p>
+                <p class="food-details">A comforting cup to fuel your day.</p>
+                <input type="number" value="0" min="1" />
 
-                            <h4> Noodles</h4>
-                            <p class="food-price">&#8377;8.00</p>
-                            <p class="food-details">Slurpy, spicy, and full of irresistible flavors.</p>
-                            <input type="number" value="0" min="1">
-
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/chnages3.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
-                        </div>
-                        <div class="food-menu-desc">
-
-                            <h4>Burger</h4>
-                            <p class="food-price">&#8377;8.00</p>
-                            <p class="food-details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                                excepturi porro.</p>
-                            <input type="number" value="1" min="1">
-
-                            <h4> Coffee</h4>
-                            <p class="food-price">&#8377;8.00</p>
-                            <p class="food-details">A comforting cup to fuel your day.</p>
-                            <input type="number" value="0" min="1">
-
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-            </div>
+                <input type="submit" class="btn-primary" value="Add To Cart" />
+              </div>
+            </form>
+          </div>
         </div>
-        <p class="text-center">
-            <a href="foods.html" class="btn-primary">See All Foods</a>
-        </p>
+      </div>
+      <p class="text-center">
+        <a href="foods.html" class="btn-primary">See All Foods</a>
+      </p>
     </section>
     <!-- Foods Section End -->
 
     <!-- Footer Section Start -->
     <section class="footer">
-        <div class="container">
-            <div class="grid-3">
-
-                <!--About Us-->
-                <div class="aboutus-flex">
-                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
-                    <div class="about-content">
-                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
-                        <p>Our shared passion for food and community drives us to bring qualiy meals directly to you doorstep.</p>
-                    </div>
-                </div>
-                <div class="FoodFusion">
-                    <h3>Food Fusion</h3>
-                    <div class="foodfusion">
-                        <a href="WhoWeAre.html">Who We Are</a>
-                        <a href="Blog.html">Blog</a>
-                        <a href="WorkWithus.html">Work With Us</a>
-                        <a href="contact.html">Contact Us</a>
-                        <a href="ReportFraud.html">Report Fraud</a>
-                    </div>
-                </div>
-                <!-- Learn More Links -->
-                <div>
-                    <h3>Learn More</h3>
-                    <div class="learnmore" >
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Security</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Lodge Complaint</a>
-                        <a href="#">Testimonials</a>
-                    </div>
-                </div>
-                <div class="FollowUs">
-                    <!-- Social Links -->
-                    <h3>Social Links</h3>
-                    <div class="social">
-                        <ul>
-                             <li><a href="https://www.facebook.com/">
-                                <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
-                                Facebook
-                                </a></li>
-                            <li><a href="https://www.instagram.com/">
-                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
-                               Instagram
-                                </a>
-                            </li>
-                            <li><a href="https://x.com/">
-                                <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
-                                Twitter
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="grid-3">
+          <!--About Us-->
+          <div class="aboutus-flex">
+            <img src="img/footerimage.png" alt="Logo" class="footer-logo" />
+            <div class="about-content">
+              <p>
+                Food Fusion connects customers with local food centers,
+                providing a seamless and delightful dining experience.
+              </p>
+              <p>
+                Our shared passion for food and community drives us to bring
+                qualiy meals directly to you doorstep.
+              </p>
             </div>
+          </div>
+          <div class="FoodFusion">
+            <h3>Food Fusion</h3>
+            <div class="foodfusion">
+              <a href="WhoWeAre.html">Who We Are</a>
+              <a href="Blog.html">Blog</a>
+              <a href="WorkWithus.html">Work With Us</a>
+              <a href="contact.html">Contact Us</a>
+              <a href="ReportFraud.html">Report Fraud</a>
+            </div>
+          </div>
+          <!-- Learn More Links -->
+          <div>
+            <h3>Learn More</h3>
+            <div class="learnmore">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Security</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Lodge Complaint</a>
+              <a href="#">Testimonials</a>
+            </div>
+          </div>
+          <div class="FollowUs">
+            <!-- Social Links -->
+            <h3>Social Links</h3>
+            <div class="social">
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/">
+                    <img
+                      src="/img/footer-icons/facebook.svg"
+                      alt="X icon"
+                      width="24"
+                      height="24"
+                    />
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/">
+                    <img
+                      src="/img/footer-icons/instagram.svg"
+                      alt="X icon"
+                      width="24"
+                      height="24"
+                    />
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href="https://x.com/">
+                    <img
+                      src="/img/footer-icons/x-twitter.svg"
+                      alt="X icon"
+                      width="24"
+                      height="24"
+                    />
+                    Twitter
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- Footer Section End -->
 
+    <!-- Load PayPal SDK with both PayPal and Card funding -->
+    <script src="https://www.paypal.com/sdk/js?client-id=test&components=buttons,funding-eligibility&enable-funding=card&currency=USD"></script>
+
+    <script>
+      const payNowBtn = document.getElementById("show-pay-options");
+      const paypalOptions = document.getElementById("paypal-options");
+
+      payNowBtn.addEventListener("click", () => {
+        // Disable button to prevent multiple renders
+        payNowBtn.disabled = true;
+        paypalOptions.style.display = "block";
+        paypalOptions.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Render PayPal button
+        paypal
+          .Buttons({
+            style: {
+              layout: "vertical",
+              color: "gold",
+              shape: "rect",
+              label: "paypal",
+            },
+            fundingSource: paypal.FUNDING.PAYPAL,
+            createOrder: (data, actions) => {
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    amount: { value: "24.00" },
+                  },
+                ],
+              });
+            },
+            onApprove: (data, actions) => {
+              return actions.order.capture().then((details) => {
+                alert("Payment completed by " + details.payer.name.given_name);
+                window.location.href = "thankyou.html";
+              });
+            },
+          })
+          .render("#paypal-button-container");
+
+        // Render Card button
+        if (paypal.FUNDING.CARD) {
+          paypal
+            .Buttons({
+              fundingSource: paypal.FUNDING.CARD,
+              style: {
+                layout: "vertical",
+                color: "black",
+                shape: "rect",
+                label: "pay",
+              },
+              createOrder: (data, actions) => {
+                return actions.order.create({
+                  purchase_units: [{ amount: { value: "24.00" } }],
+                });
+              },
+              onApprove: (data, actions) => {
+                return actions.order.capture().then((details) => {
+                  alert(
+                    "Card payment completed by " + details.payer.name.given_name
+                  );
+                  window.location.href = "thankyou.html";
+                });
+              },
+              onError: (err) => {
+                console.error("Card Button Error:", err);
+              },
+            })
+            .render("#card-button-container");
+        } else {
+          console.warn("Card funding not eligible in this browser");
+        }
+      });
+    </script>
+
     <!-- Copyright Section start -->
     <section class="copyright">
-        <div class="container text-center">
-            <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
-        </div>
-        <a id="back-to-top" class="btn-primary">
-            <i class="fa fa-angle-double-up"></i>
-        </a>
+      <div class="container text-center">
+        <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+      </div>
+      <a id="back-to-top" class="btn-primary">
+        <i class="fa fa-angle-double-up"></i>
+      </a>
     </section>
     <!-- Copyright Section End -->
 
@@ -374,6 +591,5 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
-</body>
-
+  </body>
 </html>
