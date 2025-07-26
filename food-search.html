@@ -96,7 +96,7 @@
     <!-- Food Search Section Start -->
     <section class="food-search text-center" >
         <div class="container">
-            <h2 style="background: #44bd32;">Foods on you search <a href="#" class="text-white">"Pizza"</a></h2>
+            <h2 style="background: #44bd32;">Foods on your search <a href="#" class="text-white" id="search-term">"..."</a></h2>
         </div>
     </section>
     <!-- Food Search Section End -->
@@ -107,7 +107,7 @@
             <h2 class="text-center">Food Menu</h2>
             <div class="heading-border"></div>
             <div class="grid-2">
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Pizza">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/p1.jpg" alt="" class="img-responsive img-curve">
@@ -121,7 +121,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Sandwich">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
@@ -135,7 +135,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Burger">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/b1.jpg" alt="" class="img-responsive img-curve">
@@ -149,7 +149,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Pizza">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/p1.jpg" alt="" class="img-responsive img-curve">
@@ -163,7 +163,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Sandwich">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
@@ -177,7 +177,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
+                <div class="food-menu-box" data-name="Burger">
                     <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/b1.jpg" alt="" class="img-responsive img-curve">
@@ -192,11 +192,18 @@
                     </form>
                 </div>
             </div>
+            <h2 id="no-results-message" class="text-center" style="display:none; font-size: 18px; color: #fe8769; margin-top: 20px;"></h2>
+
+
         </div>
     </section>
     <!-- Foods Section End -->
 
+    <!-- <h2 id="no-results-message" class="text-center" style="display:none; font-size: 18px; color: #fe8769; background-color: rgba(243, 247, 7, 0.3); margin-top: 20px;"></h2>
+ -->
+
     <!-- Footer Section Start -->
+
    <footer class="footer">
   <div class="footer-container">
     
@@ -255,6 +262,77 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
    
+
+    <section class="footer">
+        <div class="container">
+            <div class="grid-3">
+
+                <!--About Us-->
+                <div class="aboutus-flex">
+                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+                    <div class="about-content">
+                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
+                        <p>Our shared passion for food and community drives us to bring qualiy meals directly to you doorstep.</p>
+                    </div>
+                </div>
+                <div class="FoodFusion">
+                    <h3>Food Fusion</h3>
+                    <div class="foodfusion">
+                        <a href="WhoWeAre.html">Who We Are</a>
+                        <a href="Blog.html">Blog</a>
+                        <a href="WorkWithus.html">Work With Us</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="ReportFraud.html">Report Fraud</a>
+                    </div>
+                </div>
+                <!-- Learn More Links -->
+                <div>
+                    <h3>Learn More</h3>
+                    <div class="learnmore" >
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Security</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Lodge Complaint</a>
+                        <a href="#">Testimonials</a>
+                    </div>
+                </div>
+                <div class="FollowUs">
+                    <!-- Social Links -->
+                    <h3>Social Links</h3>
+                    <div class="social">
+                        <ul>
+                             <li><a href="https://www.facebook.com/">
+                                <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
+                                Facebook
+                                </a></li>
+                            <li><a href="https://www.instagram.com/">
+                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
+                               Instagram
+                                </a>
+                            </li>
+                            <li><a href="https://x.com/">
+                                <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
+                                Twitter
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section End -->
+     
+    <!-- Copyright Section start -->
+    <section class="copyright">
+        <div class="container text-center">
+            <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+        </div>
+        <a id="back-to-top" class="btn-primary">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+    </section>
+    <!-- Copyright Section End -->
+
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

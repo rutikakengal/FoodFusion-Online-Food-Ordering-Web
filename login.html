@@ -100,18 +100,26 @@
             <div class="heading-border"></div>
 
             <form action="" class="form">
-                <fieldset>
-                    <legend>Login</legend>
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
-                    <p class="label">Password</p>
-                    <input type="password" placeholder="Enter your password..." required>
-                    <input type="submit" value="Login" class="btn-primary">
-                </fieldset>
-            </form>
+            <fieldset>
+                <legend>Login</legend>
+                <p class="label">Email</p>
+                <input type="email" placeholder="Enter your email..." required>
+
+               <p class="label">Password</p>
+                <div class="password-container">
+                <input type="password" id="password" placeholder="Enter your password..." required>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+
+
+                <input type="submit" value="Login" class="btn-primary">
+            </fieldset>
+        </form>
+
         </div>
     </section>
     <!-- Login Section End -->
+
 
    
                                <!-- Footer Section Start -->
@@ -166,6 +174,66 @@
 </footer>
 
 
+
+    <!-- Footer Section Start -->
+    <section class="footer">
+        <div class="container">
+            <div class="grid-3">
+
+                <!--About Us-->
+                <div class="aboutus-flex">
+                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+                    <div class="about-content">
+                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
+                        <p>Our shared passion for food and community drives us to bring qualiy meals directly to you doorstep.</p>
+                    </div>
+                </div>
+                <div class="FoodFusion">
+                    <h3>Food Fusion</h3>
+                    <div class="foodfusion">
+                        <a href="WhoWeAre.html">Who We Are</a>
+                        <a href="Blog.html">Blog</a>
+                        <a href="WorkWithus.html">Work With Us</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="ReportFraud.html">Report Fraud</a>
+                    </div>
+                </div>
+                <!-- Learn More Links -->
+                <div>
+                    <h3>Learn More</h3>
+                    <div class="learnmore" >
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Security</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Lodge Complaint</a>
+                        <a href="#">Testimonials</a>
+                    </div>
+                </div>
+                <div class="FollowUs">
+                    <!-- Social Links -->
+                    <h3>Social Links</h3>
+                    <div class="social">
+                        <ul>
+                             <li><a href="https://www.facebook.com/">
+                                <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
+                                Facebook
+                                </a></li>
+                            <li><a href="https://www.instagram.com/">
+                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
+                               Instagram
+                                </a>
+                            </li>
+                            <li><a href="https://x.com/">
+                                <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
+                                Twitter
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Section End -->
 
     
@@ -178,5 +246,20 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
+    <script>
+    function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const toggleIcon = document.querySelector(".toggle-password");
+
+        if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.textContent = "🙈";
+        } else {
+        passwordInput.type = "password";
+        toggleIcon.textContent = "👁️";
+        }
+    }
+    </script>
+
 </body>
 </html>
