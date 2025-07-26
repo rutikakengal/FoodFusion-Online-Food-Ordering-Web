@@ -83,11 +83,11 @@ h3 {
   font-size: 24px;
 }
 .heading-border {
-  height: 3px;
+ 
   width: 70px;
-  background: rgb(226, 74, 74);
+
   margin: auto;
-  margin-top: -10px;
+  margin-top: 20px;
   margin-bottom: 15px;
 }
 fieldset {
@@ -128,6 +128,9 @@ fieldset legend {
   padding: 0;
   /* box-shadow: 2px -4px 13px 0px #000; */
 }
+#site-top-nav{
+  height: 80px;
+}
 
 .navbar-fixed-top {
   padding: 0;
@@ -137,9 +140,8 @@ fieldset legend {
   right: 0;
   z-index: 1030;
   height: 65px;
-  background: rgba(255, 255, 255, 0.15); /* translucent white */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background:linear-gradient(to right, #000000, #312a2a) /* translucent white */
+  
 }
 .navbar-fixed-top .container {
   padding: 0 15px;
@@ -148,6 +150,7 @@ fieldset legend {
   width: 120px;
   float: left;
   padding: 5px 5px;
+  
 }
 .menu {
   line-height: 60px;
@@ -157,20 +160,21 @@ fieldset legend {
   list-style: none;
   width: 80%;
   float: right;
+  margin-top: 8px;
 }
 .menu ul li {
   display: inline;
   padding: 10px;
   font-weight: bold;
+  margin-left: 85px;
+  margin-top: 28px;
 }
-.menu ul li:last-of-type {
-  text-align: center;
+
+.menu ul li:hover{
+  color: #bfbbbb;
+  transition: color 0.5s;
 }
-.hvr-underline-from-center:before {
-  background: #6c5ce7;
-  height: 2px;
-  bottom: 10px;
-}
+
 .badge {
   color: #fff;
   background: #ff0000;
@@ -179,7 +183,7 @@ fieldset legend {
   border-radius: 3px;
 }
 .shopping-cart {
-  color: #6c5ce7;
+  color: #ffffff;
   cursor: pointer;
   font-size: 18px;
 }
