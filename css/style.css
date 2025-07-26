@@ -369,6 +369,11 @@ body {
   margin-left: 14px;
  
 }
+.social-icons i:hover{
+color: #f9dcc9db;
+transition:color 0.3s;
+
+}
 
 .footer-social{
   margin-top: 38px;
