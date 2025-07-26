@@ -38,6 +38,7 @@
                         <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
                         <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
                         <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+
                         <li>
                             <a id="shopping-cart" class="shopping-cart">
                                 <i class="fa fa-cart-arrow-down"></i>
@@ -57,36 +58,37 @@
                                     <tr>
                                         <td><img src="img/food/p1.jpg" alt="Food"></td>
                                         <td>Pizza</td>
-                                        <td>$ 8.00</td>
+                                        <td>&#8377; 8.00</td>
                                         <td>1</td>
-                                        <td>$ 8.00</td>
+                                        <td>&#8377; 8.00</td>
                                         <td><a href="#" class="btn-delete">&times;</a></td>
                                     </tr>
                                     <tr>
                                         <td><img src="img/food/s1.jpg" alt="Food"></td>
                                         <td>Sandwich</td>
-                                        <td>$ 8.00</td>
+                                        <td>&#8377; 8.00</td>
                                         <td>1</td>
-                                        <td>$ 8.00</td>
+                                        <td>&#8377; 8.00</td>
                                         <td><a href="#" class="btn-delete">&times;</a></td>
                                     </tr>
                                     <tr>
                                         <td><img src="img/food/b1.jpg" alt="Food"></td>
                                         <td>Burder</td>
-                                        <td>$ 8.00</td>
+                                        <td>&#8377; 8.00</td>
                                         <td>1</td>
-                                        <td>$ 8.00</td>
+                                        <td>&#8377; 8.00</td>
                                         <td><a href="#" class="btn-delete">&times;</a></td>
                                     </tr>
                                     <tr>
                                         <th colspan="4">Total</th>
-                                        <th>$24.00$</th>
+                                        <th>&#8377;24.00</th>
                                         <th></th>
                                     </tr>
                                 </table>
                                 <a href="order.html" class="btn-primary">Confirm Order</a>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -112,52 +114,70 @@
                     <td>1</td>
                     <td><img src="img/food/p1.jpg" alt="Food"></td>
                     <td>Pizza</td>
-                    <td>$ 8.00</td>
+                    <td>&#8377; 8.00</td>
                     <td>1</td>
-                    <td>$ 8.00</td>
+                    <td>&#8377;8.00</td>
                     <td><a href="#" class="btn-delete">&times;</a></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td><img src="img/food/s1.jpg" alt="Food"></td>
                     <td>Sandwich</td>
-                    <td>$ 8.00</td>
+                    <td>&#8377; 8.00</td>
                     <td>1</td>
-                    <td>$ 8.00</td>
+                    <td>&#8377; 8.00</td>
                     <td><a href="#" class="btn-delete">&times;</a></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td><img src="img/food/b1.jpg" alt="Food"></td>
+
                     <td>Burder</td>
+                    <td>&#8377; 8.00</td>
+
+                    <td>Burger</td>
                     <td>$ 8.00</td>
+
                     <td>1</td>
-                    <td>$ 8.00</td>
+                    <td>&#8377; 8.00</td>
                     <td><a href="#" class="btn-delete">&times;</a></td>
                 </tr>
                 <tr>
                     <th colspan="5">Total</th>
-                    <th>$24.00</th>
+                    <th>&#8377;24.00</th>
                     <th></th>
                 </tr>
             </table>
-            <form action="" class="form">
+
+            <!-- ✅ Updated Form -->
+            <form class="form" id="orderForm">
                 <fieldset>
                     <legend>Delivery Details</legend>
+
                     <p class="label">Full Name</p>
-                    <input type="text" placeholder="Enter your name..." required>
+                    <input type="text" placeholder="Enter your name..." name="fullname" required>
+
                     <p class="label">Phone Number</p>
-                    <input type="contact" placeholder="Enter your phone..." required>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone..." maxlength="10" pattern="\d{10}" required>
+
                     <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
+                    <input type="email" placeholder="Enter your email..." name="email" required>
+
                     <p class="label">Address</p>
-                    <input type="text" placeholder="Enter your address..." required>
+                    <input type="text" placeholder="Enter your address..." name="address" required>
+
                     <input type="submit" value="Confirm Order" class="btn-primary">
                 </fieldset>
             </form>
+
+            <!-- ✅ Confirmation Message -->
+            <p id="confirmationMessage" style="display:none; color: green; font-weight: bold; margin-top: 10px;">
+                ✅ Your order has been placed successfully!
+            </p>
         </div>
     </section>
     <!-- Food Order Section End -->
+
 
     
                                <!-- Footer Section Start -->
@@ -218,11 +238,97 @@
     
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
+    <!-- Footer Section Start -->
+    <section class="footer">
+        <div class="container">
+            <div class="grid-3">
+
+                <!--About Us-->
+                <div class="aboutus-flex">
+                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+                    <div class="about-content">
+                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
+                        <p>Our shared passion for food and community drives us to bring qualiy meals directly to you doorstep.</p>
+                    </div>
+                </div>
+                <div class="FoodFusion">
+                    <h3>Food Fusion</h3>
+                    <div class="foodfusion">
+                        <a href="WhoWeAre.html">Who We Are</a>
+                        <a href="Blog.html">Blog</a>
+                        <a href="WorkWithus.html">Work With Us</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="ReportFraud.html">Report Fraud</a>
+                    </div>
+                </div>
+                <!-- Learn More Links -->
+                <div>
+                    <h3>Learn More</h3>
+                    <div class="learnmore" >
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Security</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Lodge Complaint</a>
+                        <a href="#">Testimonials</a>
+                    </div>
+                </div>
+                <div class="FollowUs">
+                    <!-- Social Links -->
+                    <h3>Social Links</h3>
+                    <div class="social">
+                        <ul>
+                             <li><a href="https://www.facebook.com/">
+                                <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
+                                Facebook
+                                </a></li>
+                            <li><a href="https://www.instagram.com/">
+                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
+                               Instagram
+                                </a>
+                            </li>
+                            <li><a href="https://x.com/">
+                                <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
+                                Twitter
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section End -->
+    <!-- Copyright Section start -->
+    <section class="copyright">
+        <div class="container text-center">
+            <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+        </div>
+        <a id="back-to-top" class="btn-primary">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+    </section>
+    <!-- Copyright Section End -->
+
+
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!-- Jquery UI -->
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <script>
+  $(function () {
+    // Phone validation
+    $("#phone").on("input", function () {
+      this.value = this.value.replace(/\D/g, "");
+    });
+
+    // Confirmation message
+    $("#orderForm").on("submit", function (e) {
+      e.preventDefault();
+      $("#confirmationMessage").fadeIn();
+      this.reset();
+    });
+  });
+</script>
+
 </body>
 </html>

@@ -94,31 +94,102 @@
     <!-- Navigation Section End -->
 
     <!-- Contact Section Start -->
-    <section class="contact">
-        <div class="container">
-            <h2 class="text-center">Get in touch</h2>
-            <div class="heading-border"></div>
+    
+        <section class="contact-section" style="padding: 30px 20px; background: linear-gradient(to bottom right, #fff6f0, #ffeaea);">
+  <div class="container" style="max-width: 1900px; margin: 0 auto;">
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px;">Get in Touch</h2>
 
-            <form action="" class="form">
-                <fieldset>
-                    <legend>Contact Us</legend>
-                    <p class="label">Full Name</p>
-                    <input type="text" placeholder="Enter your name..." required>
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." required>
-                    <p class="label">Phone Number</p>
-                    <input type="contact" placeholder="Enter your phone..." required>
-                    <p class="label">Subject</p>
-                    <input type="text" placeholder="Enter your subject..." required>
-                    <p class="label">Message</p>
-                    <textarea name="" id="" rows="5" placeholder="Enter your message..." required></textarea>
-                    <input type="submit" value="Submit" class="btn-primary">
-                </fieldset>
-            </form>
-        </div>
-    </section>
-    <!-- Contact Section End -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
 
+      <!-- FAQs -->
+       <div class="faq-box">
+  <h3 class="faq-title">
+    <span class="emoji">🧠</span> Frequently Asked Questions
+  </h3>
+  <div class="faq-item">
+    <details>
+      <summary>How can I track my order?</summary>
+      <p>We’ll email tracking details once your order is shipped.</p>
+    </details>
+  </div>
+  <div class="faq-item">
+    <details>
+      <summary>Can I cancel my meal?</summary>
+      <p>Yes, within 30 mins of ordering. Contact support.</p>
+    </details>
+  </div>
+  <div class="faq-item">
+    <details>
+      <summary>Do you support cash on delivery?</summary>
+      <p>Yes, we support COD for select locations.</p>
+    </details>
+  </div>
+  <div class="faq-item">
+    <details>
+      <summary>Can I change delivery address?</summary>
+      <p>Address changes are accepted within 1 hour of order.</p>
+    </details>
+  </div>
+</div>
+      <!-- Contact Form -->
+      <div style="flex: 1.5; min-width: 180px; background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+        <form>
+          <div style="margin-bottom: 15px;">
+            <label for="category"><strong>Category</strong></label>
+            <select id="category" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+              <option value="">Select a category</option>
+              <option value="order">Order Inquiry</option>
+              <option value="cancel">Cancel Request</option>
+              <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="name"><strong>Full Name</strong></label>
+            <input type="text" id="name" placeholder="Enter your name..." required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="email"><strong>Email</strong></label>
+            <input type="email" id="email" placeholder="Enter your email..." required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="phone"><strong>Phone Number</strong></label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+          </div>
+          <div style="margin-bottom: 20px;">
+            <label for="message"><strong>Your Message</strong></label>
+            <textarea id="message" rows="4" placeholder="Type your message..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+          </div>
+          <button type="submit" style="background: #f44336; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 600;">Send Message</button>
+        </form>
+      </div>
+       <!-- My recent Orders -->
+        <div class="order-summary-card">
+  <h3>🛒 My Recent Orders</h3>
+  <ul>
+    <li>
+      <span>🍱 Paneer Rice Bowl – <strong>Delivered</strong> Jul 18</span>
+      <button>Reorder</button>
+    </li>
+    <li>
+      <span>🥗 Keto Salad Box – <strong>Cancelled</strong> Jul 15</span>
+      <button>Reorder</button>
+    </li>
+  <!-- Why Choose Us Section -->
+<div class="usp-card">
+  <h3>🌟 Why Choose Us?</h3>
+  <ul>
+    <li><span class="icon">✅</span> Farm-Fresh Ingredients</li>
+    <!-- <li><span class="icon">⏱️</span> Delivered in Under 45 Minutes</li> -->
+    <li><span class="icon">📦</span> Eco-friendly, Reusable Packaging</li>
+    <li><span class="icon">🧑‍⚕️</span> Diet Plans Approved by Nutritionists</li>
+  </ul>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+<!--Contact Section End -->
      <!-- Map Section Start -->
      <section class="map">
         <h2 class="text-center">Find Us</h2>
@@ -127,6 +198,7 @@
         <iframe id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d118103.45687625333!2d91.81986775!3d22.32593435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1671287502415!5m2!1sen!2sbd" ></iframe>
      </section>
      <!-- Map Section End -->
+
 
  <!-- Footer Section Start -->
    <footer class="footer">
@@ -179,6 +251,66 @@
   </div>
 </footer>
 
+
+
+    <!-- Footer Section Start -->
+    <section class="footer">
+        <div class="container">
+            <div class="grid-3">
+
+                <!--About Us-->
+                <div class="aboutus-flex">
+                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+                    <div class="about-content">
+                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
+                        <p>Our shared passion for food and community drives us to bring qualiy meals directly to you doorstep.</p>
+                    </div>
+                </div>
+                <div class="FoodFusion">
+                    <h3>Food Fusion</h3>
+                    <div class="foodfusion">
+                        <a href="WhoWeAre.html">Who We Are</a>
+                        <a href="Blog.html">Blog</a>
+                        <a href="WorkWithus.html">Work With Us</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="ReportFraud.html">Report Fraud</a>
+                    </div>
+                </div>
+                <!-- Learn More Links -->
+                <div>
+                    <h3>Learn More</h3>
+                    <div class="learnmore" >
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Security</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Lodge Complaint</a>
+                        <a href="#">Testimonials</a>
+                    </div>
+                </div>
+                <div class="FollowUs">
+                    <!-- Social Links -->
+                    <h3>Social Links</h3>
+                    <div class="social">
+                        <ul>
+                             <li><a href="https://www.facebook.com/">
+                                <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
+                                Facebook
+                                </a></li>
+                            <li><a href="https://www.instagram.com/">
+                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
+                               Instagram
+                                </a>
+                            </li>
+                            <li><a href="https://x.com/">
+                                <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
+                                Twitter
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Section End -->
 
