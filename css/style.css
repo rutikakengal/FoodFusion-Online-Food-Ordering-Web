@@ -366,7 +366,11 @@ button{
   font-size: 15px;
 
 .categories .float-container:hover  {
+
   transform: scale(1.2);
+
+
+  transform: scale(1.1);
 
 }
 
