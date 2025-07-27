@@ -382,7 +382,7 @@ fieldset legend {
   transition: transform 0.5s ease;
 }
 .categories .float-container:hover  {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 /* Categories Section Style End */
 
