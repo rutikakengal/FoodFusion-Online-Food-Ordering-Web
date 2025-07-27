@@ -382,7 +382,7 @@ fieldset legend {
   transition: transform 0.5s ease;
 }
 .categories .float-container:hover  {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 /* Categories Section Style End */
 
@@ -400,14 +400,21 @@ fieldset legend {
   background: #fff;
   border-radius: 10px;
 }
+
+.food-menu-box form{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
 .food-menu-img {
-  width: 20%;
-  float: left;
+  width: 24%;
+  object-fit: cover;
 }
 .food-menu-desc {
   width: 70%;
   float: left;
-  margin-left: 40px;
+
+  /* margin-left: 40px; */
 }
 .food-price {
   font-size: 18px;
