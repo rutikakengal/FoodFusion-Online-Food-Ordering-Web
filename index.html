@@ -445,7 +445,23 @@
         </p>
     </section>
     <!-- Foods Section End -->
-
+    
+   <!-- Feedback & Reviews Section Start -->
+    <section id="feedback-review">
+      <div class="feedback-container">
+        <h2>Feedback & Reviews</h2>
+        <p>We value your experience! Leave your feedback or review about our website below.</p>
+        <form id="feedback-form">
+          <input type="text" id="name-input" placeholder="Your Name" required>
+          <input type="email" id="email-input" placeholder="Your Email" required>
+          <input type="text" id="feedback-input" placeholder="Share your thoughts..." required>
+          <button type="submit">Submit</button>
+        </form>
+        <div id="feedback-success" style="display:none;color:green;font-weight:600;margin-top:10px;"></div>
+      </div>
+    </section>
+    <!-- Feedback & Reviews Section End -->
+    
     <!-- Footer Section Start -->
     <section class="footer">
         <div class="container">
@@ -523,6 +539,34 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
-</body>
+     <!-- Feedback & Reviews JS -->
+    <script>
+      document.getElementById('feedback-form').addEventListener('submit', function(e) {
+        e.preventDefault();
 
+        const nameInput = document.getElementById('name-input');
+        const emailInput = document.getElementById('email-input');
+        const feedbackInput = document.getElementById('feedback-input');
+        const successMsg = document.getElementById('feedback-success');
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const feedbackText = feedbackInput.value.trim();
+
+        if (name !== '' && email !== '' && feedbackText !== '') {
+          // Here you would send the feedback to the backend (not implemented)
+          nameInput.value = '';
+          emailInput.value = '';
+          feedbackInput.value = '';
+
+          // Show success message
+          successMsg.textContent = 'Submitted successfully! Thank you for your feedback.';
+          successMsg.style.display = 'block';
+          setTimeout(function() {
+            successMsg.style.display = 'none';
+          }, 3000);
+        }
+      });
+    </script>
+</body>
 </html>
