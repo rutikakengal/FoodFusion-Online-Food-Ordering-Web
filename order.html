@@ -115,6 +115,9 @@
                     // Save updated cart
                     localStorage.setItem('foodFusionCart', JSON.stringify(cart));
                     
+                    // Play remove sound
+                    playSound('remove');
+                    
                     // Reload cart items
                     loadCartItems();
                     
@@ -173,6 +176,19 @@
                     });
                     
                     $(".badge").text(count);
+                }
+                
+                // Function to play sound
+                function playSound(action) {
+                    // This function will be defined in cart-sound.js
+                    // We'll just make sure it doesn't cause errors if not available
+                    if (typeof cartSound !== 'undefined' && cartSound) {
+                        if (action === 'add') {
+                            cartSound.play();
+                        } else if (action === 'remove') {
+                            // Could add a different sound for removal in the future
+                        }
+                    }
                 }
             });
             </script>

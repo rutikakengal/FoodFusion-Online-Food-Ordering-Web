@@ -110,14 +110,11 @@ $(function () {
     // Remove this item from cart array
     cart = cart.filter(item => item.name !== foodName);
     
-    // Save to localStorage
-    localStorage.setItem('foodFusionCart', JSON.stringify(cart));
-    
     // Update DOM
-    $(this).closest("tr").remove();
+    loadCartFromStorage(); // Reload cart items from the updated cart array
     cartCount = calculateCartCount();
     updateCartBadge();
-    updateTotal();
+    updateTotal(); // This will also save to localStorage
   });
   
   // Update Cart Badge
@@ -127,20 +124,21 @@ $(function () {
     $(".badge").text(cartCount);
   }
 
-  // Update Total Price JS
   function updateTotal() {
     let total = 0;
-    $("#cart-content tr").each(function () {
-      const rowTotal = parseFloat($(this).find("td:nth-child(5)").text().replace("$", ""));
-      if (!isNaN(rowTotal)) {
-        total += rowTotal;
-      }
-    });
+    
+    if (cart && cart.length) {
+      cart.forEach(item => {
+        total += parseFloat(item.total);
+      });
+    }
+    
+    // Update total in the DOM
     $("#cart-content th:nth-child(5)").text("$" + total.toFixed(2));
     $(".tbl-full th:nth-child(6)").text("$" + total.toFixed(2));
     
-    // Save cart to localStorage after updating total
-    saveCartToStorage();
+    // Save cart to localStorage without triggering loadCartFromStorage
+    localStorage.setItem('foodFusionCart', JSON.stringify(cart));
   }
   
   // Calculate total items in cart
@@ -156,45 +154,49 @@ $(function () {
   
   // Load cart from localStorage
   function loadCartFromStorage() {
+    $("#cart-content tbody").empty();
+    
     if (cart && cart.length) {
-      // Clear existing cart items except the last row (total)
-      $("#cart-content table tr:not(:last)").remove();
-      
-      // Add items from localStorage
       cart.forEach(item => {
-        const newRow = `
+        const row = `
           <tr>
-            <td><img src="${item.image}" alt="Food"></td>
+            <td><img src="${item.image}" alt="${item.name}" class="cart-img"></td>
             <td>${item.name}</td>
             <td>$${item.price}</td>
             <td>${item.quantity}</td>
             <td>$${item.total}</td>
-            <td><a href="#" class="btn-delete">&times;</a></td>
+            <td>
+              <a href="#" class="btn-delete"><i class="fas fa-trash-alt"></i></a>
+            </td>
           </tr>
         `;
-        
-        $("#cart-content table tr:last").before(newRow);
+        $("#cart-content tbody").append(row);
       });
-      
-      // Update total
-      updateTotal();
+    } else {
+      const emptyRow = `
+        <tr>
+          <td colspan="6" class="text-center">Your cart is empty</td>
+        </tr>
+      `;
+      $("#cart-content tbody").append(emptyRow);
     }
+    
+    // Update total without saving to localStorage to avoid circular calls
+    let total = 0;
+    if (cart && cart.length) {
+      cart.forEach(item => {
+        total += parseFloat(item.total);
+      });
+    }
+    
+    // Update total in the DOM
+    $("#cart-content th:nth-child(5)").text("$" + total.toFixed(2));
+    $(".tbl-full th:nth-child(6)").text("$" + total.toFixed(2));
   }
   
   // Save cart to localStorage
   function saveCartToStorage() {
-    cart = [];
-    $("#cart-content tr:not(:last)").each(function() {
-      const item = {
-        image: $(this).find('td:nth-child(1) img').attr('src'),
-        name: $(this).find('td:nth-child(2)').text(),
-        price: $(this).find('td:nth-child(3)').text().replace('$', ''),
-        quantity: parseInt($(this).find('td:nth-child(4)').text()),
-        total: $(this).find('td:nth-child(5)').text().replace('$', '')
-      };
-      cart.push(item);
-    });
-    
+    // Simply save the global cart array to localStorage
     localStorage.setItem('foodFusionCart', JSON.stringify(cart));
   }
 
