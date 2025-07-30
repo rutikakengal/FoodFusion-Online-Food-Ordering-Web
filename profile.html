@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Food Delivery Website</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- Navigation Section Start -->
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="index.html" title="Logo">
+                        <img src="img/logo.svg" alt="Logo" class="img-responsive">
+                    </a>
+                </div>
+                <!-- Main Menu -->
+                <div class="menu text-right">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
+                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li><a class="hvr-underline-from-center" href="user-profile.html" title="Profile"><i class="fa fa-user"></i></a></li>
+                        <li>
+                            <a id="shopping-cart" class="shopping-cart">
+                                <i class="fa fa-cart-arrow-down"></i>
+                                <span class="badge">4</span>
+                            </a>
+                            <div id="cart-content" class="cart-content">
+                                <h3 class="text-center">Shopping Cart</h3>
+                                <table class="cart-table" border="0">
+                                    <tr>
+                                        <th>Food</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Qty</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/food/p1.jpg" alt="Food"></td>
+                                        <td>Pizza</td>
+                                        <td>$ 8.00</td>
+                                        <td>1</td>
+                                        <td>$ 8.00</td>
+                                        <td><a href="#" class="btn-delete">&times;</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/food/s1.jpg" alt="Food"></td>
+                                        <td>Sandwich</td>
+                                        <td>$ 8.00</td>
+                                        <td>1</td>
+                                        <td>$ 8.00</td>
+                                        <td><a href="#" class="btn-delete">&times;</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/food/b1.jpg" alt="Food"></td>
+                                        <td>Burger</td>
+                                        <td>$ 8.00</td>
+                                        <td>1</td>
+                                        <td>$ 8.00</td>
+                                        <td><a href="#" class="btn-delete">&times;</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">Total</th>
+                                        <th>$24.00$</th>
+                                        <th></th>
+                                    </tr>
+                                </table>
+                                <a href="order.html" class="btn-primary">Confirm Order</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navigation Section End -->
+
+    <!-- Login Section Start -->
+    <!-- Signup/Profile Section Start -->
+    <section class="profile-signup">
+        <div class="container">
+            <div class="signup-logo" style="text-align:center; margin-bottom: 10px;">
+                <img src="img/logo.svg" alt="Food Fusion Logo" class="profile-logo signup-logo-img">
+            </div>
+            <h2 class="text-center">Sign Up</h2>
+            <div class="heading-border"></div>
+
+            <form action="" class="form" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Sign Up</legend>
+                    <p class="label">Full Name</p>
+                    <input type="text" id="signup-name" placeholder="Enter your full name..." required>
+
+                    <p class="label">Email</p>
+                    <input type="email" id="signup-email" placeholder="Enter your email..." required>
+
+                    <p class="label">Password</p>
+                    <div class="password-container">
+                        <input type="password" id="password" placeholder="Create a password..." required>
+                        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                    </div>
+
+                    <p class="label">Address <span class="optional-label">(optional)</span></p>
+                    <input type="text" id="signup-address" placeholder="Enter your address...">
+
+                    <p class="label">Profile Picture</p>
+                    <input type="file" id="signup-picture" accept="image/*">
+                    <div class="signup-divider">or sign up with</div>
+                    <div class="signup-social">
+                        <a href="#" class="signup-social-btn google social-icon" title="Sign up with Google"><i class="fa fa-google"></i></a>
+                        <a href="#" class="signup-social-btn twitter social-icon" title="Sign up with Twitter" style="padding:0; background: none;">
+                          <span style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #000; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+                            <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="22" height="22" style="display:block; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.10));" />
+                          </span>
+                        </a>
+                        <a href="#" class="signup-social-btn instagram social-icon" title="Sign up with Instagram"><i class="fa fa-instagram"></i></a>
+</style>
+<style>
+  .signup-social {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 12px 0 0 0;
+  }
+  .signup-social .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    color: #fff;
+    background: #bbb;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: none;
+    text-decoration: none;
+  }
+  .signup-social .google {
+    background: #ea4335;
+  }
+  .signup-social .twitter {
+    background: #1da1f2;
+  }
+  .signup-social .instagram {
+    background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+  }
+  .signup-social .social-icon:hover {
+    transform: scale(1.12);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    opacity: 0.92;
+  }
+</style>
+                    </div>
+                    <div class="signup-btn-center">
+                        <input type="submit" value="Sign Up" class="btn-primary">
+                    </div>
+                    <div class="login-prompt" style="text-align:center;margin:12px 0 16px 0;">
+                        <span>Already have an account?</span>
+                        <a href="login.html" class="btn-primary" style="margin-left:8px;">Login</a>
+                    </div>
+                </fieldset>
+            </form>
+
+            <!-- Signup Success Message (hidden by default, shown after signup) -->
+            <div id="signup-success-message" class="signup-success-message" style="display:none;text-align:center;background:#e6ffe6;color:#2e7d32;padding:12px 0;font-size:1.1em;font-weight:600;">
+                Signup done successfully! You can now see your profile below.
+            </div>
+            <!-- Profile Card (shown after signup) -->
+            <div class="profile-card" style="display:none;">
+                <div class="profile-header">
+                    <img id="profile-picture" src="img/logo.svg" alt="Profile Picture" class="profile-logo" style="object-fit:cover;" />
+                    <input type="file" id="upload-picture" accept="image/*" style="display:block;margin:10px auto 0;" />
+                </div>
+                <div class="profile-body">
+                    <h2 id="user-name">Welcome, Username</h2>
+                    <p id="user-role" class="role">Food Lover | Member since 2024</p>
+                    <p id="user-email" class="email">user@email.com</p>
+                    <p id="user-address" class="address">123 Main Street, City</p>
+                    <div class="profile-stats">
+                        <div><strong id="user-orders">0</strong><br />Orders</div>
+                        <div><strong id="user-reviews">0</strong><br />Reviews</div>
+                        <div><strong id="user-rating">0.0</strong><br />Avg. Rating</div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="profile-btn" id="edit-profile-btn"><i class="fa fa-pencil"></i> Edit</button>
+                        <button class="profile-btn" id="my-orders-btn"><i class="fa fa-list"></i> My Orders</button>
+                        <button class="profile-btn" id="home-btn"><i class="fa fa-home"></i> Home</button>
+                    </div>
+                    <div id="orders-section" class="orders-section" style="display:none;">
+                        <h3 class="orders-title">Your Orders</h3>
+                        <ul id="orders-list" class="orders-list">
+                            <li>Pizza Margherita - $8.00 <span class="order-status delivered">Delivered</span></li>
+                            <li>Veg Sandwich - $5.00 <span class="order-status onway">On the way</span></li>
+                            <li>Burger - $6.00 <span class="order-status cancelled">Cancelled</span></li>
+                        </ul>
+                    </div>
+                    <form id="edit-profile-form" style="display:none;">
+                        <h3>Edit Profile</h3>
+                        <input type="text" id="edit-name" placeholder="Full Name" required />
+                        <input type="email" id="edit-email" placeholder="Email" required />
+                        <input type="text" id="edit-address" placeholder="Address (optional)" />
+                        <button type="submit" class="profile-btn"><i class="fa fa-save"></i> Save</button>
+                        <button type="button" class="profile-btn" id="cancel-edit-btn" style="background:#888;"><i class="fa fa-times"></i> Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <script>
+            // Show profile card after signup (form submit)
+            document.querySelector('.form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                this.style.display = 'none';
+                document.getElementById('signup-success-message').style.display = 'block';
+                document.querySelector('.profile-card').style.display = 'block';
+                // Fill profile card with signup data
+                document.getElementById('user-name').textContent = 'Welcome, ' + document.getElementById('signup-name').value;
+                document.getElementById('user-email').textContent = document.getElementById('signup-email').value;
+                document.getElementById('user-address').textContent = document.getElementById('signup-address').value;
+                // Profile picture preview
+                var picInput = document.getElementById('signup-picture');
+                var profilePic = document.getElementById('profile-picture');
+                if (picInput.files && picInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(evt) {
+                        profilePic.src = evt.target.result;
+                        localStorage.setItem('profilePicture', evt.target.result);
+                    };
+                    reader.readAsDataURL(picInput.files[0]);
+                }
+
+                // Enable profile card JS after signup
+                enableProfileCardJS();
+            });
+
+            // Profile card JS (edit, orders, home, picture upload)
+            function enableProfileCardJS() {
+                var ordersBtn = document.getElementById('my-orders-btn');
+                var ordersSection = document.getElementById('orders-section');
+                var homeBtn = document.getElementById('home-btn');
+                var editBtn = document.getElementById('edit-profile-btn');
+                var editForm = document.getElementById('edit-profile-form');
+                var cancelEditBtn = document.getElementById('cancel-edit-btn');
+                var userName = document.getElementById('user-name');
+                var userEmail = document.getElementById('user-email');
+                var userAddress = document.getElementById('user-address');
+                var editName = document.getElementById('edit-name');
+                var editEmail = document.getElementById('edit-email');
+                var editAddress = document.getElementById('edit-address');
+                var profilePicture = document.getElementById('profile-picture');
+                var uploadPicture = document.getElementById('upload-picture');
+
+                // Load profile picture from localStorage if available
+                var storedPic = localStorage.getItem('profilePicture');
+                if (storedPic) {
+                    profilePicture.src = storedPic;
+                }
+
+                // Handle profile picture upload
+                if (uploadPicture) {
+                    uploadPicture.addEventListener('change', function(e) {
+                        var file = e.target.files[0];
+                        if (file) {
+                            var reader = new FileReader();
+                            reader.onload = function(evt) {
+                                profilePicture.src = evt.target.result;
+                                localStorage.setItem('profilePicture', evt.target.result);
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                }
+
+                if (ordersBtn && ordersSection) {
+                    ordersBtn.addEventListener('click', function() {
+                        // Always populate with default orders and show the section
+                        var ordersList = document.getElementById('orders-list');
+                        if (ordersList) {
+                            ordersList.innerHTML = `
+                                <li>Pizza Margherita - $8.00 <span class="order-status delivered">Delivered</span></li>
+                                <li>Veg Sandwich - $5.00 <span class="order-status onway">On the way</span></li>
+                                <li>Burger - $6.00 <span class="order-status cancelled">Cancelled</span></li>
+                            `;
+                        }
+                        ordersSection.style.display = 'block';
+                        ordersSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    });
+                }
+                if (homeBtn) {
+                    homeBtn.addEventListener('click', function() {
+                        window.location.href = 'index.html';
+                    });
+                }
+                if (editBtn && editForm) {
+                    editBtn.addEventListener('click', function() {
+                        editForm.style.display = 'block';
+                        editName.value = userName.textContent.replace('Welcome, ', '');
+                        editEmail.value = userEmail.textContent;
+                        editAddress.value = userAddress.textContent;
+                    });
+                }
+                if (cancelEditBtn && editForm) {
+                    cancelEditBtn.addEventListener('click', function() {
+                        editForm.style.display = 'none';
+                    });
+                }
+                if (editForm) {
+                    editForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        userName.textContent = 'Welcome, ' + editName.value;
+                        userEmail.textContent = editEmail.value;
+                        userAddress.textContent = editAddress.value;
+                        editForm.style.display = 'none';
+                    });
+                }
+            }
+
+            // Enable profile card JS on page load if profile card is visible (for returning users)
+            document.addEventListener('DOMContentLoaded', function() {
+                if (document.querySelector('.profile-card').style.display === 'block') {
+                    enableProfileCardJS();
+                }
+            });
+            </script>
+        </div>
+    </section>
+    <!-- Signup/Profile Section End -->
+
+    <!-- Footer Section Start -->
+    <section class="footer">
+        <div class="container">
+            <div class="grid-3">
+
+                <!--About Us-->
+                <div class="aboutus-flex">
+                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+                    <div class="about-content">
+                        <p style="text-align:justify;">Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
+                        <p style="text-align:justify;">Our shared passion for food and community drives us to bring quality meals directly to your doorstep.</p>
+                    </div>
+                </div>
+                <div class="FoodFusion">
+                    <h3>Food Fusion</h3>
+                    <div class="foodfusion">
+                        <a href="WhoWeAre.html">Who We Are</a>
+                        <a href="Blog.html">Blog</a>
+                        <a href="WorkWithus.html">Work With Us</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="ReportFraud.html">Report Fraud</a>
+                    </div>
+                </div>
+                <!-- Learn More Links -->
+                <div>
+                    <h3>Learn More</h3>
+                    <div class="learnmore" >
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Security</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Lodge Complaint</a>
+                        <a href="#">Testimonials</a>
+                    </div>
+                </div>
+                <div class="FollowUs">
+                    <!-- Social Links -->
+                    <h3>Social Links</h3>
+                    <div class="social">
+                        <ul>
+                             <li><a href="https://www.facebook.com/">
+                                <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
+                                Facebook
+                                </a></li>
+                            <li><a href="https://www.instagram.com/">
+                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
+                               Instagram
+                                </a>
+                            </li>
+                            <li><a href="https://x.com/">
+                                <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
+                                Twitter
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Copyright Section start -->
+    <section class="copyright">
+        <div class="container text-center">
+            <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+        </div>
+        <a id="back-to-top" class="btn-primary">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+    </section>
+    <!-- Copyright Section End -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+    function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const toggleIcon = document.querySelector(".toggle-password");
+
+        if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.textContent = "🙈";
+        } else {
+        passwordInput.type = "password";
+        toggleIcon.textContent = "👁️";
+        }
+    }
+    </script>
+
+</body>
+</html>
