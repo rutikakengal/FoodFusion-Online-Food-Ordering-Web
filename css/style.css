@@ -332,6 +332,8 @@ fieldset legend {
 /* Navigation Section Style End */
 
 /* Food Search Section Style Start */
+
+
 .food-search {
   background-image: url(../img/search-bg.jpg);
   background-size: cover;
@@ -354,6 +356,74 @@ fieldset legend {
   border-radius: 0px 15px 15px 0px;
   position: absolute;
 }
+
+.food-menu-box {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.food-menu-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.food-menu-img img {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.food-menu-desc {
+    padding: 20px;
+    text-align: center;
+}
+
+.food-menu-desc h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #2f3640;
+}
+
+.food-price {
+    font-size: 18px;
+    color: #e84118;
+    font-weight: bold;
+}
+
+.food-details {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.food-menu-desc input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.btn-primary {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #44bd32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #4cd137;
+}
+
 
 /* Food Search Section Style End */
 
