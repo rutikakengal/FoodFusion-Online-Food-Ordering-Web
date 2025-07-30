@@ -222,9 +222,9 @@ fieldset legend {
 }
 .grid-3 {
     display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px 30px;
-  justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px 30px;
+    justify-items: center;
 }
 /* CSS Style For All End */
 
@@ -331,6 +331,27 @@ fieldset legend {
 }
 /* Navigation Section Style End */
 
+/* Home Page central box */
+.hero-overlay {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  height:60px;
+  width:500px;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow:2px 2px 10px rgba(226,74,74);
+  padding: 30px 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.hero-overlay h1{
+  color: rgb(112, 22, 22)
+}
+
+/* Home Page central box */
+
 /* Food Search Section Style Start */
 .food-search {
   background-image: url(../img/search-bg.jpg);
@@ -365,7 +386,7 @@ fieldset legend {
   padding: 55px 0;
 }
 .grid-3 .float-container h3 {
-  background: #2f3542;
+  background:  #a93b3b;
   color: white;
   text-align: center;
   padding: 10px;
@@ -379,8 +400,8 @@ fieldset legend {
   box-sizing: border-box;
 }
 .float-container {
-  height: 350px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -396,7 +417,7 @@ fieldset legend {
   /* height: 100%;
   width: 100%; */
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
 }
 .categories .float-container  img{
   flex: 1;
@@ -406,7 +427,9 @@ fieldset legend {
   transition: transform 0.5s ease;
 }
 .categories .float-container:hover  {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+  box-shadow:4px 2px 10px rgba(0, 0, 0, 0.5);
 }
 /* Categories Section Style End */
 
@@ -423,8 +446,17 @@ fieldset legend {
   padding: 23px;
   background: #fff;
   border-radius: 10px;
+  border: 1px solid #e4d5d5;
+  transition: transform 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
 }
 
+.food-menu-box:hover {
+  transform: scale(1.03);
+  transition : 0.5s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  background: #f5f3f3
+}
 .food-menu-box form{
   display: flex;
   flex-wrap: wrap;
