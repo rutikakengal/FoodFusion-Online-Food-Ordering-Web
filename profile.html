@@ -215,11 +215,30 @@
                     </div>
                     <form id="edit-profile-form" style="display:none;">
                         <h3>Edit Profile</h3>
-                        <input type="text" id="edit-name" placeholder="Full Name" required />
+                         <input type="text" id="edit-name" placeholder="Full Name" required />
                         <input type="email" id="edit-email" placeholder="Email" required />
                         <input type="text" id="edit-address" placeholder="Address (optional)" />
-                        <button type="submit" class="profile-btn"><i class="fa fa-save"></i> Save</button>
-                        <button type="button" class="profile-btn" id="cancel-edit-btn" style="background:#888;"><i class="fa fa-times"></i> Cancel</button>
+                    <style>
+                      #edit-profile-form input[type="text"],
+                      #edit-profile-form input[type="email"] {
+                        display: block;
+                        width: 100%;
+                        max-width: 100%;
+                        padding: 12px 16px;
+                        border: 1.5px solid #ddd;
+                        border-radius: 6px;
+                        font-size: 1em;
+                        margin-bottom: 10px;
+                        box-sizing: border-box;
+                        background: #fafbfc;
+                        transition: border 0.2s;
+                        margin-left: 0;
+                        margin-right: 0;
+                      }
+                    </style>
+                    <div class="profile-edit-btn-row">
+                    <button type="submit" class="profile-btn"><i class="fa fa-save"></i> Save</button>
+                    <button type="button" class="profile-btn" id="cancel-edit-btn" style="background:#888;"><i class="fa fa-times"></i> Cancel</button>
                     </form>
                 </div>
             </div>
