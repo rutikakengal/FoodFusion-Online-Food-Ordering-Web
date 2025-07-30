@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Based Food Suggestions</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 32px; }
+    h2 { color: #333; margin-bottom: 10px; }
+    #weather-info { margin: 20px 0; font-size: 18px; }
+    #food-suggestions { margin: 20px 0; font-size: 18px; }
+    button { background: #ff4757; color: #fff; border: none; border-radius: 5px; padding: 12px 25px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #e84118; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 8px 0; }
+    .error { color: red; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Weather Based Food Suggestions</h2>
+    <p>Click the button to get food suggestions based on your current weather!</p>
+    <button id="get-weather-btn">Get My Suggestions</button>
+    <div id="weather-info"></div>
+    <div id="food-suggestions"></div>
+  </div>
+  <script>
+    const weatherFoodMap = {
+      Rain: ['Samosa', 'Tea', 'Pakora'],
+      Clear: ['Juice', 'Ice Cream', 'Cold Coffee'],
+      Snow: ['Soup', 'Hot Chocolate', 'Stew'],
+      Clouds: ['Sandwich', 'Coffee', 'Pastry'],
+      Drizzle: ['Cutlet', 'Hot Soup'],
+      Thunderstorm: ['Momos', 'Fried Rice'],
+      Mist: ['Maggi', 'Boiled Eggs'],
+      Haze: ['Masala Chai', 'Spring Rolls'],
+      Hot: ['Lassi', 'Fruit Salad', 'Buttermilk']
+    };
+    document.getElementById('get-weather-btn').addEventListener('click', function() {
+      const weatherInfo = document.getElementById('weather-info');
+      const foodSuggestions = document.getElementById('food-suggestions');
+      weatherInfo.textContent = 'Fetching your location...';
+      foodSuggestions.textContent = '';
+      if (!navigator.geolocation) {
+        weatherInfo.innerHTML = '<span class="error">Geolocation is not supported by your browser.</span>';
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(success, error);
+      function success(position) {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        weatherInfo.textContent = 'Fetching weather for your location...';
+        // Use OpenWeatherMap API (replace with your API key if needed)
+        const apiKey = 'a3decbde9b0cefe12820659bd76861d3';
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+        fetch(url)
+          .then(res => res.json())
+          .then(data => {
+            if (!data.weather || !data.weather[0]) {
+              weatherInfo.innerHTML = '<span class="error">Could not fetch weather data.</span>';
+              return;
+            }
+            const weatherType = data.weather[0].main;
+            const tempC = (data.main.temp - 273.15).toFixed(1);
+            weatherInfo.innerHTML = `<b>Current Weather:</b> ${weatherType}, <b>Temperature:</b> ${tempC}&deg;C`;
+            const foods = weatherFoodMap[weatherType] || ['Biryani', 'Pizza', 'Burger'];
+            foodSuggestions.innerHTML = `<b>Suggested Foods:</b><ul>${foods.map(f => `<li>${f}</li>`).join('')}</ul>`;
+          })
+          .catch(() => {
+            weatherInfo.innerHTML = '<span class="error">Could not fetch weather data.</span>';
+          });
+      }
+      function error(err) {
+        let msg = 'Unable to retrieve your location.';
+        if (err && err.code === 1) {
+          msg = 'Location access denied. Please allow location access in your browser settings and try again.';
+        } else if (err && err.code === 2) {
+          msg = 'Location unavailable. Please check your device settings.';
+        } else if (err && err.code === 3) {
+          msg = 'Location request timed out. Please try again.';
+        }
+        weatherInfo.innerHTML = `<span class='error'>${msg}</span><br><span style='font-size:13px;color:#555;'>Tip: Make sure you allow location access when prompted by your browser.</span>`;
+      }
+    });
+  </script>
+</body>
+</html>
