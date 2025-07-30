@@ -334,7 +334,7 @@ fieldset legend {
 /* Home Page central box */
 .hero-overlay {
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 50%;
   height:60px;
   width:500px;
