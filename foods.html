@@ -13,10 +13,6 @@
     <link rel="stylesheet" href="css/hover-min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 </head>
 <body>
     <!-- Navigation Section Start -->
@@ -41,7 +37,7 @@
                         <li>
                             <a id="shopping-cart" class="shopping-cart">
                                 <i class="fa fa-cart-arrow-down"></i>
-                                <span class="badge">0</span>
+                                <span class="badge">4</span>
                             </a>
                             <div id="cart-content" class="cart-content">
                                 <h3 class="text-center">Shopping Cart</h3>
@@ -55,8 +51,32 @@
                                         <th>Action</th>
                                     </tr>
                                     <tr>
+                                        <td><img src="img/food/p1.jpg" alt="Food"></td>
+                                        <td>Pizza</td>
+                                        <td>&#8377; 8.00</td>
+                                        <td>1</td>
+                                        <td>&#8377; 8.00</td>
+                                        <td><a href="#" class="btn-delete">&times;</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/food/s1.jpg" alt="Food"></td>
+                                        <td>Sandwich</td>
+                                        <td>&#8377; 8.00</td>
+                                        <td>1</td>
+                                        <td>&#8377; 8.00</td>
+                                        <td><a href="#" class="btn-delete">&times;</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/food/b1.jpg" alt="Food"></td>
+                                        <td>Burger</td>
+                                        <td>&#8377; 8.00</td>
+                                        <td>1</td>
+                                        <td>&#8377; 8.00</td>
+                                        <td><a href="#" class="btn-delete">&times;</a></td>
+                                    </tr>
+                                    <tr>
                                         <th colspan="4">Total</th>
-                                        <th>$0.00</th>
+                                        <th>&#8377; 24.00</th>
                                         <th></th>
                                     </tr>
                                 </table>
@@ -90,91 +110,312 @@
             <h2 class="text-center">Food Menu</h2>
             <div class="heading-border"></div>
             <div class="grid-2">
-                <div class="food-menu-box">
-                    <form>
+                <div class="food-menu-box" >
+                    <form action="">
                         <div class="food-menu-img">
-                            <img src="img/food/p1.jpg" alt="" class="img-responsive img-curve">
+                            <img src="img/food/barbecue-chicken-pizza-0917.jpg" alt="" class="img-responsive img-curve">
                         </div>
                         <div class="food-menu-desc">
-                            <h4>Pizza</h4>
+                            <h4> Chicken Pizza</h4>
                             <p class="food-price">$8.00</p>
-                            <p class="food-details"><b> Fresh, Cheesy, Irresistible </b> &#127829; 
+                            <p class="food-details"> <b> Cheesy, crispy, and loaded with juicy chicken! </b> &#127829; 
                                 <br>
-                                Enjoy our handcrafted pizzas topped with the finest ingredients and baked to perfection. One slice is never enough.</p>
+                                Topped with grilled chicken, melted cheese, and flavorful sauce, this chicken pizza is a tasty treat for every pizza lover.</p>
                              </p>
+                            <br>
+                            <p><b>Ingredients</b><br>1)Chicken (grilled or shredded)
+                                <br>2)Mozzarella cheese<br>
+                                3)Onion<br>
+                                4)Pizza sauce (tomato-based)<br>
+                                5)Capsicum<br>
+                                6)Oregano<br>
+                                7)Chili flakes<br>
+                                </p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
-                    <form>
+                 <div class="food-menu-box">
+                    <form action="">
                         <div class="food-menu-img">
-                            <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
+                            <img src="img/food/veg_pizza.jpg" alt="" class="img-responsive img-curve">
                         </div>
                         <div class="food-menu-desc">
-                            <h4>Sandwich</h4>
+                            <h4> veg Pizza</h4>
                             <p class="food-price">$8.00</p>
-                            <p class="food-details"> <b> Stacked with Flavor</b>
+                            <p class="food-details"> <b> Colorful, cheesy, and packed with veggie goodness </b> &#127829; 
                                 <br>
-                                Freshly made sandwiches loaded with crisp veggies, juicy fillings, and creamy spreads -- the perfect bite for any time of day! </p>
-                           
+                               A delicious mix of fresh vegetables, rich tomato sauce, and melty cheese on a crispy base — this veg pizza is a perfect bite of flavor and crunch!.</p>
+                             </p>
+                            <br>
+                            <p><b>Ingredients</b><br>1)Pizza base (wheat or refined flour)
+                                <br>2)Mozzarella cheese<br>
+                                3)Onion<br>
+                                4)Pizza sauce (tomato-based)<br>
+                                5)Capsicum<br>
+                                6)Oregano<br>
+                                7)Chili flakes<br>
+                                8)Tomato<br>
+                                9)Sweet corn<br>
+                                </p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
-                    <form>
+               <div class="food-menu-box">
+                    <form action="">
                         <div class="food-menu-img">
-                            <img src="img/food/b1.jpg" alt="" class="img-responsive img-curve">
+                            <img src="img/food/veg_sandwich.JPG" alt="" class="img-responsive img-curve">
                         </div>
                         <div class="food-menu-desc">
-                            <h4>Burger</h4>
+                            <h4> Veg Sandwich</h4>
                             <p class="food-price">$8.00</p>
-                            <p class="food-details"><b>Big on Taste, Bold in Flavor</b>
-                                <br>
-                                Juicy patties, fresh veggies, and melty cheese stacked in a soft bun --our burgers are a bite of pure satisfaction! </p>
+                            <p class="food-details"><b> Fresh, crispy, and filled with veggie delight!</b>
+                                <br>Loaded with crunchy vegetables, creamy spreads, and toasted to golden perfection — this veg sandwich is a simple yet satisfying bite for anytime hunger!
+                                 </p><br>
+                                  <p><b>Ingredients</b><br>1)Bread slices
+                                <br>2)Cucumber<br>
+                                3)Onion<br>
+                                4)Tomato<br>
+                                5)Capsicum<br>
+                                6)Lettuce or cabbage<br>
+                                7)Cheese slices or grated cheese<br>
+                                8)Butter or mayonnaise<br>
+                                9)Salt & pepper<br>
+                                </p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                         </div>
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form>
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/grilled-chicken-sandwich-11.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4> chicken Sandwich</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details"><b> Juicy chicken, crispy bread – a sandwich that hits the spot!</b>
+                                <br>Tender chicken mixed with creamy mayo and fresh veggies, tucked between golden-toasted bread slices — a perfect blend of flavor and crunch in every bite!
+                                 </p><br>
+                                  <p><b>Ingredients</b><br>1)Bread slices
+                                <br>2)Cucumber<br>
+                                3)Onion<br>
+                                4)Tomato<br>
+                                5)Cooked or shredded chicken<br>
+                                6)Lettuce or cabbage<br>
+                                7)Cheese slices or grated cheese<br>
+                                8)Butter or mayonnaise<br>
+                                9)Salt & pepper<br>
+                    
+                                </p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/veg_burger.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4> veg Burger</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details"><b>Crispy, cheesy, and bursting with veggie goodness!</b>
+                                <br>
+                                A crunchy veggie patty layered with fresh lettuce, tomato, and creamy sauces — all packed inside a soft burger bun for the ultimate veg treat! </p>
+                                <br><p><b>Ingredients</b><br>1)Burger bun
+                                <br>2)Veg patty (made from potato, peas, carrot, and spices)<br>
+                                3)Onion<br>
+                                4)Tomato<br>
+                                5)Cheese slice <br>
+                                6)Lettuce or cabbage<br>
+                                7)Cheese slices or grated cheese<br>
+                                8)Mayonnaise or burger sauce<br>
+                                9)Salt & pepper<br>
+                    
+                                </p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                 <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/chicken_burger.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4> chicken Burger</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details"><b>Big on flavor, loaded with juicy chicken!</b>
+                                <br>
+                                A tender, crispy chicken patty stacked with fresh veggies, cheese, and creamy sauce — all inside a soft bun for a deliciously satisfying bite! </p>
+                                <br><p><b>Ingredients</b><br>1)Burger bun
+                                <br>2)Chicken patty (grilled or crispy)<br>
+                                3)Onion<br>
+                                4)Tomato<br>
+                                5)Cheese slice <br>
+                                6)Lettuce or cabbage<br>
+                                7)Cheese slices or grated cheese<br>
+                                8)Mayonnaise or burger sauce<br>
+                                9)Salt & pepper<br>
+                                </p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/changes1.jpg" alt="" class="img-responsive img-curve">
                         </div>
-                        <div class="food-menu-desc">
+                 <div class="food-menu-desc">
                             <h4>Momos</h4>
                             <p class="food-price">$8.00</p>
-                            <p class="food-details"><b> Hot,Fresh and Flavor-Packed! </b>
+                            <p class="food-details">
+                                <b>Hot,Fresh and Flavor-Packed! </b>
                                 <br>
-                                Soft, steamed momos filled with juicy chicken, spiced veggies, or paneer -served with fiery chutney for the ultimate street food experience. </p>
+                                Steamed to perfection, these veg momos are filled with a savory mix of fresh vegetables and spices, wrapped in a soft dumpling shell.</p>
+                            </p>
+                            <br>
+                            <p><b>Ingredients</b><br>1)Cabbage
+                                <br>2)Carrot<br>
+                                3)Onion<br>
+                                4)Garlic<br>
+                                5)Ginger<br>
+                                6)Green chilli<br>
+                                7)Soy sauce<br>
+                                8)Wheat flour (for dough)<br>
+                                9)Salt & pepper</p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                         </div>
                     </form>
                 </div>
-                <div class="food-menu-box">
-                    <form>
+                 <div class="food-menu-box" >
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/chicken-momos-recipe-1.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4> Chicken Momos</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details">
+                                <b> Bite into bliss with every juicy chicken momo! </b>
+                                <br>
+                                Tender minced chicken mixed with aromatic spices, wrapped in a delicate dough and steamed to juicy perfection — a street food favorite that hits the spot!</p>          
+                            </p>
+                             <br>
+                            <p><b>Ingredients</b><br>1)Minced chicken
+                                <br>
+                                2)Onion<br>
+                                3)Garlic<br>
+                                4)Ginger<br>
+                                5)Green chilli<br>
+                                6)Soy sauce<br>
+                                7)Wheat flour (for dough)<br>
+                                8)Salt & pepper</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+               <div class="food-menu-box" >
+                    <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/changes2.jpg" alt="" class="img-responsive img-curve">
                         </div>
                         <div class="food-menu-desc">
-                            <h4>Noodles</h4>
+                            <h4> veg Noodles</h4>
                             <p class="food-price">$8.00</p>
-                            <p class="food-details"> <b> Slurp-Worthy, Spicy & Satisfying! </b>
+                            <p class="food-details"><b> Slurp-Worthy, Spicy & Satisfying! </b>
                                 <br>
-                                Wok-tossed noodles loaded with veggies, sauces, and bold flavors - the perfect blend of taste and texture in every bite! 
-                            </p>
+                            Wok-tossed noodles loaded with veggies, sauces, and bold flavors - the perfect blend of taste and texture in every bite!</p>
+                           </p>
+                            <br>
+                            <p><b>Ingredients</b><br>1)Noodles (wheat or hakka)
+                                <br>
+                                2)Onion<br>
+                                3)Garlic<br>
+                                4)Ginger<br>
+                                5)Green chilli<br>
+                                6)Soy sauce<br>
+                                7)Cabbage<br>
+                                8)Salt & pepper<br>
+                                9)Carrot</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+
+                 <div class="food-menu-box" >
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/egg_noodles.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4> egg Noodles</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details"><b> Egg-citing flavors in every forkful! </b>
+                                <br>
+                           Wholesome noodles tossed with fluffy scrambled eggs, crisp veggies, and a blend of sauces — a deliciously satisfying dish that’s quick, tasty, and packed with flavor!</p>
+                           </p>
+                            <br>
+                            <p><b>Ingredients</b><br>1)Noodles (wheat or hakka)
+                                <br>
+                                2)Onion<br>
+                                3)Garlic<br>
+                                4)Ginger<br>
+                                5)Green chilli<br>
+                                6)Soy sauce<br>
+                                7)Cabbage<br>
+                                8)Salt & pepper<br>
+                                9)Carrot<br>
+                                10)Eggs (scrambled or stirred in)</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                  
+                <div class="food-menu-box" >
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/chicken_noodles.jpg" alt="" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4> Chicken Noodles</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details"><b> Savor the spice, enjoy the bite — chicken noodles done right!</b>
+                                <br>
+                           Juicy chicken pieces stir-fried with noodles, crisp veggies, and bold sauces — this classic favorite is a flavorful, filling treat in every bite!</p>
+                           </p>
+                            <br>
+                            <p><b>Ingredients</b><br>1)Noodles (wheat or hakka)
+                                <br>
+                                2)Onion<br>
+                                3)Garlic<br>
+                                4)Ginger<br>
+                                5)Green chilli<br>
+                                6)Soy sauce<br>
+                                7)Cabbage<br>
+                                8)Salt & pepper<br>
+                                9)Carrot<br>
+                                10) shredded Chicken</p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                         </div>
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form>
+                    <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/chnages3.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                             
@@ -185,7 +426,13 @@
                             <p class="food-details"><b>Brewed to Perfection!</b>
                                 <br>
                                 Rich, aromatic coffee that energizes your day - smooth, bold, and crafted for true coffee lovers!</p>
-                             </p>
+                             </p><br>
+                                 <p><b>Ingredients</b><br>
+                                1) Coffee powder<br>
+                                2) Water<br>
+                                3) Milk<br>
+                                4) Sugar
+                                </p>        
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                         </div>
@@ -193,7 +440,7 @@
                 </div>
 
                 <div class="food-menu-box">
-                    <form>
+                    <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/samosa.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -204,14 +451,24 @@
                             <p class="food-details"><b>Crispy, Spicy, Addictive!</b>
                                 <br>
                                 Our golden-fried samosas are packed with zesty potato filling and bold Indian spices. The ultimate tea-time classic!</p>
-                            <input type="number" value="1" min="1">
+                             <p><br><b>Ingredients</b><br>1)All-purpose flour 
+                                <br>
+                                2)Onion<br>
+                                3)Green peas<br>
+                                4)Ginger<br>
+                                5)Green chilli<br>
+                                6)Potato (boiled and mashed)<br>
+                                7)Cumin seeds<br>
+                                8)Garam masala<br>
+                                9)Turmeric<br></p>
+                                <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                          </div>
                  </form>
                 </div>
 
                 <div class="food-menu-box">
-                    <form>
+                    <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/Pasta.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -222,6 +479,18 @@
                             <p class="food-details"><b>Creamy, Comforting, Crave-Worthy!</b>
                                 <br>
                             Our pasta is tossed in rich, velvety sauces with fresh veggies and cheese - a spoonful of comfort in every bite!</p>
+                            <br><b>Ingredients</b><br>
+                                1) Pasta <br>
+                                2) Onion<br>
+                                3) Garlic<br>
+                                4) Tomato puree or chopped tomatoes<br>
+                                5) Capsicum<br>
+                                6) Cheese<br>
+                                7) Chili flakes<br>
+                                8) Oregano<br>
+                                9) Salt<br>
+                                10) Oil
+                                </p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                          </div>
@@ -231,7 +500,7 @@
           
                 
                 <div class="food-menu-box">
-                    <form>
+                    <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/manchurian.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -242,6 +511,18 @@
                             <p class="food-details"><b>Bold, Saucy, Street-Style!</b>
                                 <br>
                             Crispy veggie balls tossed in a spicy Indo-Chineese gravy - our Manchurian is all about that fiery flavor punch!</p>
+                            <p><br><b>Ingredients</b><br>
+                                    1) Cabbage (grated)<br>
+                                    2) Carrot (grated)<br>
+                                    3) Maida (all-purpose flour)<br>
+                                    4) Corn flour<br>
+                                    5) Garlic<br>
+                                    6) Soy sauce<br>
+                                    7) Chili sauce<br>
+                                    8) Spring onion<br>
+                                    9) Salt<br>
+                                    10) Oil
+                                    </p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                          </div>
@@ -249,7 +530,7 @@
                 </div>
 
                 <div class="food-menu-box">
-                    <form>
+                    <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/fries.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -260,6 +541,11 @@
                             <p class="food-details"><b>Crispy, Salty, Snack-Perfect!</b>
                                 <br>
                             Golden-fried potato sticks sprinkled with classic seasoning - your all time favourite munches done right!</p>
+                            <br><b>Ingredients</b><br>
+                                1) Potatoes<br>
+                                2) Salt<br>
+                                3) Oil (for frying)
+                                </p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                          </div>
@@ -267,7 +553,7 @@
                 </div>
 
                 <div class="food-menu-box">
-                    <form>
+                    <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/Pav-BHaji.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -278,6 +564,18 @@
                             <p class="food-details"><b>Bold, Buttery, Bhaji Bliss!</b>
                                 <br>
                             Mumbai,s iconic street food - spicy mashed veggies served with golden-toasted pav.Pure comfort on a plate!</p>
+                            <p><br><b>Ingredients</b><br>
+                                        1) Potato (boiled and mashed)<br>
+                                        2) Tomato<br>
+                                        3) Onion<br>
+                                        4) Capsicum<br>
+                                        5) Green peas<br>
+                                        6) Ginger-garlic paste<br>
+                                        7) Pav bhaji masala<br>
+                                        8) Butter<br>
+                                        9) Salt<br>
+                                        10) Pav 
+                                        </p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                          </div>
@@ -285,7 +583,7 @@
                 </div>
 
                 <div class="food-menu-box">
-                    <form>
+                    <form action="">
                         <div class="food-menu-img">
                             <img src="img/food/dosa.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -296,11 +594,76 @@
                             <p class="food-details"><b>Crispy, Savory, South-Style!</b>
                                 <br>
                             A golden, paper-thin crepe made from fermented batter, served hot with chutney and sambar - light,crispy and soul-satisfying!</p>
+                            <br><b>Ingredients</b><br>
+                                1) Rice<br>
+                                2) Urad dal (black gram)<br>
+                                3) oil<br>
+                                4) Water<br>
+                                5) Salt
+                                </p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                         </div>
+</form>
+</div>
+                         <div class="food-menu-box">
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/panipuri.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
+                        </div>
+                        <div class="food-menu-desc">
+
+                            <h4>panipuri</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details"><b>One bite, a burst of tangy magic!</b>
+                                <br>
+                            Crispy puris filled with spicy, tangy water, mashed potatoes, and chutneys — pani puri is the ultimate street-style explosion of flavors in every mouthful!</p>
+                            <p><br><b>Ingredients</b><br>
+                                    1) Semolina or wheat flour puris<br>
+                                    2) Boiled potatoes (mashed)<br>
+                                    3) Boiled chickpeas or black chana<br>
+                                    4) Tamarind chutney<br>
+                                    5) Spicy mint-coriander water<br>
+                                    6) Black salt<br>
+                                    7) Chaat masala<br>
+                                    8) Green chili<br>
+                                    9) Fresh coriander<br>
+                                    10) Salt
+                                </p>
                             <input type="number" value="1" min="1">
                             <input type="submit" class="btn-primary" value="Add To Cart">
                          </div>
                  </form>
                 </div>
+                <div class="food-menu-box" >
+                    <form action="">
+                        <div class="food-menu-img">
+                            <img src="img/food/vada_pav.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
+                        </div>
+                        <div class="food-menu-desc">
+
+                            <h4>vada pav</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details"><b>Mumbai’s favorite bite in a bun!</b>
+                                <br>
+                            A spicy potato fritter tucked inside a soft pav bun, layered with chutneys and fried chilies — vada pav is the perfect blend of crunch, spice, and street-food charm!</p>
+                            <p><br><b>Ingredients</b><br>
+                                    1) Pav (bun)<br>
+                                    2) Boiled potatoes (mashed)<br>
+                                    3) Ginger-garlic paste<br>
+                                    4) Green chili<br>
+                                    5) Mustard seeds<br>
+                                    6) Curry leaves<br>
+                                    7) Turmeric<br>
+                                    8) Besan (gram flour)<br>
+                                    9) Salt<br>
+                                    10) Oil
+                                    </p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                         </div>
+                         </form>
+                         </div>
 
             </div>
         </div>
@@ -378,8 +741,11 @@
     </section>
     <!-- Copyright Section End -->
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
-    <script src="js/cart-sound.js"></script>
     <script src="js/custom.js"></script>
 </body>
 </html>
