@@ -834,10 +834,9 @@ details p {
   border-radius: 16px;
   padding: 25px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI',  sans-serif;
   margin-top: 0px;
 }
-
 .order-summary-card h3 {
   font-size: 1.4rem;
   margin-bottom: 20px;
