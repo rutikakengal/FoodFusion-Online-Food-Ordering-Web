@@ -94,6 +94,7 @@
                     <span class="toggle-password" onclick="togglePassword()">👁️</span>
                 </div>
                 <button type="submit" class="btn-login"><i class="fa fa-sign-in"></i> Login</button>
+                <a href="admin-login.html" class="btn-admin-login"><i class="fa fa-user-shield"></i> Admin Login</a>
             </form>
             <div class="login-links">
                 <p>Don't have an account? <a href="profile.html">Sign Up</a></p>
@@ -213,7 +214,7 @@
             });
 
             // Ripple effect on button click
-            $('.btn-login').on('click', function(e) {
+            $('.btn-login, .btn-admin-login').on('click', function(e) {
                 const btn = $(this);
                 const x = e.pageX - btn.offset().left;
                 const y = e.pageY - btn.offset().top;
