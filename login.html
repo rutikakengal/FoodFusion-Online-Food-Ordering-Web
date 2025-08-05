@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Food Delivery Website</title>
+    <title>Login - Food Fusion</title>
+    
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
     <!-- Fontawesome CSS -->
@@ -13,6 +14,15 @@
     <link rel="stylesheet" href="css/hover-min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- login css  -->
+     <link rel="stylesheet" href="css/login.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+    
 </head>
 <body>
     <!-- Navigation Section Start -->
@@ -34,6 +44,7 @@
                         <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
                         <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
                         <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li><a class="hvr-underline-from-center" href="profile.html" title="Sign-in"><i class="fa fa-user"></i> Signup</a></li>
                         <li>
                             <a id="shopping-cart" class="shopping-cart">
                                 <i class="fa fa-cart-arrow-down"></i>
@@ -68,27 +79,27 @@
 
     <!-- Login Section Start -->
     <section class="login">
-        <div class="container">
-            <h2 class="text-center">Login</h2>
-            <div class="heading-border"></div>
-
-            <form action="" class="form">
-            <fieldset>
-                <legend>Login</legend>
-                <p class="label">Email</p>
-                <input type="email" placeholder="Enter your email..." required>
-
-               <p class="label">Password</p>
-                <div class="password-container">
-                <input type="password" id="password" placeholder="Enter your password..." required>
-                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        <div class="login-container">
+            <div class="login-image">
+                <img src="img/food/p1.jpg" alt="Pizza" class="img-responsive">
             </div>
-
-
-                <input type="submit" value="Login" class="btn-primary">
-            </fieldset>
-        </form>
-
+            <h2>Login to Food Fusion</h2>
+            <p>Sign in to explore delicious meals and place your orders!</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="email" id="email-input" placeholder="Enter your email..." required>
+                </div>
+                <div class="password-container">
+                    <input type="password" id="password-input" placeholder="Enter your password..." required>
+                    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                </div>
+                <button type="submit" class="btn-login"><i class="fa fa-sign-in"></i> Login</button>
+            </form>
+            <div class="login-links">
+                <p>Don't have an account? <a href="profile.html">Sign Up</a></p>
+                <p><a href="#">Forgot Password?</a></p>
+            </div>
+            <div id="login-message"></div>
         </div>
     </section>
     <!-- Login Section End -->
@@ -97,13 +108,12 @@
     <section class="footer">
         <div class="container">
             <div class="grid-3">
-
-                <!--About Us-->
+                <!-- About Us -->
                 <div class="aboutus-flex">
                     <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
                     <div class="about-content">
                         <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
-                        <p>Our shared passion for food and community drives us to bring qualiy meals directly to you doorstep.</p>
+                        <p>Our shared passion for food and community drives us to bring quality meals directly to your doorstep.</p>
                     </div>
                 </div>
                 <div class="FoodFusion">
@@ -113,17 +123,17 @@
                         <a href="Blog.html">Blog</a>
                         <a href="WorkWithus.html">Work With Us</a>
                         <a href="contact.html">Contact Us</a>
-                        <a href="ReportFraud.html">Report Fraud</a>
+                        <a href="report-fraud.html">Report Fraud</a>
                     </div>
                 </div>
                 <!-- Learn More Links -->
                 <div>
                     <h3>Learn More</h3>
-                    <div class="learnmore" >
+                    <div class="learnmore">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Security</a>
                         <a href="#">Terms of Service</a>
-                        <a href="#">Lodge Complaint</a>
+                        <a href="/lodge-complaint.html">Lodge Complaint</a>
                         <a href="#">Testimonials</a>
                     </div>
                 </div>
@@ -132,19 +142,18 @@
                     <h3>Social Links</h3>
                     <div class="social">
                         <ul>
-                             <li><a href="https://www.facebook.com/">
-                                <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
+                            <li><a href="https://www.facebook.com/">
+                                <img src="/img/footer-icons/facebook.svg" alt="Facebook icon" width="24" height="24">
                                 Facebook
-                                </a></li>
+                            </a></li>
                             <li><a href="https://www.instagram.com/">
-                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
-                               Instagram
-                                </a>
-                            </li>
+                                <img src="/img/footer-icons/instagram.svg" alt="Instagram icon" width="24" height="24">
+                                Instagram
+                            </a></li>
                             <li><a href="https://x.com/">
-                                <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
+                                <img src="/img/footer-icons/x-twitter.svg" alt="Twitter icon" width="24" height="24">
                                 Twitter
-                                </a></li>
+                            </a></li>
                         </ul>
                     </div>
                 </div>
@@ -153,7 +162,7 @@
     </section>
     <!-- Footer Section End -->
 
-    <!-- Copyright Section start -->
+    <!-- Copyright Section Start -->
     <section class="copyright">
         <div class="container text-center">
             <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
@@ -164,30 +173,78 @@
     </section>
     <!-- Copyright Section End -->
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <!-- Login JavaScript -->
     <script>
-    function togglePassword() {
-        const passwordInput = document.getElementById("password");
-        const toggleIcon = document.querySelector(".toggle-password");
+        $(document).ready(function() {
+            $('#login-form').on('submit', function(e) {
+                e.preventDefault();
 
-        if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleIcon.textContent = "🙈";
-        } else {
-        passwordInput.type = "password";
-        toggleIcon.textContent = "👁️";
+                const emailInput = $('#email-input');
+                const passwordInput = $('#password-input');
+                const message = $('#login-message');
+
+                const email = emailInput.val().trim();
+                const password = passwordInput.val().trim();
+
+                if (email && password) {
+                    // Simulate login (replace with actual backend logic)
+                    emailInput.val('');
+                    passwordInput.val('');
+
+                    message.text('Login successful! Redirecting...').css({
+                        'color': '#2ecc71',
+                        'background': 'rgba(46, 204, 113, 0.1)'
+                    }).show();
+                    setTimeout(function() {
+                        message.fadeOut(500);
+                        // Simulate redirect (e.g., window.location.href = 'index.html')
+                    }, 2000);
+                } else {
+                    message.text('Please fill out all fields.').css({
+                        'color': '#e74c3c',
+                        'background': 'rgba(231, 76, 60, 0.1)'
+                    }).show();
+                    $('.form-group, .password-container').addClass('shake');
+                    setTimeout(function() {
+                        $('.form-group, .password-container').removeClass('shake');
+                        message.fadeOut(500);
+                    }, 2000);
+                }
+            });
+
+            // Ripple effect on button click
+            $('.btn-login').on('click', function(e) {
+                const btn = $(this);
+                const x = e.pageX - btn.offset().left;
+                const y = e.pageY - btn.offset().top;
+
+                const ripple = $('<span class="ripple"></span>');
+                ripple.css({
+                    left: x,
+                    top: y
+                });
+                btn.append(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('password-input');
+            const toggleIcon = document.querySelector('.toggle-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = '👁️';
+            }
         }
-    }
     </script>
-
-    <!-- Cart Sound JS -->
-    <script src="js/cart-sound.js"></script>
     <!-- Custom JS -->
+    <script src="js/cart-sound.js"></script>
     <script src="js/custom.js"></script>
 </body>
 </html>

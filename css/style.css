@@ -200,9 +200,7 @@ h3 {
   height: 3px;
   width: 70px;
   background: rgb(226, 74, 74);
-  margin: auto;
-  margin-top: -10px;
-  margin-bottom: 15px;
+  margin: 15px auto;
 }
 fieldset {
   border: 1px solid #fff;
