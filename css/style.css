@@ -157,9 +157,10 @@ fieldset legend {
   right: 0;
   z-index: 1030;
   height: 65px;
-  background: rgba(255, 255, 255, 0.15); /* translucent white */
+  background: #fff; /* translucent white */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border-bottom: 4px solid rgb(226, 74, 74); 
 }
 .navbar-fixed-top .container {
   padding: 0 15px;
