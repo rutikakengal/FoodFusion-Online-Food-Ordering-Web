@@ -36,13 +36,7 @@
             object-fit: cover;
             border-radius: 4px;
         }
-        .image-preview {
-            max-width: 200px;
-            max-height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
+     
         @media (min-width: 768px) {
             .sidebar {
                 position: relative;
@@ -188,7 +182,6 @@
                         <div>
                             <label class="block text-gray-700">Image</label>
                             <input type="file" id="mealImage" accept="image/*" class="w-full p-2 border rounded-lg">
-                            <img id="imagePreview" class="image-preview hidden" alt="Image Preview">
                         </div>
                         <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition duration-300">Save</button>
                         <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition duration-300" onclick="closeModal()">Cancel</button>
@@ -253,15 +246,15 @@
                 document.getElementById("mealId").value = id;
                 if (id === 1) {
                     document.getElementById("mealName").value = "Margherita Pizza";
-                    document.getElementById("mealPrice").value = "12.99";
+                    document.getElementById("mealPrice").value = "1299";
                     document.getElementById("mealDescription").value = "Classic pizza with fresh mozzarella.";
-                    imagePreview.src = "https://via.placeholder.com/50";
+                    imagePreview.src = "img/category/pizza.jpg";
                     imagePreview.classList.remove("hidden");
                 } else if (id === 2) {
                     document.getElementById("mealName").value = "Chicken Burger";
-                    document.getElementById("mealPrice").value = "8.99";
+                    document.getElementById("mealPrice").value = "899";
                     document.getElementById("mealDescription").value = "Juicy chicken patty with veggies.";
-                    imagePreview.src = "https://via.placeholder.com/50";
+                    imagePreview.src = "img/category/burger.jpg";
                     imagePreview.classList.remove("hidden");
                 }
             } else {
