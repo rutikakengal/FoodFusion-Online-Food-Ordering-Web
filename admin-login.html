@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Food Fusion</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- login css  -->
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Section Start -->
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="index.html" title="Logo">
+                        <img src="img/logo.svg" alt="Logo" class="img-responsive">
+                    </a>
+                </div>
+                <!-- Main Menu -->
+                <div class="menu text-right">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
+                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li><a class="hvr-underline-from-center" href="profile.html" title="Sign-in"><i class="fa fa-user"></i> Signup</a></li>
+                        <li>
+                            <a id="shopping-cart" class="shopping-cart">
+                                <i class="fa fa-cart-arrow-down"></i>
+                                <span class="badge">0</span>
+                            </a>
+                            <div id="cart-content" class="cart-content">
+                                <h3 class="text-center">Shopping Cart</h3>
+                                <table class="cart-table" border="0">
+                                    <tr>
+                                        <th>Food</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Qty</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">Total</th>
+                                        <th>$0.00</th>
+                                        <th></th>
+                                    </tr>
+                                </table>
+                                <a href="order.html" class="btn-primary">Confirm Order</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navigation Section End -->
+
+    <!-- Login Section Start -->
+    <section class="login">
+        <div class="login-container">
+            <div class="login-image">
+                <img src="img/food/p1.jpg" alt="Pizza" class="img-responsive">
+            </div>
+            <h2>Admin Login to Food Fusion</h2>
+            <p>Access the admin panel to manage Food Fusion</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="email" id="email-input" placeholder="Enter your admin email..." required>
+                </div>
+                <div class="password-container">
+                    <input type="password" id="password-input" placeholder="Enter your admin password..." required>
+                    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                </div>
+                <button type="submit" class="btn-login"><i class="fa fa-sign-in"></i> Admin Login</button>
+            </form>
+            <div class="login-links">
+                <p>Back to <a href="login.html">User Login</a></p>
+                <p><a href="#">Forgot Password?</a></p>
+            </div>
+            <div id="login-message"></div>
+        </div>
+    </section>
+    <!-- Login Section End -->
+
+    <!-- Footer Section Start -->
+    <section class="footer">
+        <div class="container">
+            <div class="grid-3">
+                <!-- About Us -->
+                <div class="aboutus-flex">
+                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+                    <div class="about-content">
+                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
+                        <p>Our shared passion for food and community drives us to bring quality meals directly to your doorstep.</p>
+                    </div>
+                </div>
+                <div class="FoodFusion">
+                    <h3>Food Fusion</h3>
+                    <div class="foodfusion">
+                        <a href="WhoWeAre.html">Who We Are</a>
+                        <a href="Blog.html">Blog</a>
+                        <a href="WorkWithus.html">Work With Us</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="report-fraud.html">Report Fraud</a>
+                    </div>
+                </div>
+                <!-- Learn More Links -->
+                <div>
+                    <h3>Learn More</h3>
+                    <div class="learnmore">
+                        <a href="/privacy-policy.html">Privacy Policy</a>
+                        <a href="/sercurity.html">Security</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="/lodge-complaint.html">Lodge Complaint</a>
+                        <a href="#">Testimonials</a>
+                    </div>
+                </div>
+                <div class="FollowUs">
+                    <!-- Social Links -->
+                    <h3>Social Links</h3>
+                    <div class="social">
+                        <ul>
+                            <li><a href="https://www.facebook.com/">
+                                <img src="/img/footer-icons/facebook.svg" alt="Facebook icon" width="24" height="24">
+                                Facebook
+                            </a></li>
+                            <li><a href="https://www.instagram.com/">
+                                <img src="/img/footer-icons/instagram.svg" alt="Instagram icon" width="24" height="24">
+                                Instagram
+                            </a></li>
+                            <li><a href="https://x.com/">
+                                <img src="/img/footer-icons/x-twitter.svg" alt="Twitter icon" width="24" height="24">
+                                Twitter
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Copyright Section Start -->
+    <section class="copyright">
+        <div class="container text-center">
+            <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+        </div>
+        <a id="back-to-top" class="btn-primary">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+    </section>
+    <!-- Copyright Section End -->
+
+    <!-- Login JavaScript -->
+    <script>
+        $(document).ready(function() {
+            $('#login-form').on('submit', function(e) {
+                e.preventDefault();
+
+                const emailInput = $('#email-input');
+                const passwordInput = $('#password-input');
+                const message = $('#login-message');
+
+                const email = emailInput.val().trim();
+                const password = passwordInput.val().trim();
+                const dummyEmail = 'rutikakengal@foodfusion.com';
+                const dummyPassword = 'rutika123';
+
+                if (email && password) {
+                    if (email === dummyEmail && password === dummyPassword) {
+                        // Successful admin login with redirection
+                        emailInput.val('');
+                        passwordInput.val('');
+                        message.text('Admin login successful! Redirecting to admin panel...').css({
+                            'color': '#2ecc71',
+                            'background': 'rgba(46, 204, 113, 0.1)'
+                        }).show();
+                        setTimeout(function() {
+                            message.fadeOut(500);
+                            window.location.href = 'admin-index.html';
+                        }, 2000);
+                    } else {
+                        message.text('Invalid admin email or password.').css({
+                            'color': '#e74c3c',
+                            'background': 'rgba(231, 76, 60, 0.1)'
+                        }).show();
+                        $('.form-group, .password-container').addClass('shake');
+                        setTimeout(function() {
+                            $('.form-group, .password-container').removeClass('shake');
+                            message.fadeOut(500);
+                        }, 2000);
+                    }
+                } else {
+                    message.text('Please fill out all fields.').css({
+                        'color': '#e74c3c',
+                        'background': 'rgba(231, 76, 60, 0.1)'
+                    }).show();
+                    $('.form-group, .password-container').addClass('shake');
+                    setTimeout(function() {
+                        $('.form-group, .password-container').removeClass('shake');
+                        message.fadeOut(500);
+                    }, 2000);
+                }
+            });
+
+            // Ripple effect on button click
+            $('.btn-login').on('click', function(e) {
+                const btn = $(this);
+                const x = e.pageX - btn.offset().left;
+                const y = e.pageY - btn.offset().top;
+
+                const ripple = $('<span class="ripple"></span>');
+                ripple.css({
+                    left: x,
+                    top: y
+                });
+                btn.append(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('password-input');
+            const toggleIcon = document.querySelector('.toggle-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = '👁️';
+            }
+        }
+    </script>
+    <!-- Custom JS -->
+    <script src="js/cart-sound.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
