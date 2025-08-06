@@ -3,94 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <title>Security - Food Fusion</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header class="navbar">
-        <nav class="navbar-menu navbar-fixed-top">
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="img/logo.svg" alt="Logo" class="img-responsive">
-                    </a>
+
+<!-- Navigation Section Start -->
+<header class="navbar">
+    <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+        <div class="container">
+            <!-- logo -->
+            <div class="logo">
+                <a href="index.html" title="Logo">
+                    <img src="img/logo.svg" alt="Logo" class="img-responsive">
+                </a>
+            </div>
+            <!-- Main Menu -->
+            <div class="menu text-right">
+                <ul>
+                    <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                    <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
+                    <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
+                    <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+                    <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                    <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                    <li>
+                        <a id="shopping-cart" class="shopping-cart">
+                            <i class="fa fa-cart-arrow-down"></i>
+                            <span class="badge">4</span>
+                        </a>
+                        <div id="cart-content" class="cart-content">
+                            <h3 class="text-center">Shopping Cart</h3>
+                            <table class="cart-table" border="0">
+                                <tr>
+                                    <th>Food</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Qty</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/food/p1.jpg" alt="Food"></td>
+                                    <td>Pizza</td>
+                                    <td>&#8377; 8.00</td>
+                                    <td>1</td>
+                                    <td>&#8377; 8.00</td>
+                                    <td><a href="#" class="btn-delete">&times;</a></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/food/s1.jpg" alt="Food"></td>
+                                    <td>Sandwich</td>
+                                    <td>&#8377; 8.00</td>
+                                    <td>1</td>
+                                    <td>&#8377; 8.00</td>
+                                    <td><a href="#" class="btn-delete">&times;</a></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/food/b1.jpg" alt="Food"></td>
+                                    <td>Burger</td>
+                                    <td>&#8377; 8.00</td>
+                                    <td>1</td>
+                                    <td>&#8377; 8.00</td>
+                                    <td><a href="#" class="btn-delete">&times;</a></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="4">Total</th>
+                                    <th>&#8377;24.00</th>
+                                    <th></th>
+                                </tr>
+                            </table>
+                            <a href="order.html" class="btn-primary">Confirm Order</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Navigation Section End -->
+
+<!-- Security Content Section -->
+<section class="food-menu">
+    <div class="container text-center">
+        <h2>Website Security</h2>
+        <div class="heading-border"></div>
+
+        <div class="grid-3" style="margin-top: 40px; text-align: left;">
+            <div class="usp-card">
+                <h3>🔒 Data Encryption</h3>
+                <p>All transactions and user data are protected with SSL encryption to ensure confidentiality.</p>
+            </div>
+
+            <div class="usp-card">
+                <h3>🛡 Secure Payments</h3>
+                <p>We use trusted third-party gateways to handle all online transactions securely.</p>
+            </div>
+
+            <div class="usp-card">
+                <h3>👤 Account Protection</h3>
+                <p>We encourage strong passwords and never share your login credentials with anyone.</p>
+            </div>
+
+            <div class="usp-card">
+                <h3>🚨 Reporting Issues</h3>
+                <p>If you notice any suspicious activity, please report it to us through the <a href="ReportFraud.html">Report Fraud</a> page.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section (copied from index.html) -->
+<section class="footer">
+    <div class="container">
+        <div class="grid-3">
+            <!--About Us-->
+            <div class="aboutus-flex">
+                <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+                <div class="about-content">
+                    <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
+                    <p>Our shared passion for food and community drives us to bring qualiy meals directly to you doorstep.</p>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <!-- Security Content Section -->
-    <section class="food-menu">
-        <div class="container text-center">
-            <h2>Website Security</h2>
-            <div class="heading-border"></div>
-
-            <div class="grid-3" style="margin-top: 40px; text-align: left;">
-                <div class="usp-card">
-                    <h3>🔒 Data Encryption</h3>
-                    <p>All transactions and user data are protected with SSL encryption to ensure confidentiality.</p>
+            <div class="FoodFusion">
+                <h3>Food Fusion</h3>
+                <div class="foodfusion">
+                    <a href="WhoWeAre.html">Who We Are</a>
+                    <a href="Blog.html">Blog</a>
+                    <a href="WorkWithus.html">Work With Us</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="ReportFraud.html">Report Fraud</a>
                 </div>
-
-                <div class="usp-card">
-                    <h3>🛡 Secure Payments</h3>
-                    <p>We use trusted third-party gateways to handle all online transactions securely.</p>
+            </div>
+            <div>
+                <h3>Learn More</h3>
+                <div class="learnmore">
+                    <a href="#">Privacy Policy</a>
+                    <a href="security.html">Security</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Lodge Complaint</a>
+                    <a href="#">Testimonials</a>
                 </div>
-
-                <div class="usp-card">
-                    <h3>👤 Account Protection</h3>
-                    <p>We encourage strong passwords and never share your login credentials with anyone.</p>
-                </div>
-
-                <div class="usp-card">
-                    <h3>🚨 Reporting Issues</h3>
-                    <p>If you notice any suspicious activity, please report it to us through the <a href="ReportFraud.html">Report Fraud</a> page.</p>
+            </div>
+            <div class="FollowUs">
+                <h3>Social Links</h3>
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/">
+                            <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
+                            Facebook
+                        </a></li>
+                        <li><a href="https://www.instagram.com/">
+                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
+                            Instagram
+                        </a></li>
+                        <li><a href="https://x.com/">
+                            <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
+                            Twitter
+                        </a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer Section (copied from index.html) -->
-    <section class="footer">
-        <div class="container">
-            <div class="grid-3">
+<!-- Copyright Section -->
+<section class="copyright">
+    <div class="container text-center">
+        <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+    </div>
+    <a id="back-to-top" class="btn-primary">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+</section>
 
-                <!-- About Us -->
-                <div class="aboutus-flex">
-                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
-                    <div class="about-content">
-                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
-                        <p>Our shared passion for food and community drives us to bring qualiy meals directly to your doorstep.</p>
-                    </div>
-                </div>
-
-                <!-- Food Fusion Links -->
-                <div class="FoodFusion">
-                    <h3>Food Fusion</h3>
-                    <div class="foodfusion">
-                        <a href="WhoWeAre.html">Who We Are</a>
-                        <a href="Blog.html">Blog</a>
-                        <a href="WorkWithus.html">Work With Us</a>
-                        <a href="contact.html">Contact Us</a>
-                        <a href="ReportFraud.html">Report Fraud</a>
-                    </div>
-                </div>
-
-                <!-- Learn More -->
-                <div>
-                    <h3>Learn More</h3>
-                    <div class="learnmore">
-                        <a href="#">Privacy Policy</a>
-                        <a href="security.html">Security</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Lodge Complaint</a>
-                        <a href="#">Testimonials</a>
-                    </div>
-                </div>
-
-                <!-- Social Links -->
-                <div class="FollowUs">
-                    <h3>Social Links</h3>
-                    <div class="social">
-                        <ul>
-                            <li><a href="https://www.facebook.com/">
-                                <img src="/img/footer-icons/facebook.svg"
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<!-- Jquery UI -->
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<!-- Custom JS -->
+<script src="js/custom.js"></script>
+</body>
+</html>
