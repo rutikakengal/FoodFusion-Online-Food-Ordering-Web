@@ -166,7 +166,7 @@ $(function () {
             <td>${item.quantity}</td>
             <td>$${item.total}</td>
             <td>
-              <a href="#" class="btn-delete"><i class="fas fa-trash-alt"></i></a>
+              <a href="#" class="btn-delete">x</a>
             </td>
           </tr>
         `;
