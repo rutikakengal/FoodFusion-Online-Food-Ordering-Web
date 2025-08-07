@@ -110,6 +110,26 @@ if (visibleCount === 0 && messageEl) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("darkModeToggle");
+
+  // Load dark mode if set
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    if (toggle) toggle.textContent = "☀️";
+  }
+
+  // Toggle on click
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      toggle.textContent = isDark ? "☀️" : "🌙";
+    });
+  }
+});
+
 
 
 const searchInput = document.getElementById('search-input');
@@ -137,7 +157,7 @@ searchInput.addEventListener('input', () => {
             });
             suggestionsBox.appendChild(suggestion);
         });
-     } 
+    }
 });
 
 

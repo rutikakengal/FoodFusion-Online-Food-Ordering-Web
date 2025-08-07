@@ -83,6 +83,11 @@
                                 <a href="order.html" class="btn-primary">Confirm Order</a>
                             </div>
                         </li>
+                        <li>
+                            <button id="darkModeToggle" title="Toggle Dark Mode" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">
+                                🌙
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -92,9 +97,11 @@
 
     <!-- Contact Section Start -->
     
-        <section class="contact-section" style="padding: 30px 20px; background: linear-gradient(to bottom right, #fff6f0, #ffeaea);">
+        <section class="contact-section">
+
   <div class="container" style="max-width: 1900px; margin: 0 auto;">
-    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px;">Get in Touch</h2>
+   <h2 class="contact-heading">Get in Touch</h2>
+
 
     <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
 
@@ -128,65 +135,68 @@
     </details>
   </div>
 </div>
+      
       <!-- Contact Form -->
-      <div style="flex: 1.5; min-width: 180px; background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
-        <form>
+      <div class="contact-form-box" style="flex: 1.5; min-width: 180px;">
+        <form class="contact-form">
           <div style="margin-bottom: 15px;">
             <label for="category"><strong>Category</strong></label>
-            <select id="category" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+            <select id="category" required>
               <option value="">Select a category</option>
               <option value="order">Order Inquiry</option>
               <option value="cancel">Cancel Request</option>
               <option value="feedback">Feedback</option>
-                <option value="other">Other</option>
+              <option value="other">Other</option>
             </select>
           </div>
           <div style="margin-bottom: 15px;">
             <label for="name"><strong>Full Name</strong></label>
-            <input type="text" id="name" placeholder="Enter your name..." required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+            <input type="text" id="name" placeholder="Enter your name..." required>
           </div>
           <div style="margin-bottom: 15px;">
             <label for="email"><strong>Email</strong></label>
-            <input type="email" id="email" placeholder="Enter your email..." required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+            <input type="email" id="email" placeholder="Enter your email..." required>
           </div>
           <div style="margin-bottom: 15px;">
             <label for="phone"><strong>Phone Number</strong></label>
-            <input type="tel" id="phone" placeholder="Enter your phone number" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
           </div>
           <div style="margin-bottom: 20px;">
             <label for="message"><strong>Your Message</strong></label>
-            <textarea id="message" rows="4" placeholder="Type your message..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+            <textarea id="message" rows="4" placeholder="Type your message..."></textarea>
           </div>
-          <button type="submit" style="background: #f44336; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 600;">Send Message</button>
+          <button type="submit" class="submit-btn">Send Message</button>
         </form>
       </div>
-       <!-- My recent Orders -->
-        <div class="order-summary-card">
-  <h3>🛒 My Recent Orders</h3>
-  <ul>
-    <li>
-      <span>🍱 Paneer Rice Bowl – <strong>Delivered</strong> Jul 18</span>
-      <button>Reorder</button>
-    </li>
-    <li>
-      <span>🥗 Keto Salad Box – <strong>Cancelled</strong> Jul 15</span>
-      <button>Reorder</button>
-    </li>
-  <!-- Why Choose Us Section -->
-<div class="usp-card">
-  <h3>🌟 Why Choose Us?</h3>
-  <ul>
-    <li><span class="icon">✅</span> Farm-Fresh Ingredients</li>
-    <!-- <li><span class="icon">⏱️</span> Delivered in Under 45 Minutes</li> -->
-    <li><span class="icon">📦</span> Eco-friendly, Reusable Packaging</li>
-    <li><span class="icon">🧑‍⚕️</span> Diet Plans Approved by Nutritionists</li>
-  </ul>
-</div>
-</div>
-    </div>
-  </div>
-</section>
-<!--Contact Section End -->
+
+
+            <!-- My recent Orders -->
+              <div class="order-summary-card">
+        <h3>🛒 My Recent Orders</h3>
+        <ul>
+          <li>
+            <span>🍱 Paneer Rice Bowl – <strong>Delivered</strong> Jul 18</span>
+            <button>Reorder</button>
+          </li>
+          <li>
+            <span>🥗 Keto Salad Box – <strong>Cancelled</strong> Jul 15</span>
+            <button>Reorder</button>
+          </li>
+        <!-- Why Choose Us Section -->
+      <div class="usp-card">
+        <h3>🌟 Why Choose Us?</h3>
+        <ul>
+          <li><span class="icon">✅</span> Farm-Fresh Ingredients</li>
+          <!-- <li><span class="icon">⏱️</span> Delivered in Under 45 Minutes</li> -->
+          <li><span class="icon">📦</span> Eco-friendly, Reusable Packaging</li>
+          <li><span class="icon">🧑‍⚕️</span> Diet Plans Approved by Nutritionists</li>
+        </ul>
+      </div>
+      </div>
+          </div>
+        </div>
+      </section>
+      <!--Contact Section End -->
      <!-- Map Section Start -->
      <section class="map">
         <h2 class="text-center">Find Us</h2>

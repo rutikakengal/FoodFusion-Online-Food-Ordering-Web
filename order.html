@@ -14,7 +14,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body >
     <!-- Navigation Section Start -->
     <header class="navbar">
         <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
@@ -84,7 +84,11 @@
                                 <a href="order.html" class="btn-primary">Confirm Order</a>
                             </div>
                         </li>
-
+                        <li>
+                            <button id="darkModeToggle" title="Toggle Dark Mode" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">
+                                🌙
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -244,24 +248,55 @@
     </section>
     <!-- Copyright Section End -->
 
-    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <!-- Custom JS -->
-    <script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script>
   $(function () {
-    // Phone validation
+    // Phone validation (Your existing code)
     $("#phone").on("input", function () {
       this.value = this.value.replace(/\D/g, "");
     });
 
-    // Confirmation message
+    // Confirmation message (Your existing code)
     $("#orderForm").on("submit", function (e) {
       e.preventDefault();
       $("#confirmationMessage").fadeIn();
       this.reset();
     });
+
+    // ✅ START: ADD THIS CODE FOR DARK MODE
+    const darkModeToggle = $('#darkModeToggle');
+    const body = $('body');
+
+    // Function to apply the stored theme on page load
+    function applyTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.addClass('dark-mode');
+            darkModeToggle.html('☀️'); // Change to sun icon
+        } else {
+            body.removeClass('dark-mode');
+            darkModeToggle.html('🌙'); // Keep moon icon
+        }
+    }
+
+    // Apply the theme when the page loads
+    applyTheme();
+
+    // Event listener for the toggle button
+    darkModeToggle.on('click', function() {
+        body.toggleClass('dark-mode');
+
+        // Save the user's preference in localStorage
+        if (body.hasClass('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            $(this).html('☀️'); // Change to sun icon
+        } else {
+            localStorage.setItem('theme', 'light');
+            $(this).html('🌙'); // Change back to moon icon
+        }
+    });
+    // ✅ END: ADD THIS CODE FOR DARK MODE
   });
 </script>
 

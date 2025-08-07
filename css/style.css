@@ -235,6 +235,145 @@ fieldset legend {
   vertical-align: middle;
   border-radius: 100%;
 }
+
+/* --- Shopping Cart Dark Mode Styles --- */
+
+/* Style for the cart dropdown container */
+.dark-mode .cart-content {
+    background: #1f1f1f; /* Dark background for the cart pop-up */
+    box-shadow: 0px 4px 12px 0px #00000090; /* A more subtle shadow for dark environments */
+}
+
+/* General text color inside the dark mode cart */
+.dark-mode .cart-content h3 {
+    color: #ffffff;
+}
+
+/* Style for the table borders */
+.dark-mode .cart-table th,
+.dark-mode .cart-table td {
+    color: #e1e1e1; /* Light gray text for readability */
+    border-bottom: 1px solid #444; /* Darker border that's still visible */
+}
+
+/* Top border for the table header */
+.dark-mode .cart-table th {
+    border-top: 1px solid #444;
+    color: #ffffff; /* Make header text white and bold */
+}
+
+/* Changes the shopping cart icon color to be more vibrant in dark mode */
+.dark-mode .shopping-cart {
+    color: #bb86fc;
+}
+
+/* Styles the "Confirm Order" button for dark mode */
+.dark-mode .cart-content .btn-primary {
+    background-color: #bb86fc; /* A vibrant purple, great for primary actions in dark mode */
+    color: #000000; /* Black text for high contrast on the button */
+}
+
+/* Optional: Add a hover effect for the button in dark mode */
+.dark-mode .cart-content .btn-primary:hover {
+    filter: brightness(1.2);
+}
+/* Default (light) theme */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode {
+  background: linear-gradient(to bottom right, #464646, #2c2c2c);
+  color: #ffffff; /* Make text white */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Ensure all links and headings also turn white */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode span,
+.dark-mode a,
+.dark-mode li,
+.dark-mode td,
+.dark-mode th,
+.dark-mode label,
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+  color: #ffffff !important;
+}
+/* Apply dark styling to the entire food-menu section */
+.dark-mode .food-menu {
+  background-color: #121212;
+  color: #ffffff;
+}
+.dark-mode .food-menu h2,
+.dark-mode .food-menu {
+  color: #121212 !important;
+}
+
+/* Make food card boxes dark */
+.dark-mode .food-menu-box {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px 0;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+}
+
+/* Fix inner text colors */
+.dark-mode .food-menu-box h4,
+.dark-mode .food-menu-box .food-price,
+.dark-mode .food-menu-box .food-details {
+  color: #ffffff;
+}
+
+/* Inputs in dark mode */
+.dark-mode .food-menu-box input[type="number"],
+.dark-mode .food-menu-box input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.dark-mode .btn-primary {
+  background-color: #ff4c4c !important;
+  color: white !important;
+  border: none;
+}
+
+
+
+/* make navbar dark */
+.dark-mode nav {
+  background-color: #1e1e1e;
+}
+
+/* dark mode buttons */
+.dark-mode button {
+  background-color: #333;
+  color: #fff;
+}
+
+/* For cart badge, etc. */
+.dark-mode .cart-badge {
+  background-color: red;
+}
+
+
+
+
 /* Navigation Section Style End */
 
 /* Food Search Section Style Start */
@@ -446,6 +585,47 @@ fieldset legend {
   display: flex;
   justify-content: center;
 }
+
+/* === DARK MODE FOOTER OVERRIDES === */
+
+.dark-mode .footer {
+  background: #121212 !important;
+  color: #ffffff !important;
+  border-top: 0.2px solid #444444;
+}
+
+.dark-mode .footer h3 {
+  color: #ff6e6e !important; /* Light red heading for dark mode */
+}
+
+.dark-mode .footer .grid-3 {
+  background-color: transparent !important;
+}
+
+.dark-mode .footer a,
+.dark-mode .foodfusion a,
+.dark-mode .learnmore a,
+.dark-mode .social a {
+  color: #ffffff !important;
+}
+
+.dark-mode .footer a:hover,
+.dark-mode .foodfusion a:hover,
+.dark-mode .learnmore a:hover,
+.dark-mode .social a:hover {
+  color: #ff6e6e !important;
+}
+
+/* Invert social icons */
+.dark-mode .footer .social img {
+  filter: invert(1);
+}
+
+/* Optional logo brightening */
+.dark-mode .footer-logo {
+  filter: brightness(1.2);
+}
+
 /* Footer Section Style End */
 
 /* Copyright Section Style Start */
@@ -526,6 +706,56 @@ fieldset legend {
   width: 30%;
   border-radius: 5px;
 }
+
+/* ✅ DARK MODE for Order page */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode {
+  background: linear-gradient(to bottom right, #464646, #2c2c2c);
+  color: #ffffff; /* Make text white */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode .order .tbl-full tr {
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+}
+
+.dark-mode .order .tbl-full tr th,
+.dark-mode .order .tbl-full tr td {
+  border-bottom: 1px solid #444;
+  color: white;
+}
+
+.dark-mode .order .tbl-full tr th {
+  border-top: 1px solid #444;
+}
+
+.dark-mode .form {
+  background-color: #1f1f1f;
+  box-shadow: 0 0 20px 2px #00000080;
+}
+
+.dark-mode .form fieldset {
+  border: 1px solid #555;
+}
+
+.dark-mode .form input,
+.dark-mode .form textarea {
+  background-color: #2c2c2c;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark-mode .form input[type="submit"] {
+  background-color: #bb86fc;
+  color: black;
+}
+
 /* Order Page Style End */
 
 /* Contact Page Style Start */
@@ -533,6 +763,57 @@ fieldset legend {
 .login {
   padding: 65px 0;
 }
+#gmap_canvas {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+
+/* Order Page Style End */
+
+/* Contact Page Style Start */
+.contact,
+.login {
+  padding: 65px 0;
+}
+
+/* Light mode (default) */
+.form legend,
+.form .label {
+  color: #222;
+}
+
+.form input,
+.password-container input {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+.toggle-password {
+  color: #333;
+}
+
+/* Dark mode */
+.dark-mode .form legend,
+.dark-mode .form .label {
+  color: white;
+}
+
+.dark-mode .form input,
+.dark-mode .password-container input {
+  background-color: #222;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark-mode .toggle-password {
+  color: #ddd;
+}
+
+
+
 #gmap_canvas {
   width: 100%;
   height: 400px;
@@ -840,7 +1121,116 @@ details p {
 .usp-card .icon {
   font-size: 1.2rem;
 }
+.contact-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: black; /* Light mode */
+}
+
+.dark-mode .contact-heading {
+  color: black; /* Dark mode */
+}
+.contact-section {
+  padding: 30px 20px;
+  background: linear-gradient(to bottom right, #fff6f0, #ffeaea); /* Light Mode */
+}
+
+.dark-mode .contact-section {
+  background: linear-gradient(to bottom right, #a49b9b, #2c2c2c); /* Dark Mode: smooth charcoal gradient */
+}
 
 
+/* DARK MODE STYLES */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Contact Page Container */
+body.dark-mode .contact-modern {
+  background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+  border-top: 1px solid #444;
+}
+
+/* Cards */
+body.dark-mode .contact-faq,
+body.dark-mode .contact-form,
+body.dark-mode .contact-info,
+body.dark-mode .faq-box,
+body.dark-mode .order-summary-card,
+body.dark-mode .usp-card {
+  background: #1f1f1f;
+  color: #e0e0e0;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Form Inputs */
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form select,
+body.dark-mode .contact-form textarea {
+  background: #2a2a2a;
+  border: 1px solid #555;
+  color: #f0f0f0;
+}
+
+/* Suggestions Box */
+body.dark-mode #suggestions {
+  background: rgba(40, 40, 40, 0.95);
+  color: #f5f5f5;
+}
+
+/* FAQs */
+body.dark-mode .faq-item details {
+  background: #292929;
+  border-color: #444;
+}
+
+body.dark-mode .faq-item details:hover {
+  background: #333333;
+}
+
+body.dark-mode .faq-item summary {
+  color: #f0e8ff;
+}
+
+body.dark-mode .faq-item summary::after {
+  color: #c8a2ff;
+}
+
+/* My Recent Orders */
+body.dark-mode .order-summary-card li {
+  color: #ddd;
+}
+
+body.dark-mode .order-summary-card li strong {
+  color: #22c55e;
+}
+
+body.dark-mode .order-summary-card li:nth-child(2) strong {
+  color: #f87171;
+}
+
+body.dark-mode .order-summary-card button {
+  background-color: #2563eb;
+}
+
+body.dark-mode .order-summary-card button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Why Choose Us Card */
+body.dark-mode .usp-card {
+  color: #e0e0e0;
+}
+
+body.dark-mode .usp-card h3 {
+  color: #f8fafc;
+}
+
+body.dark-mode .usp-card li {
+  border-bottom: 1px solid #444;
+}
 
 
