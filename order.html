@@ -248,56 +248,47 @@
     </section>
     <!-- Copyright Section End -->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <script>
-  $(function () {
-    // Phone validation (Your existing code)
+$(function () {
     $("#phone").on("input", function () {
-      this.value = this.value.replace(/\D/g, "");
+        this.value = this.value.replace(/\D/g, "");
     });
 
-    // Confirmation message (Your existing code)
     $("#orderForm").on("submit", function (e) {
-      e.preventDefault();
-      $("#confirmationMessage").fadeIn();
-      this.reset();
+        e.preventDefault();
+        $("#confirmationMessage").fadeIn();
+        this.reset();
     });
 
-    // ✅ START: ADD THIS CODE FOR DARK MODE
     const darkModeToggle = $('#darkModeToggle');
     const body = $('body');
 
-    // Function to apply the stored theme on page load
     function applyTheme() {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             body.addClass('dark-mode');
-            darkModeToggle.html('☀️'); // Change to sun icon
+            darkModeToggle.html('☀️');
         } else {
             body.removeClass('dark-mode');
-            darkModeToggle.html('🌙'); // Keep moon icon
+            darkModeToggle.html('🌙');
         }
     }
 
-    // Apply the theme when the page loads
     applyTheme();
 
-    // Event listener for the toggle button
     darkModeToggle.on('click', function() {
         body.toggleClass('dark-mode');
-
-        // Save the user's preference in localStorage
         if (body.hasClass('dark-mode')) {
             localStorage.setItem('theme', 'dark');
-            $(this).html('☀️'); // Change to sun icon
+            $(this).html('☀️');
         } else {
             localStorage.setItem('theme', 'light');
-            $(this).html('🌙'); // Change back to moon icon
+            $(this).html('🌙');
         }
     });
-    // ✅ END: ADD THIS CODE FOR DARK MODE
-  });
+});
 </script>
 
 </body>
