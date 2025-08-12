@@ -15,12 +15,18 @@
     <link rel="stylesheet" href="css/hover-min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+
     <!-- Feeling Hungry CSS -->
     <link rel="stylesheet" href="css/feeling-hungry.css">
+
     
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+    <!-- Index CSS -->
+   <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -28,13 +34,11 @@
     <header class="navbar">
         <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
             <div class="container">
-                <!-- logo -->
                 <div class="logo">
                     <a href="index.html" title="Logo">
                         <img src="img/logo.svg" alt="Logo" class="img-responsive">
                     </a>
                 </div>
-                <!-- Main Menu -->
                 <div class="menu text-right">
                     <ul>
                         <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
@@ -52,19 +56,23 @@
                             <div id="cart-content" class="cart-content">
                                 <h3 class="text-center">Shopping Cart</h3>
                                 <table class="cart-table" border="0">
-                                    <tr>
-                                        <th>Food</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Qty</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="4">Total</th>
-                                        <th>$0.00</th>
-                                        <th></th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th>Food</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Qty</th>
+                                            <th>Total</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cart-items">
+                                        <tr>
+                                            <td colspan="4">Total</td>
+                                            <td id="cart-total">₹0.00</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                                 <a href="order.html" class="btn-primary">Confirm Order</a>
                             </div>
@@ -76,386 +84,415 @@
     </header>
     <!-- Navigation Section End -->
 
-    <!-- Food Search Section Start -->
-    <section class="food-search text-center">
-        <div class="container">
-            <form action="food-search.html" method="GET">
-                <div class="search-wrapper">
+    <!-- Hero Section Start -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Discover Delicious with Food Fusion</h1>
+            <p>Crave it, find it, love it! Explore a world of flavors delivered right to your door.</p>
+            <div>
+                <a href="order.html" class="btn-primary">Order Now</a>
+                <a href="categories.html" class="btn-secondary">Explore Menu</a>
+            </div>
+            <div class="hero-search">
+                <form action="food-search.html" method="GET">
                     <input type="search" id="search-input" name="query" placeholder="Search for food..." autocomplete="off" required>
-                    <div id="suggestions"></div>   
-                    <input type="submit" value="Search" class="btn-primary"> 
-                </div>                 
+                    <input type="submit" value="Search">
+                    <div id="suggestions"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+
+      <!-- Menu Section Start -->
+<section id="menu-section">
+    <div class="men-head">
+        <h2><b>Our Menu</b></h2>
+    </div>
+    <section class="menu-section">
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="Pizza">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>Pizza</h3>
+                            <span class="price">₹150</span>
+                        </div>
+                        <p>
+                            A delicious Italian flatbread topped with tomato sauce, cheese, and various toppings, baked to perfection.
+                        </p>
+                        <h4>Half | Full</h4>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/p1.jpg" alt="pizza" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="Grilled Sandwich">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>Grilled Sandwich</h3>
+                            <span class="price">₹100</span>
+                        </div>
+                        <p>
+                            Toasted bread filled with cheese, vegetables, or meat, grilled until golden and crispy.
+                        </p>
+                        <h4>Quarter | Half | Full</h4>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/s1.jpg" alt="grilled_sandwich" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="Burger">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>Burger</h3>
+                            <span class="price">₹130</span>
+                        </div>
+                        <p>
+                            A juicy patty sandwiched between soft buns, topped with lettuce, tomato, cheese, and sauces.
+                        </p>
+                        <h4>Quarter | Half | Full</h4>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/b1.jpg" alt="burger" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="Momos">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>Momos</h3>
+                            <span class="price">₹150</span>
+                        </div>
+                        <p>
+                            Steamed or fried dumplings filled with vegetables or meat, served with spicy dipping sauce.
+                        </p>
+                        <h4>Half | Full</h4>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/changes1.jpg" alt="momos" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="Noodles">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>Noodles</h3>
+                            <span class="price">₹110</span>
+                        </div>
+                        <p>
+                            Stir-fried noodles with vegetables, sauces, and spices for a flavorful Asian-inspired dish.
+                        </p>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/changes2.jpg" alt="noodles" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="Samosa">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>Samosa</h3>
+                            <span class="price">₹70</span>
+                        </div>
+                        <p>
+                            Crispy fried pastry filled with spiced potatoes, peas, and herbs, a popular Indian snack.
+                        </p>
+                        <h4>Half | Full</h4>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/samosa.jpg" alt="samosa" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="Dosa">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>Dosa</h3>
+                            <span class="price">₹15</span>
+                        </div>
+                        <p>
+                            Thin, crispy South Indian crepe made from fermented rice and lentil batter, served with chutney.
+                        </p>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/dosa.jpg" alt="dosa" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="Pasta">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>Pasta</h3>
+                            <span class="price">₹30</span>
+                        </div>
+                        <p>
+                            Italian pasta cooked al dente, tossed in a creamy or tomato-based sauce with herbs and cheese.
+                        </p>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/Pasta.jpg" alt="pasta" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="Veg Manchurian">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>Veg Manchurian</h3>
+                            <span class="price">₹45</span>
+                        </div>
+                        <p>
+                            Deep-fried vegetable balls in a tangy, spicy Indo-Chinese gravy made with soy sauce and garlic.
+                        </p>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/manchurian.jpg" alt="veg_manchurian" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-item">
+            <form class="add-to-cart-form" data-name="French Fries">
+                <div class="menu-content">
+                    <div class="menu-text">
+                        <div class="menu-header">
+                            <h3>French Fries</h3>
+                            <span class="price">₹65</span>
+                        </div>
+                        <p>
+                            Crispy golden fries, lightly seasoned, served with a side of ketchup or dipping sauce.
+                        </p>
+                        <div class="add-to-cart-form">
+                            <input type="number" value="1" min="1" name="quantity">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </div>
+                    <div class="menu-image">
+                        <img src="img/food/fries.jpg" alt="french_fries" />
+                    </div>
+                </div>
             </form>
         </div>
     </section>
-    <!-- Food Search Section End -->
+    <div class="back-clr">
+        <a href="menu-page/menu.html" class="full-menu-button">View Full Menu</a>
+    </div>
+</section>
+    <!-- Menu Section End -->
 
-    <!-- Category Section Start -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="text-center">Explore Foods</h2>
-            <div class="heading-border"></div>
-
-            <div class="grid-3">
-                <a href="category-foods.html?category=Pizza">
-                    <div class="float-container">
-
-                        <img src="img/category/pizza.jpg" class="img-responsive" alt="" >
-
-                        
-                        <h3 class="float-text text-white">Pizza</h3>
+    <!-- Services -->
+    <section id="menu" class="section-menu">
+        <div class="container text-center">
+            <h2 class="section-menu-h2">Why Food Fusion?</h2>
+            <br />
+            <div class="row">
+                <div class="col-md-3 circle-container">
+                    <div class="circle">
+                        <i data-lucide="shopping-bag"></i>
                     </div>
-                </a>
-                <a href="category-foods.html?category=Sandwich">
-                    <div class="float-container">
-                        <img src="img/category/sandwich.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Sandwich</h3>
-                    </div>
-                </a>
-                <a href="category-foods.html?category=Burger">
-                    <div class="float-container">
-                        <img src="img/category/burger.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Burger</h3>
-                    </div>
-                </a>
-                  <a href="category-foods.html?category=Momos">
-                    <div class="float-container">
-                        <img src="img/food/changes1.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Momos</h3>
-                    </div>
-                </a>
-                  <a href="category-foods.html?category=Noodles">
-                    <div class="float-container">
-
-                        <img src="img/food/changes2.jpg" class="img-responsive" alt="" >
-
-                        <h3 class="float-text text-white" >Noodles</h3>
-                    </div>
-                </a>
-                  <a href="category-foods.html?category=Coffee">
-                    <div class="float-container">
-
-                        <img src="img/food/chnages3.jpg" class="img-responsive" alt="" >
-
-              
-
-                        <h3 class="float-text text-white">Coffee</h3>
-                    </div>
-                </a>
-
-                <a href="category-foods.html?category=Samosa">
-                    <div class="float-container">
-                        <img src="img/category/samosa.jpg" class="img-responsive" alt="" >
-                        <h3 class="float-text text-white">Samosa</h3>
-                    </div>
-                </a>
-
-                <a href="category-foods.html?category=Pasta">
-                    <div class="float-container">
-                        <img src="img/category/Pasta.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Pasta</h3>
-                    </div>
-                </a>
-
-                <a href="category-foods.html?category=Manchurian">
-                    <div class="float-container">
-                        <img src="img/category/manchurian.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Manchurian</h3>
-                    </div>
-                </a>
-
-                <a href="category-foods.html?category=French Fries">
-                    <div class="float-container">
-                        <img src="img/category/fries.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">French Fries</h3>
-                    </div>
-                </a>
-
-                <a href="category-foods.html?category=Pav-Bhaji">
-                    <div class="float-container">
-                        <img src="img/category/Pav-BHaji.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Pav-Bhaji</h3>
-                    </div>
-                </a>
-
-                <a href="category-foods.html?category=dosa">
-                    <div class="float-container">
-                        <img src="img/category/dosa.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Dosa</h3>
-                    </div>
-                </a>
-
-
-
-            </div>
-        </div>
-    </section>
-    <!-- Category Section End -->
-
-    <!-- Foods Section Start -->
-    <section class="food-menu">
-        <div class="container">
-            <h2 class="text-center">Food Menu</h2>
-            <div class="heading-border"></div>
-            <div class="grid-2">
-                <div class="food-menu-box">
-                    <form>
-                        <div class="food-menu-img">
-                            <img src="img/food/p1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>Pizza</h4>
-                            <p class="food-price">$8.00</p>
-                            <p class="food-details"><b> Fresh, Cheesy, Irresistible </b> &#127829; 
-                                <br>
-                                Enjoy our handcrafted pizzas topped with the finest ingredients and baked to perfection. One slice is never enough.</p>
-                            <input type="number" value="1" min="1">
-
-                           
-
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+                    <p>Easy Ordering</p>
                 </div>
-                <div class="food-menu-box">
-                    <form>
-                        <div class="food-menu-img">
-                            <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>Sandwich</h4>
-                            <p class="food-price">$8.00</p>
-                            <p class="food-details"><b> Stacked with Flavor</b>
-                                <br>
-                                 Freshly made sandwiches loaded with crisp veggies, juicy fillings, and creamy spreads -- the perfect bite for any time of day!</p>
-                            <input type="number" value="1" min="1">
-
-                            
-
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+                <div class="col-md-3 circle-container">
+                    <div class="circle">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <p>Timely Delivery</p>
                 </div>
-                <div class="food-menu-box">
-                    <form>
-                        <div class="food-menu-img">
-                            <img src="img/food/b1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>Burger</h4>
-                            <p class="food-price">$8.00</p>
-                            <p class="food-details"><b>Big on Taste, Bold in Flavor</b>
-                                <br>
-                            Juicy patties, fresh  veggies, and melty cheese stacked in a soft bun --our burgers are a bite of pure satisfaction!</p>
-                            <input type="number" value="1" min="1">
-
-                            
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+                <div class="col-md-3 circle-container">
+                    <div class="circle">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <p>Healthy Options</p>
                 </div>
-                <div class="food-menu-box">
-                    <form>
-                        <div class="food-menu-img">
-                            <img src="img/food/changes1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-
-                            <h4>Momos</h4>
-                            <p class="food-price">$8.00</p>
-                            <p class="food-details"><b> Hot,Fresh and Flavor-Packed! </b>
-                            <br>
-                            Soft, steamed momos filled with juicy chicken, spiced veggies, or paneer -served with fiery chutney for the ultimate street food experience.</p>
-                            <input type="number" value="1" min="1">
-
-                           
-
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+                <div class="col-md-3 circle-container">
+                    <div class="circle">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <p>Community Focused</p>
                 </div>
-                <div class="food-menu-box">
-                    <form>
-                        <div class="food-menu-img">
-                            <img src="img/food/changes2.jpg" alt="" class="img-responsive img-curve" >
-                        </div>
-                        <div class="food-menu-desc">
-
-                            <h4>Noodles</h4>
-                            <p class="food-price">$8.00</p>
-                            <p class="food-details"><b> Slurp-Worthy, Spicy & Satisfying! </b>
-                                <br>
-                            Wok-tossed noodles loaded with veggies, sauces, and bold flavors - the perfect blend of taste and texture in every bite!</p>
-                            <input type="number" value="1" min="1">
-
-                            
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+                <div class="col-md-3 circle-container">
+                    <div class="circle">
+                        <i data-lucide="pizza"></i>
+                    </div>
+                    <p>Daily Variety</p>
                 </div>
-                <div class="food-menu-box">
-                    <form>
-                        <div class="food-menu-img">
-                            <img src="img/food/chnages3.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
-                        </div>
-                        <div class="food-menu-desc">
-
-                            <h4>Coffee</h4>
-                            <p class="food-price">$8.00</p>
-                            <p class="food-details"><b>Brewed to Perfection!</b>
-                                <br>
-                                Rich, aromatic coffee that energizes your day - smooth, bold, and crafted for true coffee lovers!</p>
-                            <input type="number" value="1" min="1">
-
-                           
-
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>  
-
-                        <div class="food-menu-box">
-                            <form>
-                                <div class="food-menu-img">
-                                    <img src="img/food/samosa.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
-                                </div>
-                                <div class="food-menu-desc">
-        
-                                    <h4>Samosa</h4>
-                                    <p class="food-price">$8.00</p>
-                                    <p class="food-details"><b>Crispy, Spicy, Addictive!</b>
-                                        <br>
-                                        Our golden-fried samosas are packed with zesty potato filling and bold Indian spices. The ultimate tea-time classic!</p>
-                                    <input type="number" value="1" min="1">
-                                    <input type="submit" class="btn-primary" value="Add To Cart">
-                                 </div>
-                         </form>
-                        </div>
-
-                        <div class="food-menu-box">
-                            <form>
-                                <div class="food-menu-img">
-                                    <img src="img/food/Pasta.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
-                                </div>
-                                <div class="food-menu-desc">
-        
-                                    <h4>Pasta</h4>
-                                    <p class="food-price">$8.00</p>
-                                    <p class="food-details"><b>Creamy, Comforting, Crave-Worthy!</b>
-                                        <br>
-                                    Our pasta is tossed in rich, velvety sauces with fresh veggies and cheese - a spoonful of comfort in every bite!</p>
-                                    <input type="number" value="1" min="1">
-                                    <input type="submit" class="btn-primary" value="Add To Cart">
-                                 </div>
-                         </form>
-                        </div>
-
-                        <div class="food-menu-box">
-                            <form>
-                                <div class="food-menu-img">
-                                    <img src="img/food/manchurian.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
-                                </div>
-                                <div class="food-menu-desc">
-        
-                                    <h4>Manchurian</h4>
-                                    <p class="food-price">$8.00</p>
-                                    <p class="food-details"><b>Bold, Saucy, Street-Style!</b>
-                                        <br>
-                                    Crispy veggie balls tossed in a spicy Indo-Chineese gravy - our Manchurian is all about that fiery flavor punch!</p>
-                                    <input type="number" value="1" min="1">
-                                    <input type="submit" class="btn-primary" value="Add To Cart">
-                                 </div>
-                         </form>
-                        </div>
-
-                        <div class="food-menu-box">
-                            <form>
-                                <div class="food-menu-img">
-                                    <img src="img/food/fries.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
-                                </div>
-                                <div class="food-menu-desc">
-        
-                                    <h4>French Fries</h4>
-                                    <p class="food-price">$8.00</p>
-                                    <p class="food-details"><b>Crispy, Salty, Snack-Perfect!</b>
-                                        <br>
-                                    Golden-fried potato sticks sprinkled with classic seasoning - your all time favourite munches done right!</p>
-                                    <input type="number" value="1" min="1">
-                                    <input type="submit" class="btn-primary" value="Add To Cart">
-                                 </div>
-                         </form>
-                        </div>
-                        
-                        <div class="food-menu-box">
-                            <form>
-                                <div class="food-menu-img">
-                                    <img src="img/food/Pav-BHaji.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
-                                </div>
-                                <div class="food-menu-desc">
-        
-                                    <h4>Pav-Bhaji</h4>
-                                    <p class="food-price">$8.00</p>
-                                    <p class="food-details"><b>Bold, Buttery, Bhaji Bliss!</b>
-                                        <br>
-                                    Mumbai,s iconic street food - spicy mashed veggies served with golden-toasted pav.Pure comfort on a plate!</p>
-                                    <input type="number" value="1" min="1">
-                                    <input type="submit" class="btn-primary" value="Add To Cart">
-                                 </div>
-                         </form>
-                        </div>
-
-                        <div class="food-menu-box">
-                    <form>
-                        <div class="food-menu-img">
-                            <img src="img/food/dosa.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
-                        </div>
-                        <div class="food-menu-desc">
-
-                            <h4>Dosa</h4>
-                            <p class="food-price">$8.00</p>
-                            <p class="food-details"><b>Crispy, Savory, South-Style!</b>
-                                <br>
-                            A golden, paper-thin crepe made from fermented batter, served hot with chutney and sambar - light,crispy and soul-satisfying!</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                         </div>
-                 </form>
+                <div class="col-md-3 circle-container">
+                    <div class="circle">
+                        <i data-lucide="coffee"></i>
+                    </div>
+                    <p>Served Hot</p>
+                </div>
+                <div class="col-md-3 circle-container">
+                    <div class="circle">
+                        <i data-lucide="star"></i>
+                    </div>
+                    <p>Flexibility</p>
+                </div>
+                <div class="col-md-3 circle-container">
+                    <div class="circle">
+                        <i data-lucide="smile"></i>
+                    </div>
+                    <p>No Daily Hassles</p>
                 </div>
             </div>
         </div>
-        <p class="text-center">
-            <a href="foods.html" class="btn-primary">See All Foods</a>
-        </p>
     </section>
-    <!-- Foods Section End -->
-    
-   <!-- Feedback & Reviews Section Start -->
+
+    <!-- Categories Section Start -->
+    <section id="categories-section">
+        <div class="categories-head">
+            <h2>Explore Our Categories</h2>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="img/category/pizza.jpg" alt="Pizza" class="category-image">
+                <div class="category-name">Pizza</div>
+            </div>
+            <div class="category-card">
+                <img src="img/category/burger.jpg" alt="Burger" class="category-image">
+                <div class="category-name">Burger</div>
+            </div>
+            <div class="category-card">
+                <img src="img/food/changes1.jpg" alt="Momos" class="category-image">
+                <div class="category-name">Momos</div>
+            </div>
+        </div>
+        <a href="categories.html" class="explore-categories-button">Explore More Categories</a>
+    </section>
+    <!-- Categories Section End -->
+
+    <!-- Blogs Section Start -->
+    <section id="blogs-section">
+        <div class="blogs-head">
+            <h2>Our Blogs</h2>
+        </div>
+        <div class="blogs-grid">
+            <div class="blog-card">
+                <img src="/img/food/p1.jpg" alt="Blog 1" class="blog-image">
+                <div class="blog-content">
+                    <h3>The Art of Perfecting Indian Cuisine</h3>
+                    <p>Explore the secrets behind authentic Indian dishes, from spice blends to cooking techniques .</p>
+                    <a href="Blog.html">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="/img/food/s1.jpg" alt="Blog 2" class="blog-image">
+                <div class="blog-content">
+                    <h3>Healthy Eating with Food Fusion</h3>
+                    <p>Discover how to enjoy delicious meals while keeping health in mind with our curated healthy recipes and tips.</p>
+                    <a href="Blog.html">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="/img/food/b1.jpg" alt="Blog 3" class="blog-image">
+                <div class="blog-content">
+                    <h3>Food Trends to Watch in 2025</h3>
+                    <p>Stay ahead with the latest food trends, from plant-based diets to innovative fusion cuisines hitting the scene.</p>
+                    <a href="Blog.html">Read More</a>
+                </div>
+            </div>
+        </div>
+        <a href="Blog.html" class="read-more-blogs-button">Read More Blogs</a>
+    </section>
+    <!-- Blogs Section End -->
+
+    <!-- Feedback & Reviews Section Start -->
     <section id="feedback-review">
-      <div class="feedback-container">
-        <h2>Feedback & Reviews</h2>
-        <p>We value your experience! Leave your feedback or review about our website below.</p>
-        <form id="feedback-form">
-          <input type="text" id="name-input" placeholder="Your Name" required>
-          <input type="email" id="email-input" placeholder="Your Email" required>
-          <input type="text" id="feedback-input" placeholder="Share your thoughts..." required>
-          <button type="submit">Submit</button>
-        </form>
-        <div id="feedback-success" style="display:none;color:green;font-weight:600;margin-top:10px;"></div>
-      </div>
+        <div class="feedback-container">
+            <h2>Feedback & Reviews</h2>
+            <p>We value your experience! Leave your feedback or review about our website below.</p>
+            <form id="feedback-form">
+                <input type="text" id="name-input" placeholder="Your Name" required>
+                <input type="email" id="email-input" placeholder="Your Email" required>
+                <input type="text" id="feedback-input" placeholder="Share your thoughts..." required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="feedback-success" style="display:none;color:green;font-weight:600;margin-top:10px;"></div>
+        </div>
     </section>
     <!-- Feedback & Reviews Section End -->
-    
+
     <!-- Footer Section Start -->
     <section class="footer">
         <div class="container">
             <div class="grid-3">
-
-                <!--About Us-->
                 <div class="aboutus-flex">
                     <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
                     <div class="about-content">
                         <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
-                        <p>Our shared passion for food and community drives us to bring qualiy meals directly to you doorstep.</p>
+                        <p>Our shared passion for food and community drives us to bring quality meals directly to your doorstep.</p>
                     </div>
                 </div>
                 <div class="FoodFusion">
@@ -468,35 +505,32 @@
                         <a href="/report-fraud.html">Report Fraud</a>
                     </div>
                 </div>
-                <!-- Learn More Links -->
                 <div>
                     <h3>Learn More</h3>
-                    <div class="learnmore" >
-                        <a href="/privacy-policy.html">Privacy Policy</a>
-                        <a href="/sercurity.html">Security</a>
+                    <div class="learnmore">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Security</a>
                         <a href="#">Terms of Service</a>
                         <a href="/lodge-complaint.html">Lodge Complaint</a>
-                        <a href="/testimonial.html">Testimonials</a>
+                        <a href="#">Testimonials</a>
                     </div>
                 </div>
                 <div class="FollowUs">
-                    <!-- Social Links -->
                     <h3>Social Links</h3>
                     <div class="social">
                         <ul>
-                             <li><a href="https://www.facebook.com/">
-                                <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
+                            <li><a href="https://www.facebook.com/">
+                                <img src="/img/footer-icons/facebook.svg" alt="Facebook icon" width="24" height="24">
                                 Facebook
-                                </a></li>
+                            </a></li>
                             <li><a href="https://www.instagram.com/">
-                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
-                               Instagram
-                                </a>
-                            </li>
+                                <img src="/img/footer-icons/instagram.svg" alt="Instagram icon" width="24" height="24">
+                                Instagram
+                            </a></li>
                             <li><a href="https://x.com/">
                                 <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
                                 Twitter
-                                </a></li>
+                            </a></li>
                         </ul>
                     </div>
                 </div>
@@ -505,10 +539,10 @@
     </section>
     <!-- Footer Section End -->
 
-    <!-- Copyright Section start -->
+    <!-- Copyright Section Start -->
     <section class="copyright">
         <div class="container text-center">
-            <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+            <p>All rights reserved. Designed By <a href="#">Rutika❤</a></p>
         </div>
         <a id="back-to-top" class="btn-primary">
             <i class="fa fa-angle-double-up"></i>
@@ -516,39 +550,252 @@
     </section>
     <!-- Copyright Section End -->
 
-    <!-- JQuery and jQuery UI are already included in the head section -->
-     <!-- Feedback & Reviews JS -->
+    <!-- JavaScript for Hero Section, Menu Animation, and Cart Functionality -->
     <script>
-      document.getElementById('feedback-form').addEventListener('submit', function(e) {
-        e.preventDefault();
+        // Initialize cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('foodFusionCart')) || [];
+        let cartCount = 0;
 
-        const nameInput = document.getElementById('name-input');
-        const emailInput = document.getElementById('email-input');
-        const feedbackInput = document.getElementById('feedback-input');
-        const successMsg = document.getElementById('feedback-success');
+        $(function () {
+            // Calculate cart count from loaded cart
+            cartCount = calculateCartCount();
+            loadCartFromStorage();
+            updateCartBadge();
+            updateTotal();
 
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-        const feedbackText = feedbackInput.value.trim();
+            // Main Menu JS
+            $(window).scroll(function () {
+                if ($(this).scrollTop() < 50) {
+                    $("nav").removeClass("site-top-nav");
+                    $("#back-to-top").fadeOut();
+                } else {
+                    $("nav").addClass("site-top-nav");
+                    $("#back-to-top").fadeIn();
+                }
+            });
 
-        if (name !== '' && email !== '' && feedbackText !== '') {
-          // Here you would send the feedback to the backend (not implemented)
-          nameInput.value = '';
-          emailInput.value = '';
-          feedbackInput.value = '';
+            // Shopping Cart Toggle JS
+            $("#shopping-cart").on("click", function () {
+                $("#cart-content").toggle("blind", "", 500);
+            });
 
-          // Show success message
-          successMsg.textContent = 'Submitted successfully! Thank you for your feedback.';
-          successMsg.style.display = 'block';
-          setTimeout(function() {
-            successMsg.style.display = 'none';
-          }, 3000);
-        }
-      });
+            // Back-To-Top Button JS
+            $("#back-to-top").click(function (event) {
+                event.preventDefault();
+                $("html, body").animate(
+                    {
+                        scrollTop: 0,
+                    },
+                    1000
+                );
+            });
+
+            // Feedback form submission
+            $("#feedback-form").on("submit", function(e) {
+                e.preventDefault();
+                const nameInput = $("#name-input");
+                const emailInput = $("#email-input");
+                const feedbackInput = $("#feedback-input");
+                const successMsg = $("#feedback-success");
+                const name = nameInput.val().trim();
+                const email = emailInput.val().trim();
+                const feedbackText = feedbackInput.val().trim();
+                if (name !== '' && email !== '' && feedbackText !== '') {
+                    nameInput.val('');
+                    emailInput.val('');
+                    feedbackInput.val('');
+                    successMsg.text('Submitted successfully! Thank you for your feedback.');
+                    successMsg.show();
+                    setTimeout(function() {
+                        successMsg.hide();
+                    }, 3000);
+                }
+            });
+
+            // Search suggestion functionality
+            const searchInput = $("#search-input");
+            const suggestions = $("#suggestions");
+            const foodItems = ['Steamed Rice', 'Dal Tadka', 'Dal Makhani', 'Vegetable Curry', 'Mixed Vegetable', 'Aloo Gobhi', 'Chapati', 'Raita', 'Salad', 'Fruit Salad', 'Pizza', 'Burger', 'Momos'];
+
+            searchInput.on('input', function() {
+                const query = $(this).val().toLowerCase();
+                suggestions.empty();
+                if (query) {
+                    const filteredItems = foodItems.filter(item => item.toLowerCase().includes(query));
+                    filteredItems.forEach(item => {
+                        const div = $('<div>').addClass('suggestion-item').text(item);
+                        div.on('click', () => {
+                            searchInput.val(item);
+                            suggestions.empty();
+                        });
+                        suggestions.append(div);
+                    });
+                }
+            });
+
+            // Menu item animation on scroll
+            const menuItems = $('.menu-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            menuItems.each(function() {
+                observer.observe(this);
+            });
+
+            // Add to Cart JS
+            $(document).on("submit", ".add-to-cart-form", function(event) {
+                event.preventDefault();
+                const form = $(this);
+                const foodBox = form.closest('.menu-item');
+                const foodName = form.data('name');
+                const foodPrice = foodBox.find('.price').text().replace('₹', '');
+                const quantity = parseInt(form.find('input[type="number"]').val());
+                const foodImg = foodBox.find('.menu-image img').attr('src');
+                const total = (parseFloat(foodPrice) * quantity).toFixed(2);
+
+                // Play sound effect
+                if (typeof cartSound !== 'undefined') {
+                    cartSound.currentTime = 0;
+                    cartSound.play();
+                }
+
+                // Check if item already exists in cart array
+                let itemExists = false;
+                let itemIndex = -1;
+                for (let i = 0; i < cart.length; i++) {
+                    if (cart[i].name === foodName) {
+                        itemExists = true;
+                        itemIndex = i;
+                        break;
+                    }
+                }
+
+                // Update cart array
+                if (itemExists) {
+                    cart[itemIndex].quantity += quantity;
+                    cart[itemIndex].total = (parseFloat(cart[itemIndex].price) * cart[itemIndex].quantity).toFixed(2);
+                } else {
+                    cart.push({
+                        image: foodImg,
+                        name: foodName,
+                        price: foodPrice,
+                        quantity: quantity,
+                        total: total
+                    });
+                }
+
+                // Save to localStorage
+                localStorage.setItem('foodFusionCart', JSON.stringify(cart));
+
+                // Update DOM
+                loadCartFromStorage();
+                cartCount = calculateCartCount();
+                updateCartBadge();
+                updateTotal();
+
+                // Change button text temporarily
+                const btn = form.find('.btn-primary');
+                const originalText = btn.val();
+                btn.val('Added!');
+                setTimeout(function() {
+                    btn.val(originalText);
+                }, 1000);
+            });
+
+            // Delete Cart Item JS
+            $(document).on("click", ".btn-delete", function (event) {
+                event.preventDefault();
+                const foodName = $(this).closest("tr").find("td:nth-child(2)").text();
+                cart = cart.filter(item => item.name !== foodName);
+                localStorage.setItem('foodFusionCart', JSON.stringify(cart));
+                loadCartFromStorage();
+                cartCount = calculateCartCount();
+                updateCartBadge();
+                updateTotal();
+            });
+
+            // Update Cart Badge
+            function updateCartBadge() {
+                cartCount = calculateCartCount();
+                $(".badge").text(cartCount);
+            }
+
+            // Calculate total items in cart
+            function calculateCartCount() {
+                let count = 0;
+                if (cart && cart.length) {
+                    cart.forEach(item => {
+                        count += item.quantity;
+                    });
+                }
+                return count;
+            }
+
+            // Update total
+            function updateTotal() {
+                let total = 0;
+                if (cart && cart.length) {
+                    cart.forEach(item => {
+                        total += parseFloat(item.total);
+                    });
+                }
+                $("#cart-total").text("₹" + total.toFixed(2));
+                localStorage.setItem('foodFusionCart', JSON.stringify(cart));
+            }
+
+            // Load cart from storage
+            function loadCartFromStorage() {
+                $("#cart-items").empty();
+                if (cart && cart.length) {
+                    cart.forEach(item => {
+                        const row = `
+                            <tr>
+                                <td><img src="${item.image}" alt="${item.name}" class="cart-img"></td>
+                                <td>${item.name}</td>
+                                <td>₹${item.price}</td>
+                                <td>${item.quantity}</td>
+                                <td>₹${item.total}</td>
+                                <td><a href="#" class="btn-delete"><i class="fa fa-trash"></i></a></td>
+                            </tr>
+                        `;
+                        $("#cart-items").append(row);
+                    });
+                } else {
+                    const emptyRow = `
+                        <tr>
+                            <td colspan="6" class="text-center">Your cart is empty</td>
+                        </tr>
+                    `;
+                    $("#cart-items").append(emptyRow);
+                }
+                let total = 0;
+                if (cart && cart.length) {
+                    cart.forEach(item => {
+                        total += parseFloat(item.total);
+                    });
+                }
+                $("#cart-total").text("₹" + total.toFixed(2));
+            }
+        });
     </script>
     <!-- Custom JS -->
     <script src="js/cart-sound.js"></script>
     <script src="js/custom.js"></script>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
     <script src="js/feeling-hungry.js"></script>
+
 </body>
 </html>

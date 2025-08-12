@@ -4,11 +4,11 @@
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
-  background-color: transparent;
+  background-color: rgb(248, 225, 225);
 }
 
 .feedback-container {
-  background-color: white;
+ background-image: url('/img/hero.png');
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
