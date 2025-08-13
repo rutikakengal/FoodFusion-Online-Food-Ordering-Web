@@ -21,13 +21,13 @@
       },
       {
         id: "login",
-        questions: ["login", "sign in", "how to login", "can't login"],
+        questions: ["login", "sign in", "how to login", "can't login", "how do I login"],
         answer:
           "Click the 'Login' button on the header, enter your email and password, and press Login. If you forgot your password use the 'Forgot Password' button."
       },
       {
         id: "signup",
-        questions: ["signup", "sign up", "register", "create account"],
+        questions: ["signup", "sign up", "register", "create account", "how to signup"],
         answer:
           "Click the 'Sign Up' button to create an account. We need a name, email, password and profile picture and you can also add your address if you want."
       },
@@ -75,7 +75,7 @@
       },
       {
         id: "blog",
-        questions: ["blog", "articles", "food blog", "posts"],
+        questions: ["blog", "articles", "food blog", "posts", "Where is the blog"],
         answer:
           "Our Blog contains recipes, food tips, and company news. Click on the 'Blog' link in the footer to explore recent articles."
       },
@@ -105,7 +105,7 @@
       "How to place an order?",
       "Contact information",
       "How to lodge a complaint?",
-      "How do I sign up / login?",
+      "How do I login?",
       "Where is the blog?"
     ];
   
@@ -163,7 +163,7 @@
   /* Chatbot injected styles (FoodFusion - minimalist, friendly) */
   .ff-chat-btn {
     position: fixed;
-    right: 8px;
+    left: 18px;
     bottom: 18px;
     z-index: 999999;
     width: 52px;
@@ -181,9 +181,12 @@
     border: none;
   }
   .ff-chat-btn:active { transform: scale(.98); }
+  .ff-chat-btn:hover {
+    transform: scale(1.05);
+  }
   .ff-chat-container {
     position: fixed;
-    right: 18px;
+    left: 18px;
     bottom: 92px;
     width: 360px;
     max-width: calc(100% - 48px);
@@ -318,7 +321,13 @@
     btn.className = "ff-chat-btn";
     btn.setAttribute("aria-label", "Open chat");
     btn.title = "Chat with FoodFusion helper";
-    btn.innerHTML = "💬";
+    btn.innerHTML = `
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+      <div id="chatbot-button">
+        <i class="fas fa-robot"></i>
+      </div>`;
+
     document.body.appendChild(btn);
   
     const container = document.createElement("div");
