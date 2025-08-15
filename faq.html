@@ -9,6 +9,95 @@
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="css/hover-min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* FAQ Section Styling */
+        .faq-section {
+            padding: 60px 20px;
+            background: transparent; /* Keep site background */
+        }
+
+        .faq-section h2 {
+            font-size: 2.2rem;
+            color: #E24A4A; /* Logo/header red */
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .heading-border {
+            width: 80px;
+            height: 4px;
+            background: #E24A4A;
+            margin: 0 auto 30px;
+            border-radius: 2px;
+        }
+
+        .faq-box {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 77, 77, 0.25); /* Transparent theme red */
+            border: 1px solid rgba(255, 77, 77, 0.45);
+            border-radius: 12px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 77, 77, 0.35); /* Slightly darker on hover */
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+
+        .faq-item summary {
+            padding: 18px 22px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '\f107'; /* Font Awesome chevron-down */
+            font-family: "FontAwesome";
+            font-size: 1rem;
+            color: #E24A4A;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 22px 18px;
+            font-size: 0.95rem;
+            color: inherit;
+            line-height: 1.6;
+        }
+
+        .faq-qnum-inline {
+            color: #E24A4A
+            margin-right: 8px;
+            font-weight: 700;
+        }
+
+        .faq-ans-label {
+            font-weight: bold;
+            color: #E24A4A
+            margin-right: 6px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Section Start -->
@@ -44,31 +133,31 @@
             <div class="faq-box faq-box-small">
                 <div class="faq-item">
                     <details>
-                        <summary class="faq-question faq-question-center"><span class="faq-qnum-inline">Q1.</span> How do I place an order?</summary>
+                        <summary><span class="faq-qnum-inline">Q1.</span> How do I place an order?</summary>
                         <p class="faq-answer"><span class="faq-ans-label">Ans.</span> Browse our menu, add your favorite items to the cart, and proceed to checkout. Follow the on-screen instructions to complete your order.</p>
                     </details>
                 </div>
                 <div class="faq-item">
                     <details>
-                        <summary class="faq-question faq-question-center"><span class="faq-qnum-inline">Q2.</span> What payment methods are accepted?</summary>
+                        <summary><span class="faq-qnum-inline">Q2.</span> What payment methods are accepted?</summary>
                         <p class="faq-answer"><span class="faq-ans-label">Ans.</span> We accept major credit/debit cards, UPI, and cash on delivery for your convenience.</p>
                     </details>
                 </div>
                 <div class="faq-item">
                     <details>
-                        <summary class="faq-question faq-question-center"><span class="faq-qnum-inline">Q3.</span> Can I cancel or modify my order?</summary>
+                        <summary><span class="faq-qnum-inline">Q3.</span> Can I cancel or modify my order?</summary>
                         <p class="faq-answer"><span class="faq-ans-label">Ans.</span> Yes, you can cancel or modify your order before it is prepared. Please contact our support team as soon as possible for assistance.</p>
                     </details>
                 </div>
                 <div class="faq-item">
                     <details>
-                        <summary class="faq-question faq-question-center"><span class="faq-qnum-inline">Q4.</span> How long does delivery usually take?</summary>
+                        <summary><span class="faq-qnum-inline">Q4.</span> How long does delivery usually take?</summary>
                         <p class="faq-answer"><span class="faq-ans-label">Ans.</span> Delivery typically takes 30–45 minutes, depending on your location and order volume.</p>
                     </details>
                 </div>
                 <div class="faq-item">
                     <details>
-                        <summary class="faq-question faq-question-center"><span class="faq-qnum-inline">Q5.</span> Do you deliver in all areas?</summary>
+                        <summary><span class="faq-qnum-inline">Q5.</span> Do you deliver in all areas?</summary>
                         <p class="faq-answer"><span class="faq-ans-label">Ans.</span> We deliver to most areas within the city. Enter your address at checkout to confirm delivery availability.</p>
                     </details>
                 </div>
@@ -98,7 +187,7 @@
                 </div>
                 <div>
                     <h3>Learn More</h3>
-                    <div class="learnmore" >
+                    <div class="learnmore">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Security</a>
                         <a href="#">Terms of Service</a>
@@ -110,7 +199,7 @@
                     <h3>Social Links</h3>
                     <div class="social">
                         <ul>
-                             <li><a href="https://www.facebook.com/">
+                            <li><a href="https://www.facebook.com/">
                                 <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
                                 Facebook
                                 </a></li>
