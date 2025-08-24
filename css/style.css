@@ -122,6 +122,7 @@ fieldset legend {
   padding: 10px 0;
   background: #fff;
   transition: all 0.5s ease-in-out;
+  color: white;
 }
 .site-top-nav {
   background: #fff;
@@ -140,7 +141,7 @@ fieldset legend {
   right: 0;
   z-index: 1030;
   height: 65px;
-  background:linear-gradient(to right, #000000, #312a2a) /* translucent white */
+  background:linear-gradient(to right, #1c0c0ca2, #2f3542) /* translucent white */
   
 }
 .navbar-fixed-top .container {
@@ -168,10 +169,14 @@ fieldset legend {
   font-weight: bold;
   margin-left: 85px;
   margin-top: 28px;
+  color: white;
+}
+.menu li a{
+  color: white;
 }
 
 .menu ul li:hover{
-  color: #bfbbbb;
+  color: red;
   transition: color 0.5s;
 }
 
