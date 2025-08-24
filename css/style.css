@@ -459,7 +459,50 @@ fieldset legend {
 /* Food Section Style End */
 
 /* Footer Section Style Start */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 .footer {
+
+  background: linear-gradient(to right, #000000, #312a2a);
+  color: #333;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #f9dcc9;
+
   overflow: hidden;
   background: rgba(255, 255, 255, 0.85);
   color: #000000;
@@ -538,14 +581,79 @@ fieldset legend {
   display: flex;
   justify-content: center;
 }
+
+.social-icons a {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #f35252;
+  text-decoration: none;
+  margin-top: 18px;
+  
+}
+.social-icons i{
+  margin-top: 38px;
+  margin-left: 14px;
+ 
+}
+.social-icons i:hover{
+color: #f9dcc9db;
+transition:color 0.3s;
+
+}
+
+.footer-social{
+  margin-top: 38px;
+  margin-left: 48px;
+}
+.footer-social h3{
+  color: #fdfdfde6;
+}
+.footer-links{
+  margin-top: 38px;
+  margin-left: 98px;
+  margin-right: 98px
+}
+.footer-links h3,p{
+  color: #fdfdfde6;
+}
+.footer-links ul li{
+  margin-top: 28px;
+  
+}
+.footer-links p{
+  margin-top: 38px;
+}
+
+
+
+
+
+
+
+.footer-bottom {
+  border-top: 1px solid #ccc;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+ 
+}
+.footer-logo-about {
+  flex: 1 1 250px;
+  margin-right: 2rem;
+}
+.footer-logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
 /* Footer Section Style End */
 
-/* Copyright Section Style Start */
-.copyright {
-  overflow: hidden;
-  background: #000;
-  color: #fff;
-}
+
 /* Copyright Section Style End */
 
 /* Bact-To-Top Section Style Start */
