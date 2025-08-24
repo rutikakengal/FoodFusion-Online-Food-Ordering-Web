@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Manage Users - Food Fusion</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 50;
+            background: #e74c3c;
+            width: 250px;
+        }
+        .sidebar-hidden {
+            transform: translateX(-100%);
+        }
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+            outline: none;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .user-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 200px;
+            }
+            .main-content {
+                width: 100%;
+                padding: 10px;
+            }
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td {
+                min-width: 120px;
+            }
+            .modal {
+                top: -100px;
+                width: 100%;
+                height: 100%;
+            }
+            .modal-content {
+                margin: 20% auto;
+                width: 85%;
+                max-width: 400px;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .sidebar {
+                width: 220px;
+            }
+            .main-content {
+                margin-left: 220px;
+                padding: 15px;
+            }
+            .grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .modal-content {
+                max-width: 450px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .sidebar {
+                width: 250px;
+            }
+            .main-content {
+                margin-left: 250px;
+                padding: 20px;
+            }
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: -80px;
+            left: 0;
+            width: 100%;
+            height: 1000%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 60;
+        }
+        .modal-content {
+            background: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="relative flex min-h-screen">
+        <!-- Sidebar -->
+        <div class="sidebar text-white p-6 flex flex-col shadow-2xl md:shadow-none" id="sidebar">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold animate__animated animate__fadeIn">Admin Panel</h2>
+                <button class="sidebar-close md:hidden text-white" onclick="toggleSidebar()">✕</button>
+            </div>
+            <nav class="space-y-3">
+                <a href="admin-index.html" class="block py-3 px-4 rounded-lg bg-red-600 hover:bg-red-500 transition-all duration-300 transform hover:scale-105 animate__animated animate__fadeIn animate__delay-1s">Dashboard</a>
+                <a href="admin-manage-orders.html" class="block py-3 px-4 rounded-lg bg-red-700 hover:bg-red-600 transition-all duration-300 transform hover:scale-105 animate__animated animate__fadeIn animate__delay-1s">Manage Orders</a>
+                <a href="admin-manage-users.html" class="block py-3 px-4 rounded-lg bg-red-700 hover:bg-red-600 transition-all duration-300 transform hover:scale-105 animate__animated animate__fadeIn animate__delay-1s">Manage Users</a>
+                <a href="admin-meal-items.html" class="block py-3 px-4 rounded-lg bg-red-700 hover:bg-red-600 transition-all duration-300 transform hover:scale-105 animate__animated animate__fadeIn animate__delay-1s">Meal Items</a>
+                <a href="/index.html" class="block py-3 px-4 rounded-lg bg-red-700 hover:bg-red-600 transition-all duration-300 transform hover:scale-105 animate__animated animate__fadeIn animate__delay-1s">Logout</a>
+            </nav>
+        </div>
+
+        <!-- Overlay for mobile -->
+        <div class="overlay fixed inset-0 bg-black bg-opacity-50 hidden" id="overlay" onclick="toggleSidebar()"></div>
+
+        <!-- Main Content -->
+        <div class="main-content flex-1 p-6 md:p-10">
+            <button class="hamburger md:hidden mb-4 p-2 bg-red-600 text-white rounded-lg" onclick="toggleSidebar()">☰</button>
+            <h1 class="text-3xl font-bold mb-8 text-gray-800 animate__animated animate__fadeInDown">Manage Users</h1>
+
+            <!-- Add User Button -->
+            <button class="mb-6 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-500 transition duration-300" onclick="openModal()">Add New User</button>
+
+            <!-- Users Table -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b-2 border-gray-200">
+                            <th class="py-3 px-4 text-gray-700">ID</th>
+                            <th class="py-3 px-4 text-gray-700">Image</th>
+                            <th class="py-3 px-4 text-gray-700">Name</th>
+                            <th class="py-3 px-4 text-gray-700">Email</th>
+                            <th class="py-3 px-4 text-gray-700">Role</th>
+                            <th class="py-3 px-4 text-gray-700">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-100 hover:bg-gray-50">
+                            <td class="py-3 px-4">1</td>
+                            <td class="py-3 px-4"><img src="https://avatars.githubusercontent.com/u/177618218?v=4" class="user-image" alt="User 1"></td>
+                            <td class="py-3 px-4">Rutika Kengal</td>
+                            <td class="py-3 px-4">rutika@foodfusion.com</td>
+                            <td class="py-3 px-4">Admin</td>
+                            <td class="py-3 px-4">
+                                <button class="text-blue-600 hover:text-blue-800 mr-2" onclick="openModal(1)">Edit</button>
+                                <button class="text-red-600 hover:text-red-800">Delete</button>
+                            </td>
+                        </tr>
+                 
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal -->
+            <div id="userModal" class="modal">
+                <div class="modal-content">
+                    <h2 class="text-2xl font-bold mb-4">Add/Edit User</h2>
+                    <form id="userForm" class="space-y-4">
+                        <input type="hidden" id="userId">
+                        <div>
+                            <label class="block text-gray-700">Name</label>
+                            <input type="text" id="userName" class="w-full p-2 border rounded-lg" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700">Email</label>
+                            <input type="email" id="userEmail" class="w-full p-2 border rounded-lg" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700">Role</label>
+                            <select id="userRole" class="w-full p-2 border rounded-lg" required>
+                                <option value="Admin">Admin</option>
+                                <option value="User">User</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700">Image</label>
+                            <input type="file" id="userImage" accept="image/*" class="w-full p-2 border rounded-lg">
+                     
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition duration-300">Save</button>
+                        <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition duration-300" onclick="closeModal()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.getElementById("sidebar");
+
+            if (window.innerWidth < 768) {
+                sidebar.classList.add("sidebar-hidden");
+            }
+
+            // Handle image preview
+            const userImageInput = document.getElementById("userImage");
+            const imagePreview = document.getElementById("imagePreview");
+
+            userImageInput.addEventListener("change", function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        imagePreview.src = e.target.result;
+                        imagePreview.classList.remove("hidden");
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    imagePreview.classList.add("hidden");
+                    imagePreview.src = "";
+                }
+            });
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+            
+            if (window.innerWidth < 768) {
+                sidebar.classList.toggle("sidebar-hidden");
+                overlay.classList.toggle("hidden");
+                
+                if (!sidebar.classList.contains("sidebar-hidden")) {
+                    overlay.style.opacity = "1";
+                } else {
+                    overlay.style.opacity = "0";
+                    setTimeout(() => overlay.classList.add("hidden"), 300);
+                }
+            }
+        }
+
+        function openModal(id = null) {
+            const modal = document.getElementById("userModal");
+            const imagePreview = document.getElementById("imagePreview");
+            modal.style.display = "block";
+
+            if (id) {
+                // Mock edit data
+                document.getElementById("userId").value = id;
+                if (id === 1) {
+                    document.getElementById("userName").value = "Rutika Kengal";
+                    document.getElementById("userEmail").value = "rutiak@foodfusion.com";
+                    document.getElementById("userRole").value = "Admin";
+                    imagePreview.src = "https://avatars.githubusercontent.com/u/177618218?v=4";
+                    imagePreview.classList.remove("hidden");
+                } 
+            } else {
+                document.getElementById("userForm").reset();
+                document.getElementById("userId").value = "";
+                imagePreview.classList.add("hidden");
+                imagePreview.src = "";
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("userModal");
+            modal.style.display = "none";
+        }
+
+        document.getElementById("userForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const id = document.getElementById("userId").value;
+            const name = document.getElementById("userName").value;
+            const email = document.getElementById("userEmail").value;
+            const role = document.getElementById("userRole").value;
+            const image = document.getElementById("userImage").files[0];
+            alert(`Saved: ${name}, ${email}, ${role} (ID: ${id || 'new'}) ${image ? 'with image' : 'no image'}`);
+            closeModal();
+        });
+
+        window.addEventListener("resize", () => {
+            const sidebar = document.getElementById("sidebar");
+            if (window.innerWidth >= 768) {
+                sidebar.classList.remove("sidebar-hidden");
+            } else {
+                sidebar.classList.add("sidebar-hidden");
+            }
+        });
+    </script>
+</body>
+</html>

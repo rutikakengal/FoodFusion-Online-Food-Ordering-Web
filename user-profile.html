@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+  <!-- Navigation Section Start -->
+  <header class="navbar">
+    <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html" title="Logo">
+            <img src="img/logo.svg" alt="Logo" class="img-responsive">
+          </a>
+        </div>
+        <div class="menu text-right">
+          <ul>
+            <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+            <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
+            <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
+            <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+            <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+            <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Navigation Section End -->
+
+  <section class="profile-section">
+    <div class="profile-card">
+      <div class="profile-header">
+        <img id="profile-picture" src="img/logo.svg" alt="Profile Picture" class="profile-logo profile-logo-small" style="object-fit:cover;" />
+        <input type="file" id="upload-picture" accept="image/*" style="display:block;margin:10px auto 0;" />
+      </div>
+      <div class="profile-body">
+        <h2 id="user-name">Welcome, Username</h2>
+        <p id="user-role" class="role">Food Lover | Member since 2024</p>
+        <p id="user-email" class="email">user@email.com</p>
+        <p id="user-address" class="address">123 Main Street, City</p>
+        <div class="profile-stats">
+          <div><strong id="user-orders">10</strong><br />Orders</div>
+          <div><strong id="user-reviews">4.5</strong><br />Reviews</div>
+          <div><strong id="user-rating">4.8</strong><br />Avg. Rating</div>
+        </div>
+        <div class="profile-actions">
+          <button class="profile-btn" id="edit-profile-btn"><i class="fa fa-pencil"></i> Edit</button>
+          <button class="profile-btn" id="my-orders-btn"><i class="fa fa-list"></i> My Orders</button>
+          <button class="profile-btn" id="home-btn"><i class="fa fa-home"></i> Home</button>
+        </div>
+        <div id="orders-section" class="orders-section" style="display:none;">
+          <h3 class="orders-title">Your Orders</h3>
+          <ul id="orders-list" class="orders-list">
+            <li>Pizza Margherita - $8.00 <span class="order-status delivered">Delivered</span></li>
+            <li>Veg Sandwich - $5.00 <span class="order-status onway">On the way</span></li>
+            <li>Burger - $6.00 <span class="order-status cancelled">Cancelled</span></li>
+          </ul>
+        </div>
+        <form id="edit-profile-form" style="display:none;">
+          <h3>Edit Profile</h3>
+          <input type="text" id="edit-name" placeholder="Full Name" required />
+          <input type="email" id="edit-email" placeholder="Email" required />
+          <input type="text" id="edit-address" placeholder="Address (optional)" />
+          <div class="profile-edit-btn-row">
+            <button type="submit" class="profile-btn"><i class="fa fa-save"></i> Save</button>
+            <button type="button" class="profile-btn" id="remove-pic-btn"><i class="fa fa-trash"></i> Remove Photo</button>
+            <button type="button" class="profile-btn" id="cancel-edit-btn"><i class="fa fa-times"></i> Cancel</button>
+          </div>
+        </form>
+<style>
+  #edit-profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 18px;
+    width: 100%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 20px 18px 14px 18px;
+    box-sizing: border-box;
+  }
+  #edit-profile-form input[type="text"],
+  #edit-profile-form input[type="email"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    background: #fafbfc;
+    transition: border 0.2s;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #edit-profile-form input[type="text"]:focus,
+  #edit-profile-form input[type="email"]:focus {
+    border: 1.5px solid #1da1f2;
+    outline: none;
+    background: #fff;
+  }
+  #edit-profile-form h3 {
+    margin-bottom: 4px;
+    font-size: 1.15em;
+    color: #222;
+    font-weight: 600;
+    text-align: center;
+  }
+  .profile-logo-small {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #eee;
+    margin: 0 auto 8px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    padding: 5px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60% 60%;
+  }
+  .profile-edit-btn-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .profile-edit-btn-row .profile-btn {
+    min-width: 110px;
+    font-size: 1em;
+    padding: 7px 0;
+    border-radius: 6px;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  #remove-pic-btn {
+    background: #e53935;
+    color: #fff;
+  }
+  #remove-pic-btn:hover {
+    background: #b71c1c;
+  }
+  #cancel-edit-btn {
+    background: #888;
+    color: #fff;
+  }
+  #cancel-edit-btn:hover {
+    background: #555;
+  }
+</style>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer Section Start -->
+  <section class="footer">
+    <div class="container">
+      <div class="grid-3">
+        <div class="aboutus-flex">
+          <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+          <div class="about-content">
+            <p style="text-align:justify;">Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
+            <p style="text-align:justify;">Our shared passion for food and community drives us to bring quality meals directly to your doorstep.</p>
+          </div>
+        </div>
+        <div class="FoodFusion">
+          <h3>Food Fusion</h3>
+          <div class="foodfusion">
+            <a href="WhoWeAre.html">Who We Are</a>
+            <a href="Blog.html">Blog</a>
+            <a href="WorkWithus.html">Work With Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="ReportFraud.html">Report Fraud</a>
+          </div>
+        </div>
+        <div>
+          <h3>Learn More</h3>
+          <div class="learnmore" >
+            <a href="#">Privacy Policy</a>
+            <a href="#">Security</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Lodge Complaint</a>
+            <a href="#">Testimonials</a>
+          </div>
+        </div>
+        <div class="FollowUs">
+          <h3>Social Links</h3>
+          <div class="social">
+            <ul>
+              <li><a href="https://www.facebook.com/"><img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24"> Facebook</a></li>
+              <li><a href="https://www.instagram.com/"><img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24"> Instagram</a></li>
+              <li><a href="https://x.com/"><img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24"> Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer Section End -->
+
+  <section class="copyright">
+    <div class="container text-center">
+      <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+    </div>
+    <a id="back-to-top" class="btn-primary">
+      <i class="fa fa-angle-double-up"></i>
+    </a>
+  </section>
+
+  <script src="js/profile.js"></script>
+  <script>
+    // Always provide edit option and editable form on profile page
+    document.addEventListener('DOMContentLoaded', function() {
+      var ordersBtn = document.getElementById('my-orders-btn');
+      var ordersSection = document.getElementById('orders-section');
+      var homeBtn = document.getElementById('home-btn');
+      var editBtn = document.getElementById('edit-profile-btn');
+      var editForm = document.getElementById('edit-profile-form');
+      var cancelEditBtn = document.getElementById('cancel-edit-btn');
+      var removePicBtn = document.getElementById('remove-pic-btn');
+      // Remove profile picture and reset to default logo
+      if (removePicBtn) {
+        removePicBtn.addEventListener('click', function() {
+          var defaultLogo = 'img/logo.svg';
+          profilePicture.src = defaultLogo;
+          localStorage.removeItem('profilePicture');
+          // Also clear file input if present
+          if (uploadPicture) uploadPicture.value = '';
+        });
+      }
+      var userName = document.getElementById('user-name');
+      var userEmail = document.getElementById('user-email');
+      var userAddress = document.getElementById('user-address');
+      var editName = document.getElementById('edit-name');
+      var editEmail = document.getElementById('edit-email');
+      var editAddress = document.getElementById('edit-address');
+      var profilePicture = document.getElementById('profile-picture');
+      var uploadPicture = document.getElementById('upload-picture');
+
+      // Load profile picture from localStorage if available, but only if not default
+      var defaultLogo = 'img/logo.svg';
+      var storedPic = localStorage.getItem('profilePicture');
+      // If no custom picture is set, always show default logo and clear any old custom picture
+      if (!storedPic || storedPic === defaultLogo) {
+        profilePicture.src = defaultLogo;
+        localStorage.removeItem('profilePicture');
+      } else {
+        profilePicture.src = storedPic;
+      }
+
+      // Handle profile picture upload
+      if (uploadPicture) {
+        uploadPicture.addEventListener('change', function(e) {
+          var file = e.target.files[0];
+          if (file) {
+            var reader = new FileReader();
+            reader.onload = function(evt) {
+              profilePicture.src = evt.target.result;
+              localStorage.setItem('profilePicture', evt.target.result);
+            };
+            reader.readAsDataURL(file);
+          } else {
+            // If no file is chosen, remove custom picture and show default logo
+            profilePicture.src = defaultLogo;
+            localStorage.removeItem('profilePicture');
+          }
+        });
+      }
+
+      if (ordersBtn && ordersSection) {
+        ordersBtn.addEventListener('click', function() {
+          // Always populate with default orders and show the section
+          var ordersList = document.getElementById('orders-list');
+          if (ordersList) {
+            ordersList.innerHTML = `
+              <li>Pizza Margherita - $8.00 <span class="order-status delivered">Delivered</span></li>
+              <li>Veg Sandwich - $5.00 <span class="order-status onway">On the way</span></li>
+              <li>Burger - $6.00 <span class="order-status cancelled">Cancelled</span></li>
+            `;
+          }
+          ordersSection.style.display = 'block';
+          // Optionally scroll to orders section for visibility
+          ordersSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }
+      if (homeBtn) {
+        homeBtn.addEventListener('click', function() {
+          window.location.href = 'index.html';
+        });
+      }
+      if (editBtn && editForm) {
+        editBtn.addEventListener('click', function() {
+          editForm.style.display = 'block';
+          editName.value = userName.textContent.replace('Welcome, ', '');
+          editEmail.value = userEmail.textContent;
+          editAddress.value = userAddress.textContent;
+        });
+      }
+      if (cancelEditBtn && editForm) {
+        cancelEditBtn.addEventListener('click', function() {
+          editForm.style.display = 'none';
+        });
+      }
+      if (editForm) {
+        editForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          userName.textContent = 'Welcome, ' + editName.value;
+          userEmail.textContent = editEmail.value;
+          userAddress.textContent = editAddress.value;
+          editForm.style.display = 'none';
+        });
+      }
+    });
+  </script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
+
+
+
