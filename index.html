@@ -15,10 +15,19 @@
     <link rel="stylesheet" href="css/hover-min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
     <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
+
+
+    <!-- Feeling Hungry CSS -->
+    <link rel="stylesheet" href="css/feeling-hungry.css">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 
 </head>
 
@@ -42,10 +51,12 @@
                         <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
                         <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
                         <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li><a class="hvr-underline-from-center" href="profile.html" title="Sign-in"><i class="fa fa-user"></i> Signup</a></li>
+                        <li><a class="hvr-underline-from-center" href="faq.html">FAQ</a></li>
                         <li>
                             <a id="shopping-cart" class="shopping-cart">
                                 <i class="fa fa-cart-arrow-down"></i>
-                                <span class="badge">4</span>
+                                <span class="badge">0</span>
                             </a>
                             <div id="cart-content" class="cart-content">
                                 <h3 class="text-center">Shopping Cart</h3>
@@ -59,32 +70,8 @@
                                         <th>Action</th>
                                     </tr>
                                     <tr>
-                                        <td><img src="img/food/p1.jpg" alt="Food"></td>
-                                        <td>Pizza</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/s1.jpg" alt="Food"></td>
-                                        <td>Sandwich</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/b1.jpg" alt="Food"></td>
-                                        <td>Burger</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
                                         <th colspan="4">Total</th>
-                                        <th>&#8377;24.00</th>
+                                        <th>$0.00</th>
                                         <th></th>
                                     </tr>
                                 </table>
@@ -121,7 +108,10 @@
             <div class="grid-3">
                 <a href="category-foods.html?category=Pizza">
                     <div class="float-container">
-                        <img src="img/category/pizza.jpg" class="img-responsive" alt=""  style="width: 250px;">
+
+                        <img src="img/category/pizza.jpg" class="img-responsive" alt="" >
+
+                        
                         <h3 class="float-text text-white">Pizza</h3>
                     </div>
                 </a>
@@ -137,24 +127,75 @@
                         <h3 class="float-text text-white">Burger</h3>
                     </div>
                 </a>
-                  <a href="category-foods.html">
+                  <a href="category-foods.html?category=Momos">
                     <div class="float-container">
-                        <img src="img/food/changes1.jpg" class="img-responsive" alt=""  style="width: 250px;">
+                        <img src="img/food/changes1.jpg" class="img-responsive" alt="">
                         <h3 class="float-text text-white">Momos</h3>
                     </div>
                 </a>
-                  <a href="category-foods.html">
+                  <a href="category-foods.html?category=Noodles">
                     <div class="float-container">
-                        <img src="img/food/changes2.jpg" class="img-responsive" alt=""  style="width: 250px;">
+
+                        <img src="img/food/changes2.jpg" class="img-responsive" alt="" >
+
                         <h3 class="float-text text-white" >Noodles</h3>
                     </div>
                 </a>
-                  <a href="category-foods.html">
+                  <a href="category-foods.html?category=Coffee">
                     <div class="float-container">
-                        <img src="img/food/chnages3.jpg" class="img-responsive" alt="" style="width: 250px;">
+
+                        <img src="img/food/chnages3.jpg" class="img-responsive" alt="" >
+
+              
+
                         <h3 class="float-text text-white">Coffee</h3>
                     </div>
                 </a>
+
+                <a href="category-foods.html?category=Samosa">
+                    <div class="float-container">
+                        <img src="img/category/samosa.jpg" class="img-responsive" alt="" >
+                        <h3 class="float-text text-white">Samosa</h3>
+                    </div>
+                </a>
+
+                <a href="category-foods.html?category=Pasta">
+                    <div class="float-container">
+                        <img src="img/category/Pasta.jpg" class="img-responsive" alt="">
+                        <h3 class="float-text text-white">Pasta</h3>
+                    </div>
+                </a>
+
+                <a href="category-foods.html?category=Manchurian">
+                    <div class="float-container">
+                        <img src="img/category/manchurian.jpg" class="img-responsive" alt="">
+                        <h3 class="float-text text-white">Manchurian</h3>
+                    </div>
+                </a>
+
+                <a href="category-foods.html?category=French Fries">
+                    <div class="float-container">
+                        <img src="img/category/fries.jpg" class="img-responsive" alt="">
+                        <h3 class="float-text text-white">French Fries</h3>
+                    </div>
+                </a>
+
+                <a href="category-foods.html?category=Pav-Bhaji">
+                    <div class="float-container">
+                        <img src="img/category/Pav-BHaji.jpg" class="img-responsive" alt="">
+                        <h3 class="float-text text-white">Pav-Bhaji</h3>
+                    </div>
+                </a>
+
+                <a href="category-foods.html?category=dosa">
+                    <div class="float-container">
+                        <img src="img/category/dosa.jpg" class="img-responsive" alt="">
+                        <h3 class="float-text text-white">Dosa</h3>
+                    </div>
+                </a>
+
+
+
             </div>
         </div>
     </section>
@@ -167,7 +208,7 @@
             <div class="heading-border"></div>
             <div class="grid-2">
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/p1.jpg" alt="" class="img-responsive img-curve">
                         </div>
@@ -186,7 +227,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
                         </div>
@@ -205,7 +246,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/b1.jpg" alt="" class="img-responsive img-curve">
                         </div>
@@ -223,7 +264,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/changes1.jpg" alt="" class="img-responsive img-curve">
                         </div>
@@ -243,7 +284,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/changes2.jpg" alt="" class="img-responsive img-curve" >
                         </div>
@@ -262,7 +303,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/chnages3.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -280,6 +321,114 @@
                             <input type="submit" class="btn-primary" value="Add To Cart">
                         </div>
                     </form>
+                </div>  
+
+                        <div class="food-menu-box">
+                            <form>
+                                <div class="food-menu-img">
+                                    <img src="img/food/samosa.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
+                                </div>
+                                <div class="food-menu-desc">
+        
+                                    <h4>Samosa</h4>
+                                    <p class="food-price">$8.00</p>
+                                    <p class="food-details"><b>Crispy, Spicy, Addictive!</b>
+                                        <br>
+                                        Our golden-fried samosas are packed with zesty potato filling and bold Indian spices. The ultimate tea-time classic!</p>
+                                    <input type="number" value="1" min="1">
+                                    <input type="submit" class="btn-primary" value="Add To Cart">
+                                 </div>
+                         </form>
+                        </div>
+
+                        <div class="food-menu-box">
+                            <form>
+                                <div class="food-menu-img">
+                                    <img src="img/food/Pasta.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
+                                </div>
+                                <div class="food-menu-desc">
+        
+                                    <h4>Pasta</h4>
+                                    <p class="food-price">$8.00</p>
+                                    <p class="food-details"><b>Creamy, Comforting, Crave-Worthy!</b>
+                                        <br>
+                                    Our pasta is tossed in rich, velvety sauces with fresh veggies and cheese - a spoonful of comfort in every bite!</p>
+                                    <input type="number" value="1" min="1">
+                                    <input type="submit" class="btn-primary" value="Add To Cart">
+                                 </div>
+                         </form>
+                        </div>
+
+                        <div class="food-menu-box">
+                            <form>
+                                <div class="food-menu-img">
+                                    <img src="img/food/manchurian.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
+                                </div>
+                                <div class="food-menu-desc">
+        
+                                    <h4>Manchurian</h4>
+                                    <p class="food-price">$8.00</p>
+                                    <p class="food-details"><b>Bold, Saucy, Street-Style!</b>
+                                        <br>
+                                    Crispy veggie balls tossed in a spicy Indo-Chineese gravy - our Manchurian is all about that fiery flavor punch!</p>
+                                    <input type="number" value="1" min="1">
+                                    <input type="submit" class="btn-primary" value="Add To Cart">
+                                 </div>
+                         </form>
+                        </div>
+
+                        <div class="food-menu-box">
+                            <form>
+                                <div class="food-menu-img">
+                                    <img src="img/food/fries.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
+                                </div>
+                                <div class="food-menu-desc">
+        
+                                    <h4>French Fries</h4>
+                                    <p class="food-price">$8.00</p>
+                                    <p class="food-details"><b>Crispy, Salty, Snack-Perfect!</b>
+                                        <br>
+                                    Golden-fried potato sticks sprinkled with classic seasoning - your all time favourite munches done right!</p>
+                                    <input type="number" value="1" min="1">
+                                    <input type="submit" class="btn-primary" value="Add To Cart">
+                                 </div>
+                         </form>
+                        </div>
+                        
+                        <div class="food-menu-box">
+                            <form>
+                                <div class="food-menu-img">
+                                    <img src="img/food/Pav-BHaji.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
+                                </div>
+                                <div class="food-menu-desc">
+        
+                                    <h4>Pav-Bhaji</h4>
+                                    <p class="food-price">$8.00</p>
+                                    <p class="food-details"><b>Bold, Buttery, Bhaji Bliss!</b>
+                                        <br>
+                                    Mumbai,s iconic street food - spicy mashed veggies served with golden-toasted pav.Pure comfort on a plate!</p>
+                                    <input type="number" value="1" min="1">
+                                    <input type="submit" class="btn-primary" value="Add To Cart">
+                                 </div>
+                         </form>
+                        </div>
+
+                        <div class="food-menu-box">
+                    <form>
+                        <div class="food-menu-img">
+                            <img src="img/food/dosa.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
+                        </div>
+                        <div class="food-menu-desc">
+
+                            <h4>Dosa</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details"><b>Crispy, Savory, South-Style!</b>
+                                <br>
+                            A golden, paper-thin crepe made from fermented batter, served hot with chutney and sambar - light,crispy and soul-satisfying!</p>
+                            <input type="number" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                         </div>
+                 </form>
                 </div>
             </div>
         </div>
@@ -288,7 +437,23 @@
         </p>
     </section>
     <!-- Foods Section End -->
-
+    
+   <!-- Feedback & Reviews Section Start -->
+    <section id="feedback-review">
+      <div class="feedback-container">
+        <h2>Feedback & Reviews</h2>
+        <p>We value your experience! Leave your feedback or review about our website below.</p>
+        <form id="feedback-form">
+          <input type="text" id="name-input" placeholder="Your Name" required>
+          <input type="email" id="email-input" placeholder="Your Email" required>
+          <input type="text" id="feedback-input" placeholder="Share your thoughts..." required>
+          <button type="submit">Submit</button>
+        </form>
+        <div id="feedback-success" style="display:none;color:green;font-weight:600;margin-top:10px;"></div>
+      </div>
+    </section>
+    <!-- Feedback & Reviews Section End -->
+    
     <!-- Footer Section Start -->
 
    <footer class="footer">
@@ -362,18 +527,18 @@
                         <a href="Blog.html">Blog</a>
                         <a href="WorkWithus.html">Work With Us</a>
                         <a href="contact.html">Contact Us</a>
-                        <a href="ReportFraud.html">Report Fraud</a>
+                        <a href="/report-fraud.html">Report Fraud</a>
                     </div>
                 </div>
                 <!-- Learn More Links -->
                 <div>
                     <h3>Learn More</h3>
                     <div class="learnmore" >
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Security</a>
+                        <a href="/privacy-policy.html">Privacy Policy</a>
+                        <a href="/sercurity.html">Security</a>
                         <a href="#">Terms of Service</a>
-                        <a href="#">Lodge Complaint</a>
-                        <a href="#">Testimonials</a>
+                        <a href="/lodge-complaint.html">Lodge Complaint</a>
+                        <a href="/testimonial.html">Testimonials</a>
                     </div>
                 </div>
                 <div class="FollowUs">
@@ -407,12 +572,40 @@
     
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <!-- Custom JS -->
-    <script src="js/custom.js"></script>
-</body>
+    <!-- JQuery and jQuery UI are already included in the head section -->
+     <!-- Feedback & Reviews JS -->
+    <script>
+      document.getElementById('feedback-form').addEventListener('submit', function(e) {
+        e.preventDefault();
 
+        const nameInput = document.getElementById('name-input');
+        const emailInput = document.getElementById('email-input');
+        const feedbackInput = document.getElementById('feedback-input');
+        const successMsg = document.getElementById('feedback-success');
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const feedbackText = feedbackInput.value.trim();
+
+        if (name !== '' && email !== '' && feedbackText !== '') {
+          // Here you would send the feedback to the backend (not implemented)
+          nameInput.value = '';
+          emailInput.value = '';
+          feedbackInput.value = '';
+
+          // Show success message
+          successMsg.textContent = 'Submitted successfully! Thank you for your feedback.';
+          successMsg.style.display = 'block';
+          setTimeout(function() {
+            successMsg.style.display = 'none';
+          }, 3000);
+        }
+      });
+    </script>
+    <!-- Custom JS -->
+    <script src="js/cart-sound.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/feeling-hungry.js"></script>
+    <script src="chatbot.js"></script>
+</body>
 </html>
