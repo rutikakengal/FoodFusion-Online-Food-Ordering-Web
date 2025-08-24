@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found - Food Fusion</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* 404 Error Section */
+        #error-404 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Shift content upward */
+            min-height: 100vh;
+            padding: 30px 20px; /* Reduced top padding */
+            background-image: url(../img/food-bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Pulsing Background Gradient */
+        .error-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(231, 76, 60, 0.2), rgba(108, 92, 231, 0.2));
+            z-index: -1;
+            animation: pulseGradient 6s infinite ease-in-out;
+        }
+
+        @keyframes pulseGradient {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        /* Heading Styling */
+        .error-container h1 {
+            font-size: 72px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounceIn 1s ease;
+        }
+
+        .error-container h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2f3542;
+            margin-bottom: 15px;
+        }
+
+        .error-container p {
+            font-size: 16px;
+            color: #747d8c;
+            margin-bottom: 20px;
+        }
+
+        /* Floating Food Item Animation */
+        .error-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            position: relative;
+            animation: floatRotate 4s infinite ease-in-out;
+        }
+
+        .error-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes floatRotate {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        /* Search Bar */
+        .error-search {
+            margin: 20px auto;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .error-search input[type="search"] {
+            width: 70%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid transparent;
+            border-radius: 15px 0 0 15px;
+            background: #f8f8f8;
+            transition: all 0.3s ease;
+        }
+
+        .error-search input[type="search"]:focus {
+            outline: none;
+            background: #fff;
+            border: 2px solid transparent;
+            box-shadow: 0 0 10px rgba(108, 92, 231, 0.4);
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(45deg, #e74c3c, #6c5ce7) border-box;
+        }
+
+        .error-search button {
+            padding: 12px;
+            background: linear-gradient(45deg, #e74c3c, #6c5ce7);
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 0 15px 15px 0;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .error-search button:hover {
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.4);
+        }
+
+        /* Popular Dishes Section */
+        .popular-dishes {
+            margin-top: 30px;
+            animation: fadeIn 1.4s ease;
+        }
+
+        .popular-dishes h3 {
+            font-size: 24px;
+            color: #2f3542;
+            margin-bottom: 15px;
+        }
+
+        .popular-dishes .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 15px;
+        }
+
+        .dish-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .dish-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .dish-item h4 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(47, 53, 66, 0.8);
+            color: #fff;
+            padding: 8px;
+            font-size: 16px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .dish-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Unique Animated Button */
+        .btn-home {
+            position: relative;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #e74c3c, #6c5ce7);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .btn-home i {
+            font-size: 18px;
+            animation: pulseIcon 2s infinite;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn-home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-home:hover::before {
+            left: 100%;
+        }
+
+        .btn-home .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 25px;
+            }
+
+            .error-container h1 {
+                font-size: 48px;
+            }
+
+            .error-container h2 {
+                font-size: 28px;
+            }
+
+            .error-container p {
+                font-size: 14px;
+            }
+
+            .error-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .popular-dishes .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            #error-404 {
+                padding: 20px 10px;
+            }
+
+            .error-container {
+                padding: 15px;
+            }
+
+            .error-container h1 {
+                font-size: 36px;
+            }
+
+            .error-container h2 {
+                font-size: 24px;
+            }
+
+            .btn-home {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .btn-home i {
+                font-size: 16px;
+            }
+
+            .error-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .popular-dishes .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .error-search {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .error-search input[type="search"] {
+                width: 100%;
+                border-radius: 15px;
+            }
+
+            .error-search button {
+                border-radius: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Section Start -->
+    <header class="navbar">
+        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+            <div class="container">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="index.html" title="Logo">
+                        <img src="img/logo.svg" alt="Logo" class="img-responsive">
+                    </a>
+                </div>
+                <!-- Main Menu -->
+                <div class="menu text-right">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
+                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
+                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
+                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
+                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
+                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
+                        <li><a class="hvr-underline-from-center" href="profile.html" title="Sign-in"><i class="fa fa-user"></i> Signup</a></li>
+                        <li>
+                            <a id="shopping-cart" class="shopping-cart">
+                                <i class="fa fa-cart-arrow-down"></i>
+                                <span class="badge">0</span>
+                            </a>
+                            <div id="cart-content" class="cart-content">
+                                <h3 class="text-center">Shopping Cart</h3>
+                                <table class="cart-table" border="0">
+                                    <tr>
+                                        <th>Food</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Qty</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">Total</th>
+                                        <th>$0.00</th>
+                                        <th></th>
+                                    </tr>
+                                </table>
+                                <a href="order.html" class="btn-primary">Confirm Order</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navigation Section End -->
+
+    <!-- 404 Error Section Start -->
+    <section id="error-404">
+        <div class="error-container">
+            <div class="error-image">
+                <img src="img/food/p1.jpg" alt="Pizza" class="img-responsive">
+            </div>
+            <h1>404</h1>
+            <h2>Oops! This Dish Isn't on Our Menu</h2>
+            <p>Looks like you took a wrong turn in the kitchen! Don't worry, let's find something delicious to satisfy your cravings.</p>
+            
+            <!-- Search Bar -->
+            <form action="food-search.html" method="GET" class="error-search">
+                <input type="search" name="query" placeholder="Search for food..." autocomplete="off" required>
+                <button type="submit"><i class="fa fa-search"></i> Search</button>
+            </form>
+
+            <!-- Popular Dishes -->
+            <div class="popular-dishes">
+                <h3>Try These Popular Dishes</h3>
+                <div class="grid-3">
+                    <a href="foods.html" class="dish-item">
+                        <img src="img/food/p1.jpg" alt="Pizza">
+                        <h4>Pizza</h4>
+                    </a>
+                    <a href="foods.html" class="dish-item">
+                        <img src="img/food/s1.jpg" alt="Sandwich">
+                        <h4>Sandwich</h4>
+                    </a>
+                    <a href="foods.html" class="dish-item">
+                        <img src="img/food/b1.jpg" alt="Burger">
+                        <h4>Burger</h4>
+                    </a>
+                </div>
+            </div>
+
+            <a href="index.html" class="btn-home"><i class="fa fa-home"></i> Back to Home</a>
+        </div>
+    </section>
+    <!-- 404 Error Section End -->
+
+    <!-- Footer Section Start -->
+    <section class="footer">
+        <div class="container">
+            <div class="grid-3">
+                <!-- About Us -->
+                <div class="aboutus-flex">
+                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+                    <div class="about-content">
+                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
+                        <p>Our shared passion for food and community drives us to bring quality meals directly to your doorstep.</p>
+                    </div>
+                </div>
+                <div class="FoodFusion">
+                    <h3>Food Fusion</h3>
+                    <div class="foodfusion">
+                        <a href="WhoWeAre.html">Who We Are</a>
+                        <a href="Blog.html">Blog</a>
+                        <a href="WorkWithus.html">Work With Us</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="ReportFraud.html">Report Fraud</a>
+                    </div>
+                </div>
+                <!-- Learn More Links -->
+                <div>
+                    <h3>Learn More</h3>
+                    <div class="learnmore">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Security</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="/lodge-complaint.html">Lodge Complaint</a>
+                        <a href="#">Testimonials</a>
+                    </div>
+                </div>
+                <div class="FollowUs">
+                    <!-- Social Links -->
+                    <h3>Social Links</h3>
+                    <div class="social">
+                        <ul>
+                            <li><a href="https://www.facebook.com/">
+                                <img src="/img/footer-icons/facebook.svg" alt="Facebook icon" width="24" height="24">
+                                Facebook
+                            </a></li>
+                            <li><a href="https://www.instagram.com/">
+                                <img src="/img/footer-icons/instagram.svg" alt="Instagram icon" width="24" height="24">
+                                Instagram
+                            </a></li>
+                            <li><a href="https://x.com/">
+                                <img src="/img/footer-icons/x-twitter.svg" alt="Twitter icon" width="24" height="24">
+                                Twitter
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Copyright Section Start -->
+    <section class="copyright">
+        <div class="container text-center">
+            <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
+        </div>
+        <a id="back-to-top" class="btn-primary">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+    </section>
+    <!-- Copyright Section End -->
+
+    <!-- Custom JS for Ripple Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.querySelector('.btn-home');
+            btn.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                btn.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+    <!-- Custom JS -->
+    <script src="js/cart-sound.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

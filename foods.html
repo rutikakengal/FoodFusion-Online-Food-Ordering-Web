@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="css/hover-min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Feeling Hungry CSS -->
+    <link rel="stylesheet" href="css/feeling-hungry.css">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 </head>
 <body>
     <!-- Navigation Section Start -->
@@ -37,7 +43,7 @@
                         <li>
                             <a id="shopping-cart" class="shopping-cart">
                                 <i class="fa fa-cart-arrow-down"></i>
-                                <span class="badge">4</span>
+                                <span class="badge">0</span>
                             </a>
                             <div id="cart-content" class="cart-content">
                                 <h3 class="text-center">Shopping Cart</h3>
@@ -51,32 +57,8 @@
                                         <th>Action</th>
                                     </tr>
                                     <tr>
-                                        <td><img src="img/food/p1.jpg" alt="Food"></td>
-                                        <td>Pizza</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/s1.jpg" alt="Food"></td>
-                                        <td>Sandwich</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/b1.jpg" alt="Food"></td>
-                                        <td>Burger</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
                                         <th colspan="4">Total</th>
-                                        <th>&#8377; 24.00</th>
+                                        <th>$0.00</th>
                                         <th></th>
                                     </tr>
                                 </table>
@@ -111,7 +93,7 @@
             <div class="heading-border"></div>
             <div class="grid-2">
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/p1.jpg" alt="" class="img-responsive img-curve">
                         </div>
@@ -128,7 +110,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
                         </div>
@@ -145,7 +127,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/b1.jpg" alt="" class="img-responsive img-curve">
                         </div>
@@ -161,7 +143,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/changes1.jpg" alt="" class="img-responsive img-curve">
                         </div>
@@ -177,7 +159,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/changes2.jpg" alt="" class="img-responsive img-curve">
                         </div>
@@ -194,7 +176,7 @@
                     </form>
                 </div>
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/chnages3.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                             
@@ -213,7 +195,7 @@
                 </div>
 
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/samosa.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -231,7 +213,7 @@
                 </div>
 
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/Pasta.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -251,7 +233,7 @@
           
                 
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/manchurian.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -269,7 +251,7 @@
                 </div>
 
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/fries.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -287,7 +269,7 @@
                 </div>
 
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/Pav-BHaji.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -305,7 +287,7 @@
                 </div>
 
                 <div class="food-menu-box">
-                    <form action="">
+                    <form>
                         <div class="food-menu-img">
                             <img src="img/food/dosa.jpg" alt="" class="img-responsive img-curve" style="height: 90px;">
                         </div>
@@ -354,11 +336,11 @@
                 <div>
                     <h3>Learn More</h3>
                     <div class="learnmore" >
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Security</a>
+                        <a href="/privacy-policy.html">Privacy Policy</a>
+                        <a href="/sercurity.html">Security</a>
                         <a href="#">Terms of Service</a>
-                        <a href="#">Lodge Complaint</a>
-                        <a href="#">Testimonials</a>
+                        <a href="/lodge-complaint.html">Lodge Complaint</a>
+                        <a href="/testimonial.html">Testimonials</a>
                     </div>
                 </div>
                 <div class="FollowUs">
@@ -398,11 +380,10 @@
     </section>
     <!-- Copyright Section End -->
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <!-- Custom JS -->
+    <script src="js/cart-sound.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/feeling-hungry.js"></script>
+    <script src="chatbot.js"></script>
 </body>
 </html>

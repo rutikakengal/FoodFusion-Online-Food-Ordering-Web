@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Food Delivery Website</title>
+    <title>Confirm Your Order - Food Fusion</title>
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
     <!-- Fontawesome CSS -->
@@ -13,19 +15,22 @@
     <link rel="stylesheet" href="css/hover-min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Order CSS  -->
+    <link rel="stylesheet" href="css/order.css">
+
 </head>
+
 <body>
     <!-- Navigation Section Start -->
     <header class="navbar">
         <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
             <div class="container">
-                <!-- logo -->
                 <div class="logo">
                     <a href="index.html" title="Logo">
                         <img src="img/logo.svg" alt="Logo" class="img-responsive">
                     </a>
                 </div>
-                <!-- Main Menu -->
                 <div class="menu text-right">
                     <ul>
                         <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
@@ -34,11 +39,12 @@
                         <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
                         <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
                         <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
-
+                        <li><a class="hvr-underline-from-center" href="profile.html" title="Sign-in"><i
+                                    class="fa fa-user"></i> Signup</a></li>
                         <li>
                             <a id="shopping-cart" class="shopping-cart">
                                 <i class="fa fa-cart-arrow-down"></i>
-                                <span class="badge">4</span>
+                                <span class="badge">0</span>
                             </a>
                             <div id="cart-content" class="cart-content">
                                 <h3 class="text-center">Shopping Cart</h3>
@@ -52,39 +58,14 @@
                                         <th>Action</th>
                                     </tr>
                                     <tr>
-                                        <td><img src="img/food/p1.jpg" alt="Food"></td>
-                                        <td>Pizza</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/s1.jpg" alt="Food"></td>
-                                        <td>Sandwich</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="img/food/b1.jpg" alt="Food"></td>
-                                        <td>Burder</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td>1</td>
-                                        <td>&#8377; 8.00</td>
-                                        <td><a href="#" class="btn-delete">&times;</a></td>
-                                    </tr>
-                                    <tr>
                                         <th colspan="4">Total</th>
-                                        <th>&#8377;24.00</th>
+                                        <th>$0.00</th>
                                         <th></th>
                                     </tr>
                                 </table>
                                 <a href="order.html" class="btn-primary">Confirm Order</a>
                             </div>
                         </li>
-
                     </ul>
                 </div>
             </div>
@@ -92,11 +73,43 @@
     </header>
     <!-- Navigation Section End -->
 
-    <!-- Food Order Section Start -->
+    <!-- Order Section Start -->
     <section class="order">
-        <div class="container">
-            <h2 class="text-center">Fill this form to confirm your order.</h2>
-            <table class="tbl-full" border="0">
+        <div class="order__particles">
+            <div class="order__particle" style="left: 10%; animation-delay: 0s;">🍕</div>
+            <div class="order__particle" style="left: 30%; animation-delay: 2s;">🍔</div>
+            <div class="order__particle" style="left: 50%; animation-delay: 4s;">🥪</div>
+            <div class="order__particle" style="left: 70%; animation-delay: 6s;">🍟</div>
+            <div class="order__particle" style="left: 90%; animation-delay: 8s;">🍩</div>
+        </div>
+        <div class="order__container">
+            <div class="order__hero">
+                <h1 class="order__hero-title">Confirm Your Order</h1>
+                <div class="order__border"></div>
+                <p class="order__hero-text">Review your cart and provide delivery details to enjoy your delicious meal!
+                </p>
+            </div>
+            <div class="order__progress">
+                <div class="order__progress-step order__progress-step--active">
+                    <span>Cart Review</span>
+                    <div class="order__progress-bar">
+                        <div class="order__progress-fill"></div>
+                    </div>
+                </div>
+                <div class="order__progress-step order__progress-step--active">
+                    <span>Delivery Details</span>
+                    <div class="order__progress-bar">
+                        <div class="order__progress-fill"></div>
+                    </div>
+                </div>
+                <div class="order__progress-step">
+                    <span>Order Confirmation</span>
+                    <div class="order__progress-bar">
+                        <div class="order__progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+            <table class="order__table" id="order-items-table">
                 <tr>
                     <th>S.N.</th>
                     <th>Food</th>
@@ -107,84 +120,50 @@
                     <th>Action</th>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td><img src="img/food/p1.jpg" alt="Food"></td>
-                    <td>Pizza</td>
-                    <td>&#8377; 8.00</td>
-                    <td>1</td>
-                    <td>&#8377;8.00</td>
-                    <td><a href="#" class="btn-delete">&times;</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><img src="img/food/s1.jpg" alt="Food"></td>
-                    <td>Sandwich</td>
-                    <td>&#8377; 8.00</td>
-                    <td>1</td>
-                    <td>&#8377; 8.00</td>
-                    <td><a href="#" class="btn-delete">&times;</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><img src="img/food/b1.jpg" alt="Food"></td>
-
-                    <td>Burder</td>
-                    <td>&#8377; 8.00</td>
-
-                    <td>Burger</td>
-                    <td>$ 8.00</td>
-
-                    <td>1</td>
-                    <td>&#8377; 8.00</td>
-                    <td><a href="#" class="btn-delete">&times;</a></td>
+                    <td colspan="7" class="text-center">Your cart is empty. <a href="index.html">Continue shopping</a>
+                    </td>
                 </tr>
                 <tr>
                     <th colspan="5">Total</th>
-                    <th>&#8377;24.00</th>
+                    <th id="order-total">$0.00</th>
                     <th></th>
                 </tr>
             </table>
-
-            <!-- ✅ Updated Form -->
-            <form class="form" id="orderForm">
+            <form class="order__form" id="orderForm">
                 <fieldset>
                     <legend>Delivery Details</legend>
-
-                    <p class="label">Full Name</p>
-                    <input type="text" placeholder="Enter your name..." name="fullname" required>
-
-                    <p class="label">Phone Number</p>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone..." maxlength="10" pattern="\d{10}" required>
-
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="Enter your email..." name="email" required>
-
-                    <p class="label">Address</p>
-                    <input type="text" placeholder="Enter your address..." name="address" required>
-
-                    <input type="submit" value="Confirm Order" class="btn-primary">
+                    <label class="order__form-label">Full Name</label>
+                    <input type="text" class="order__form-input" placeholder="Enter your name..." name="fullname"
+                        required>
+                    <label class="order__form-label">Phone Number</label>
+                    <input type="tel" class="order__form-input" id="phone" name="phone"
+                        placeholder="Enter your phone..." maxlength="10" pattern="\d{10}" required>
+                    <label class="order__form-label">Email</label>
+                    <input type="email" class="order__form-input" placeholder="Enter your email..." name="email"
+                        required>
+                    <label class="order__form-label">Address</label>
+                    <input type="text" class="order__form-input" placeholder="Enter your address..." name="address"
+                        required>
+                    <input type="submit" value="Confirm Order" class="order__form-submit">
                 </fieldset>
             </form>
+            <p class="order__confirmation" id="confirmationMessage">✅ Your order has been placed successfully!</p>
 
-            <!-- ✅ Confirmation Message -->
-            <p id="confirmationMessage" style="display:none; color: green; font-weight: bold; margin-top: 10px;">
-                ✅ Your order has been placed successfully!
-            </p>
         </div>
     </section>
-    <!-- Food Order Section End -->
+    <!-- Order Section End -->
 
     <!-- Footer Section Start -->
     <section class="footer">
         <div class="container">
             <div class="grid-3">
-
-                <!--About Us-->
                 <div class="aboutus-flex">
-                    <img src="img/footerimage.png" alt="Logo" class="footer-logo"/>
+                    <img src="img/footerimage.png" alt="Logo" class="footer-logo" />
                     <div class="about-content">
-                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful dining experience.</p>
-                        <p>Our shared passion for food and community drives us to bring qualiy meals directly to you doorstep.</p>
+                        <p>Food Fusion connects customers with local food centers, providing a seamless and delightful
+                            dining experience.</p>
+                        <p>Our shared passion for food and community drives us to bring quality meals directly to your
+                            doorstep.</p>
                     </div>
                 </div>
                 <div class="FoodFusion">
@@ -197,35 +176,26 @@
                         <a href="ReportFraud.html">Report Fraud</a>
                     </div>
                 </div>
-                <!-- Learn More Links -->
                 <div>
                     <h3>Learn More</h3>
-                    <div class="learnmore" >
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Security</a>
+                    <div class="learnmore">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="security.html">Security</a>
                         <a href="#">Terms of Service</a>
-                        <a href="#">Lodge Complaint</a>
+                        <a href="/lodge-complaint.html">Lodge Complaint</a>
                         <a href="#">Testimonials</a>
                     </div>
                 </div>
                 <div class="FollowUs">
-                    <!-- Social Links -->
                     <h3>Social Links</h3>
                     <div class="social">
                         <ul>
-                             <li><a href="https://www.facebook.com/">
-                                <img src="/img/footer-icons/facebook.svg" alt="X icon" width="24" height="24">
-                                Facebook
-                                </a></li>
-                            <li><a href="https://www.instagram.com/">
-                            <img src="/img/footer-icons/instagram.svg" alt="X icon" width="24" height="24">
-                               Instagram
-                                </a>
-                            </li>
-                            <li><a href="https://x.com/">
-                                <img src="/img/footer-icons/x-twitter.svg" alt="X icon" width="24" height="24">
-                                Twitter
-                                </a></li>
+                            <li><a href="https://www.facebook.com/"><img src="/img/footer-icons/facebook.svg"
+                                        alt="Facebook icon" width="24" height="24"> Facebook</a></li>
+                            <li><a href="https://www.instagram.com/"><img src="/img/footer-icons/instagram.svg"
+                                        alt="Instagram icon" width="24" height="24"> Instagram</a></li>
+                            <li><a href="https://x.com/"><img src="/img/footer-icons/x-twitter.svg" alt="Twitter icon"
+                                        width="24" height="24"> Twitter</a></li>
                         </ul>
                     </div>
                 </div>
@@ -233,37 +203,152 @@
         </div>
     </section>
     <!-- Footer Section End -->
-    <!-- Copyright Section start -->
+
+    <!-- Copyright Section Start -->
     <section class="copyright">
         <div class="container text-center">
             <p>All rights reserved. Design By <a href="#">Rutika❤️</a></p>
         </div>
-        <a id="back-to-top" class="btn-primary">
+        <a id="back-to-top" class="order__back-to-top">
             <i class="fa fa-angle-double-up"></i>
         </a>
     </section>
     <!-- Copyright Section End -->
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <!-- Custom JS -->
     <script>
-  $(function () {
-    // Phone validation
-    $("#phone").on("input", function () {
-      this.value = this.value.replace(/\D/g, "");
-    });
+        $(document).ready(function () {
+            // Load cart items into order table
+            loadCartItems();
 
-    // Confirmation message
-    $("#orderForm").on("submit", function (e) {
-      e.preventDefault();
-      $("#confirmationMessage").fadeIn();
-      this.reset();
-    });
-  });
-</script>
+            // Handle delete button clicks
+            $(document).on("click", ".btn-delete", function (event) {
+                event.preventDefault();
+
+                const indexToDelete = $(this).data("index"); // Read the index from the button
+                let cart = JSON.parse(localStorage.getItem('foodFusionCart')) || [];
+
+                // Add shake animation
+                const $row = $(this).closest("tr");
+                $row.addClass("order__table-row--removing");
+
+                setTimeout(() => {
+                    if (indexToDelete >= 0 && indexToDelete < cart.length) {
+                        cart.splice(indexToDelete, 1); // Remove the exact item by index
+                        localStorage.setItem('foodFusionCart', JSON.stringify(cart));
+                        playSound('remove');
+                        loadCartItems(); // Refresh table
+                        updateCartBadge(); // Update cart count
+                    }
+                }, 300);
+            });
+
+            // Phone validation
+            $("#phone").on("input", function () {
+                this.value = this.value.replace(/\D/g, "");
+            });
+
+            // Form submission
+            $("#orderForm").on("submit", function (e) {
+                e.preventDefault();
+                const cart = JSON.parse(localStorage.getItem('foodFusionCart')) || [];
+                if (cart.length === 0) {
+                    alert("Your cart is empty. Please add items before confirming.");
+                    return;
+                }
+                $(".order__progress-step:last").addClass("order__progress-step--active");
+                $("#confirmationMessage").fadeIn();
+                this.reset();
+                localStorage.removeItem('foodFusionCart');
+                loadCartItems();
+                updateCartBadge();
+            });
+
+            // Scroll-Triggered Animations
+            const elements = $('.order__table, .order__form');
+            function checkVisibility() {
+                elements.each(function () {
+                    const top = $(this).offset().top - $(window).height() * 0.8;
+                    if ($(window).scrollTop() > top) {
+                        $(this).addClass('order__card--visible');
+                    }
+                });
+            }
+
+            checkVisibility();
+            $(window).scroll(checkVisibility);
+
+            // Back to Top Button
+            $('.order__back-to-top').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+
+            // Load cart items into the table
+            function loadCartItems() {
+                const cart = JSON.parse(localStorage.getItem('foodFusionCart')) || [];
+                console.log("Loading cart items:", cart);
+                $("#order-items-table tr:not(:first-child):not(:last-child)").remove();
+
+                if (cart.length > 0) {
+                    let total = 0;
+                    cart.forEach((item, index) => {
+                        const itemTotal = parseFloat(item.total) || 0;
+                        total += itemTotal;
+
+                        const newRow = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td><img src="${item.image || 'img/default.jpg'}" alt="Food"></td>
+                        <td>${item.name}</td>
+                        <td>$${item.price}</td>
+                        <td>${item.quantity}</td>
+                        <td>$${itemTotal.toFixed(2)}</td>
+                        <td><a href="#" class="btn-delete" data-index="${index}">&times;</a></td>
+                    </tr>
+                `;
+                        $("#order-items-table tr:last").before(newRow);
+                    });
+                    $("#order-total").text("$" + total.toFixed(2));
+                } else {
+                    $("#order-items-table tr:last").before(`
+                <tr>
+                    <td colspan="7" class="text-center">Your cart is empty. <a href="index.html">Continue shopping</a></td>
+                </tr>
+            `);
+                    $("#order-total").text("$0.00");
+                }
+            }
+
+            function updateCartBadge() {
+                const cart = JSON.parse(localStorage.getItem('foodFusionCart')) || [];
+                let count = 0;
+                cart.forEach(item => {
+                    count += parseInt(item.quantity) || 0;
+                });
+                console.log("Updating badge with count:", count);
+                $(".badge").text(count);
+            }
+
+            function playSound(action) {
+                if (typeof cartSound !== 'undefined' && cartSound) {
+                    if (action === 'add') {
+                        cartSound.play();
+                    } else if (action === 'remove') {
+                        // Add remove sound here if needed
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script src="js/cart-sound.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="chatbot.js"></script>
 
 </body>
+
 </html>
